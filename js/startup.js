@@ -2,8 +2,9 @@
 // Run this script on document load
 
 function addItemGenerationButtons(parent) {
+    const exclude = ["", "image"]
     Object.keys(csItemTypes).forEach((key) => {
-        if (key === "") {return}
+        if (exclude.includes(key)) {return}
         const type = csItemTypes[key]
         const e = document.createElement("button")
         e.setAttribute("onclick", `newItem("${key}")`)
@@ -13,7 +14,9 @@ function addItemGenerationButtons(parent) {
 }
 
 function addItemSections(parent) {
+    const exclude = ["", "image", "date"]
     Object.keys(csItemTypes).forEach((key) => {
+        if (exclude.includes(key)) {return}
         const type = csItemTypes[key]
         const e = document.createElement("section")
         e.id = `section-${type}`
