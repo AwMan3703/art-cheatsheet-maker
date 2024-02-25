@@ -3,6 +3,7 @@
 
 const csItemTypes= {
     // type : "path/to/icon.png"
+    image : "csItemType:IMAGE",
     date : "csItemType:DATE",
     location : "csItemType:LOCATION",
     commission : "csItemType:COMMISSION",
