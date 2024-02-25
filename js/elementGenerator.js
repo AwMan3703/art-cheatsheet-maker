@@ -26,6 +26,7 @@ function addItem(item, type) {
 
 function newItem(type) {
     const content = window.prompt("New item's content:", "no content")
+    if (content.trim().length === 0) {return}
     const icon = document.createElement("img")
     icon.src = csItemIconMap[type]
     const e = document.createElement("div")
