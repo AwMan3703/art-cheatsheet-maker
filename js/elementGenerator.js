@@ -1,20 +1,20 @@
 
-const iconPath = `assets/icons/`
-const iconMap = {
+const itemIconPath = `assets/icons/`
+const itemIconMap = {
     // type : "path/to/icon.png"
-    "date" : `${iconPath}clock.png`,
-    "location" : `${iconPath}location.png`,
-    "commission" : `${iconPath}king.png`,
-    "history" : `${iconPath}history.png`,
-    "size" : `${iconPath}ruler.png`,
-    "description" : `${iconPath}text.png`,
-    "style" : `${iconPath}brush.png`,
-    "colors" : `${iconPath}palette.png`,
-    "light" : `${iconPath}sun.png`,
-    "hypothesis" : `${iconPath}question_mark.png`,
-    "documents" : `${iconPath}sheet.png`,
-    "texts" : `${iconPath}book.png`,
-    "" : `${iconPath}sparkles.png`
+    [csItemTypes.date] : `${itemIconPath}clock.png`,
+    [csItemTypes.location] : `${itemIconPath}location.png`,
+    [csItemTypes.commission] : `${itemIconPath}king.png`,
+    [csItemTypes.history] : `${itemIconPath}history.png`,
+    [csItemTypes.size] : `${itemIconPath}ruler.png`,
+    [csItemTypes.description] : `${itemIconPath}text.png`,
+    [csItemTypes.style] : `${itemIconPath}brush.png`,
+    [csItemTypes.colors] : `${itemIconPath}palette.png`,
+    [csItemTypes.light] : `${itemIconPath}sun.png`,
+    [csItemTypes.hypothesis] : `${itemIconPath}question_mark.png`,
+    [csItemTypes.documents] : `${itemIconPath}sheet.png`,
+    [csItemTypes.texts] : `${itemIconPath}book.png`,
+    [csItemTypes[""]] : `${itemIconPath}sparkles.png`
 }
 
 function addItem(item, type) {
@@ -22,9 +22,10 @@ function addItem(item, type) {
     p.appendChild(item)
 }
 
-function newItem(type, content) {
+function newItem(type) {
+    const content = window.prompt("New item's content:", "no content")
     const icon = document.createElement("img")
-    icon.src = iconMap[type]
+    icon.src = itemIconMap[type]
     const e = document.createElement("div")
     e.className = `cs-item item-${type}`
     e.innerText = content
