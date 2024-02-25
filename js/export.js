@@ -14,3 +14,11 @@ function exportSheet() {
     }
     screenshot(sheet, toDownloadButton)
 }
+
+// TODO: consider adding an "Export interactive sheet" option (see below)
+/* Interactive sheets are HTML files displaying the information in an interactive way
+* Example functionalities of an interactive sheet:
+* - Expand details
+* - Click a name/place to open a wikipedia reference
+* - Click a description to highlight the part of the image it's referring to
+*/
