@@ -16,6 +16,9 @@ function addItemSections(parent) {
         const type = csItemTypes[key]
         const e = document.createElement("section")
         e.id = `section-${type}`
+        const title = document.createElement("h3")
+        title.innerText = `${key}`
+        e.appendChild(title)
         parent.appendChild(e)
     })
 }
