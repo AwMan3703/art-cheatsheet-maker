@@ -2,10 +2,7 @@
 // Available item types
 
 const csItemTypes= {
-    // type : "path/to/icon.png"
-    name : "csItemType:NAME",
-    author : "csItemType:AUTHOR",
-    image : "csItemType:IMAGE",
+    // type : "identifier:name"
     date : "csItemType:DATE",
     location : "csItemType:LOCATION",
     commission : "csItemType:COMMISSION",
