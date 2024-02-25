@@ -3,6 +3,7 @@
 
 function addItemGenerationButtons(parent) {
     Object.keys(csItemTypes).forEach((key) => {
+        if (key === "") {return}
         const type = csItemTypes[key]
         const e = document.createElement("button")
         e.setAttribute("onclick", `newItem("${key}")`)
