@@ -21,9 +21,15 @@
         <div id="controls">
             <div id="add-element-panel">
             </div>
+            <div id="export-panel">
+                <button id="export-button" onclick="exportSheet()">Export sheet</button>
+                <a disabled id="download-point" download="info.jpg">Download</a>
+            </div>
         </div>
 
         <!--Scripts-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/export.js"></script>
         <script src="js/csItems.js"></script>
         <script src="js/elementGenerator.js"></script>
         <script src="js/startup.js"></script>

@@ -16,6 +16,9 @@ main {
   gap: 20px;
   padding: 20px;
 }
+#download-point:not(.available) {
+  opacity: 50%;
+}
 .cs-section {
   padding-inline: 10px !important;
   gap: 10px;
