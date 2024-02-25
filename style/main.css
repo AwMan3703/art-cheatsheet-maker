@@ -17,7 +17,7 @@ main {
   padding: 20px;
 }
 #download-point:not(.available) {
-  opacity: 50%;
+  visibility: hidden;
 }
 .cs-section {
   padding-inline: 10px !important;
