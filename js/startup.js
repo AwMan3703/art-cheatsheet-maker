@@ -6,7 +6,7 @@ function addItemGenerationButtons(parent) {
         const type = csItemTypes[key]
         const e = document.createElement("button")
         e.setAttribute("onclick", `newItem(${type})`)
-        e.innerText = `new ${key}`
+        e.innerText = `+ ${key}`
         parent.appendChild(e)
     })
 }
