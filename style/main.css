@@ -1,0 +1,62 @@
+* {
+  font-family: system-ui, "Arial";
+}
+body {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+main {
+  gap: 20px;
+  padding: 20px;
+}
+.cs-section {
+  padding-inline: 10px !important;
+  gap: 10px;
+}
+.cs-section:not(:has(.cs-item)) {
+  display: none;
+}
+.cs-section-header {
+  align-items: center;
+}
+.cs-section-header > img {
+  height: 3dvh;
+  width: auto;
+  margin: 5px;
+}
+.cs-section-header > h3 {
+  text-transform: capitalize;
+  margin-inline: 12px;
+}
+.flex-vert,
+main,
+.cs-section {
+  display: flex;
+  flex-direction: column;
+}
+.flex-hor,
+.cs-section-header {
+  display: flex;
+  flex-direction: row;
+}
+.round-corners,
+.material,
+.cs-section,
+.cs-item {
+  border-radius: 20px;
+}
+.material,
+.cs-section,
+.cs-item {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-inline: 15px;
+  padding-block: 10px;
+}
+/*# sourceMappingURL=main.css.map */
