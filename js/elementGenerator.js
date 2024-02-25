@@ -1,21 +1,23 @@
 
-const itemIconPath = `assets/icons/`
-const itemIconMap = {
+const csItemIconPath = `assets/icons/`
+const csItemIconMap = {
     // type : "path/to/icon.png"
-    [csItemTypes.date] : `${itemIconPath}clock.png`,
-    [csItemTypes.location] : `${itemIconPath}location.png`,
-    [csItemTypes.commission] : `${itemIconPath}king.png`,
-    [csItemTypes.history] : `${itemIconPath}history.png`,
-    [csItemTypes.size] : `${itemIconPath}ruler.png`,
-    [csItemTypes.description] : `${itemIconPath}text.png`,
-    [csItemTypes.style] : `${itemIconPath}brush.png`,
-    [csItemTypes.colors] : `${itemIconPath}palette.png`,
-    [csItemTypes.light] : `${itemIconPath}sun.png`,
-    [csItemTypes.hypothesis] : `${itemIconPath}question_mark.png`,
-    [csItemTypes.documents] : `${itemIconPath}sheet.png`,
-    [csItemTypes.texts] : `${itemIconPath}book.png`,
-    [csItemTypes[""]] : `${itemIconPath}sparkles.png`
+    [csItemTypes.date] : `${csItemIconPath}clock.png`,
+    [csItemTypes.location] : `${csItemIconPath}location.png`,
+    [csItemTypes.commission] : `${csItemIconPath}king.png`,
+    [csItemTypes.history] : `${csItemIconPath}history.png`,
+    [csItemTypes.size] : `${csItemIconPath}ruler.png`,
+    [csItemTypes.description] : `${csItemIconPath}text.png`,
+    [csItemTypes.style] : `${csItemIconPath}brush.png`,
+    [csItemTypes.colors] : `${csItemIconPath}palette.png`,
+    [csItemTypes.light] : `${csItemIconPath}sun.png`,
+    [csItemTypes.hypothesis] : `${csItemIconPath}question_mark.png`,
+    [csItemTypes.documents] : `${csItemIconPath}sheet.png`,
+    [csItemTypes.texts] : `${csItemIconPath}book.png`,
+    [csItemTypes[""]] : `${csItemIconPath}sparkles.png`
 }
+
+
 
 function addItem(item, type) {
     const p = document.getElementById(`section-${csItemTypes[type]}`)
@@ -25,7 +27,7 @@ function addItem(item, type) {
 function newItem(type) {
     const content = window.prompt("New item's content:", "no content")
     const icon = document.createElement("img")
-    icon.src = itemIconMap[type]
+    icon.src = csItemIconMap[type]
     const e = document.createElement("div")
     e.className = `cs-item item-${type}`
     e.innerText = content
