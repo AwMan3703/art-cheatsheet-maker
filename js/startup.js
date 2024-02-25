@@ -11,6 +11,15 @@ function addItemGenerationButtons(parent) {
     })
 }
 
+function addItemSections(parent) {
+    Object.keys(csItemTypes).forEach((key) => {
+        const type = csItemTypes[key]
+        const e = document.createElement("section")
+        e.id = `section-${type}`
+        parent.appendChild(e)
+    })
+}
+
 
 
 
@@ -19,6 +28,8 @@ function addItemGenerationButtons(parent) {
 function startup() {
     const itemGenerationPanel = document.getElementById("add-element-panel")
     addItemGenerationButtons(itemGenerationPanel)
+    const contentBody = document.getElementById("content-body")
+    addItemSections(contentBody)
 }
 
 startup()
