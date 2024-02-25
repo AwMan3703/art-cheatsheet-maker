@@ -18,7 +18,7 @@ const itemIconMap = {
 }
 
 function addItem(item, type) {
-    const p = document.getElementById(`section-${type}`)
+    const p = document.getElementById(`section-${csItemTypes[type]}`)
     p.appendChild(item)
 }
 
