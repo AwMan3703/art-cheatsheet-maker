@@ -4,11 +4,13 @@
         <meta charset="UTF-8">
         <title>Cheatsheet maker</title>
 
+        <link rel="stylesheet" href="style/displayMode.css">
         <link rel="stylesheet" href="style/main.css">
     </head>
-    <body>
+    <body class="">
         <main id="content-body">
-            <section class="cs-section" id="section-csItemType:X">
+            <!--TEST SECTION for testing n stuff-->
+            <!--section class="cs-section" id="section-csItemType:X">
                 <div class="cs-section-header">
                     <img src="assets/icons/sparkles.png">
                     <h3>placeholder section</h3>
@@ -16,6 +18,17 @@
                 <div class="cs-item item-size">
                     placeholder content
                 </div>
+            </section-->
+            <section class="" id="section-contentHeader">
+                <h1>Name</h1>
+                <input id="input-author" placeholder="Author name" type="text">
+                <label class="screenshot-hidden" for="input-date-day">Giorno:</label>
+                <input id="input-date-day" type="number" min="1" max="31">/
+                <label class="screenshot-hidden" for="input-date-month">Mese:</label>
+                <input id="input-date-month" type="number" min="1" max="12">/
+                <label class="screenshot-hidden" for="input-date-year">Anno:</label>
+                <input id="input-date-year" type="number" min="-9999" max="9999">
+                <input id="input-location" placeholder="Location" type="text">
             </section>
         </main>
         <div id="controls">
@@ -23,13 +36,17 @@
             </div>
             <div id="export-panel">
                 <button id="export-button" onclick="exportSheet()">Export sheet</button>
-                <a disabled id="download-point" download="info.jpg">Download</a>
+                <a id="download-point" download="info.jpg">Download</a>
+            </div>
+            <div id="display-panel">
+                <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Toggle dark mode</button>
             </div>
         </div>
 
         <!--Scripts-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="js/export.js"></script>
+        <script src="js/displayMode.js"></script>
         <script src="js/csItems.js"></script>
         <script src="js/elementGenerator.js"></script>
         <script src="js/startup.js"></script>

@@ -1,3 +1,9 @@
+/* Reset some styles */
+input,
+button {
+  all: unset;
+}
+/* - */
 * {
   font-family: system-ui, "Arial";
   color: var(--color-text-main);
@@ -24,6 +30,14 @@ main {
 }
 #download-point:not(.available) {
   visibility: hidden;
+}
+#section-contentHeader > h1 {
+  border: none;
+  font-size: xxx-large;
+}
+#section-contentHeader > input[type="text"] {
+  border: none;
+  font-size: larger;
 }
 .cs-section {
   padding-inline: 10px !important;
