@@ -4,11 +4,14 @@
 
 * {
 	font-family: system-ui, "Arial";
+	color: var(--color-text-main);
+	background-color: var(--color-background-main);
 }
 
 body {
 	margin: 0;
 }
+input::placeholder { color: var(--color-text-secondary); }
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
@@ -66,7 +69,7 @@ main {
 
 .material {
 	&:extend(.round-corners);
-	background-color: @color-darker;
+	background-color: var(--color-layer);
 	padding-inline: 15px;
 	padding-block: 10px;
 }
