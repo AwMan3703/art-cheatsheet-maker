@@ -3,8 +3,6 @@
 
 const csItemTypes= {
     // type : "identifier:name"
-    date : "csItemType:DATE",
-    location : "csItemType:LOCATION",
     commission : "csItemType:COMMISSION",
     history : "csItemType:HISTORY",
     size : "csItemType:SIZE",
