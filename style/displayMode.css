@@ -1,0 +1,15 @@
+:root {
+  --color-layer: rgba(0, 0, 0, 0.05);
+  --color-background-main: #ffffff;
+  --color-border-main: #7a7a7a;
+  --color-text-main: #212121;
+  --color-text-secondary: rgba(33, 33, 33, 0.5);
+}
+.darkmode {
+  --color-layer: rgba(255, 255, 255, 0.05);
+  --color-background-main: #24242a;
+  --color-border-main: #3e3e3e;
+  --color-text-main: #f2f2f2;
+  --color-text-secondary: rgba(242, 242, 242, 0.5);
+}
+/*# sourceMappingURL=displayMode.css.map */
