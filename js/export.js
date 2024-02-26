@@ -1,7 +1,16 @@
 
 // Screenshot [element], then pass it as an HTMLCanvasElement to [callback]
 const screenshot = (element, callback) => {
+    const hidden_elements = document.querySelectorAll('.screenshot-hidden')
+    const setDisplayAll = (value) => {
+        for (let i = 0; i < hidden_elements.length; i++) {
+            const element = hidden_elements[i]
+            element.style.display = value
+        }}
+
+    setDisplayAll('none')
     html2canvas(element).then(callback);
+    setDisplayAll('inherit')
 }
 
 function exportSheet() {
