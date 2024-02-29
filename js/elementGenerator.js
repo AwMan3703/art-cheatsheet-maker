@@ -2,7 +2,6 @@
 const csItemIconPath = `assets/icons/`
 const csItemIconMap = {
     // type : "path/to/icon.png"
-    [csItemTypes.date] : `${csItemIconPath}clock.png`,
     [csItemTypes.location] : `${csItemIconPath}location.png`,
     [csItemTypes.commission] : `${csItemIconPath}king.png`,
     [csItemTypes.history] : `${csItemIconPath}history.png`,
