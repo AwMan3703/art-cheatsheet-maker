@@ -8,12 +8,12 @@ input, button {
 * {
 	font-family: system-ui, "Arial";
 	color: var(--color-text-main);
-	background-color: var(--color-background-main);
 }
 
 body {
 	margin: 0;
 	min-height: 100vh;
+	background-color: var(--color-background-main);
 }
 input::placeholder { color: var(--color-text-secondary); }
 h1, h2, h3, h4, h5, h6 {
@@ -26,10 +26,19 @@ main {
 	padding: 20px;
 }
 
+#content-body.darkmode {
+	background-color: var(--color-background-main);
+}
+
 #download-point:not(.available) {
 	visibility: hidden;
 }
 
+/*--------------------------------------*/
+#controls {
+	position: fixed;
+}
+/*--------------------------------------*/
 #section-contentHeader > h1 {
 	border: none;
 	font-size: xxx-large;
@@ -66,9 +75,13 @@ main {
 .cs-item {
 	&:extend(.material);
 }
+/*--------------------------------------*/
+
+
 .darkmode .icon-mono.display-mode-dynamic-icon {
 	filter: contrast(0) brightness(100%);
 }
+
 
 .flex-vert {
 	display: flex;
