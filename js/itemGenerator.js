@@ -28,6 +28,9 @@ function newItem(type) {
     e.className = `cs-item item-${type}`
     e.innerText = content
 
+    const xBtn = document.createElement("button")
+    const editBtn = document.createElement("button")
+
     addItem(e, type)
     return e
 }
