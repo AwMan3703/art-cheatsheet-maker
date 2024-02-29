@@ -29,7 +29,24 @@ function newItem(type) {
     e.innerText = content
 
     const xBtn = document.createElement("button")
+    xBtn.className = "csItem-inlineButton"
+    const xIcon = document.createElement("img")
+    xIcon.className = "icon-mono display-mode-dynamic-icon"
+    xIcon.src = `${csIconPath}x.png`
+    xBtn.appendChild(xIcon)
+
     const editBtn = document.createElement("button")
+    editBtn.className = "csItem-inlineButton"
+    const editIcon = document.createElement("img")
+    editIcon.className = "icon-mono display-mode-dynamic-icon"
+    editIcon.src = `${csIconPath}pencil.png`
+    editBtn.appendChild(editIcon)
+
+    const btnWrapper = document.createElement("div")
+    btnWrapper.className = "csItem-buttonWrapper"
+    btnWrapper.appendChild(editBtn)
+    btnWrapper.appendChild(xBtn)
+    e.appendChild(btnWrapper)
 
     addItem(e, type)
     return e

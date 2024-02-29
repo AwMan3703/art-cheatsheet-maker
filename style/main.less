@@ -123,6 +123,27 @@ main {
 
 .cs-item {
 	&:extend(.material);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.csItem-buttonWrapper {
+	&:extend(.round-corners);
+	overflow: hidden;
+	min-width: max-content;
+}
+.csItem-inlineButton {
+	border-radius: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: center;
+}
+.csItem-inlineButton > img {
+	width: 20px;
+	height: 20px;
 }
 /*--------------------------------------*/
 

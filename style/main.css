@@ -116,6 +116,28 @@ main {
   text-transform: capitalize;
   margin-inline: 12px;
 }
+.cs-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.csItem-buttonWrapper {
+  overflow: hidden;
+  min-width: max-content;
+}
+.csItem-inlineButton {
+  border-radius: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+}
+.csItem-inlineButton > img {
+  width: 20px;
+  height: 20px;
+}
 /*--------------------------------------*/
 .darkmode .icon-mono.display-mode-dynamic-icon {
   filter: contrast(0) brightness(100%);
@@ -132,6 +154,7 @@ main,
   flex-direction: row;
 }
 .round-corners,
+.csItem-buttonWrapper,
 .material,
 button,
 #controls,
