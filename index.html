@@ -31,15 +31,17 @@
                 <input id="input-location" placeholder="Location" type="text">
             </section>
         </main>
-        <div id="controls">
-            <div id="add-element-panel">
-            </div>
-            <div id="export-panel">
-                <button id="export-button" onclick="exportSheet()">Export sheet</button>
-                <a id="download-point" download="unnamed.jpg">Download</a>
-            </div>
-            <div id="display-panel">
-                <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Toggle dark mode</button>
+        <div id="controls-wrapper">
+            <div id="controls">
+                <div id="add-element-panel" class="controls-panel">
+                </div>
+                <div id="export-panel" class="controls-panel">
+                    <button id="export-button" onclick="exportSheet()">Export sheet</button>
+                    <a id="download-point" download="unnamed.jpg">Download</a>
+                </div>
+                <div id="display-panel" class="controls-panel">
+                    <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Toggle dark mode</button>
+                </div>
             </div>
         </div>
 
