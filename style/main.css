@@ -58,6 +58,10 @@ main {
   text-transform: capitalize;
   margin-inline: 12px;
 }
+/*--------------------------------------*/
+.darkmode .icon-mono.display-mode-dynamic-icon {
+  filter: contrast(0) brightness(100%);
+}
 .flex-vert,
 main,
 .cs-section {

@@ -26,6 +26,7 @@ function addItemSections(parent) {
         const header = document.createElement("div")
         header.className = "cs-section-header"
         const icon = document.createElement("img")
+        icon.className = "icon-mono display-mode-dynamic-icon"
         icon.src = `${csItemIconMap[type]}`
         header.appendChild(icon)
         const title = document.createElement("h3")
