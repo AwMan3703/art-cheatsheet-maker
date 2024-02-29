@@ -1,6 +1,9 @@
 
 // Screenshot [element], then pass it as an HTMLCanvasElement to [callback]
 const screenshot = (element, callback) => {
+    const body_class = document.body.className
+    document.body.classList.remove("darkmode")
+
     const hidden_elements = document.querySelectorAll('.screenshot-hidden')
     const setDisplayAll = (value) => {
         for (let i = 0; i < hidden_elements.length; i++) {
@@ -9,8 +12,10 @@ const screenshot = (element, callback) => {
         }}
 
     setDisplayAll('none')
-    html2canvas(element).then(callback);
-    setDisplayAll('inherit')
+    html2canvas(element).then(callback)
+    setDisplayAll('')
+
+    document.body.className = body_class
 }
 
 function exportSheet() {
