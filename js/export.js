@@ -25,6 +25,11 @@ function exportSheet() {
     const toDownloadButton = (canvas) => {
         downloadButton.href = canvas.toDataURL("img/jpeg")
         downloadButton.classList.add("available")
+        downloadButton.download = document.getElementById("main-title").innerText
+
+        downloadButton.addEventListener("click", () => {
+            downloadButton.classList.remove("available")
+        })
     }
     screenshot(sheet, toDownloadButton)
 }
