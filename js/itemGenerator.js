@@ -1,19 +1,19 @@
 
-const csItemIconPath = `assets/icons/`
+const csIconPath = `assets/icons/`
 const csItemIconMap = {
     // type : "path/to/icon.png"
-    [csItemTypes.location] : `${csItemIconPath}location.png`,
-    [csItemTypes.commission] : `${csItemIconPath}king.png`,
-    [csItemTypes.history] : `${csItemIconPath}history.png`,
-    [csItemTypes.size] : `${csItemIconPath}ruler.png`,
-    [csItemTypes.description] : `${csItemIconPath}text.png`,
-    [csItemTypes.style] : `${csItemIconPath}brush.png`,
-    [csItemTypes.colors] : `${csItemIconPath}palette.png`,
-    [csItemTypes.light] : `${csItemIconPath}sun.png`,
-    [csItemTypes.hypothesis] : `${csItemIconPath}question_mark.png`,
-    [csItemTypes.documents] : `${csItemIconPath}sheet.png`,
-    [csItemTypes.texts] : `${csItemIconPath}book.png`,
-    [csItemTypes[""]] : `${csItemIconPath}sparkles.png`
+    [csItemTypes.location] : `${csIconPath}location.png`,
+    [csItemTypes.commission] : `${csIconPath}king.png`,
+    [csItemTypes.history] : `${csIconPath}history.png`,
+    [csItemTypes.size] : `${csIconPath}ruler.png`,
+    [csItemTypes.description] : `${csIconPath}text.png`,
+    [csItemTypes.style] : `${csIconPath}brush.png`,
+    [csItemTypes.colors] : `${csIconPath}palette.png`,
+    [csItemTypes.light] : `${csIconPath}sun.png`,
+    [csItemTypes.hypothesis] : `${csIconPath}question_mark.png`,
+    [csItemTypes.documents] : `${csIconPath}sheet.png`,
+    [csItemTypes.texts] : `${csIconPath}book.png`,
+    [csItemTypes[""]] : `${csIconPath}sparkles.png`
 }
 
 function addItem(item, type) {
