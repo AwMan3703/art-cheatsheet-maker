@@ -1,0 +1,45 @@
+
+/* ----- Reset ----- */
+input, button {
+	all: unset;
+}
+/* ----------------- */
+
+* {
+	font-family: system-ui, "Arial";
+	color: var(--color-text-main);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background-color: var(--color-background-main);
+}
+
+button {
+	&:extend(.material);
+	padding: 7px !important;
+	cursor: pointer;
+	transition: box-shadow .2s ease;
+}
+button:hover {
+	box-shadow: 0 0 15px 10px var(--color-layer);
+}
+button:active {
+	box-shadow: 0 0 50px 0 var(--color-layer);
+}
+
+input::placeholder { color: var(--color-text-secondary); }
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+main {
+	&:extend(.flex-vert);
+	gap: 20px;
+	padding: 20px;
+}

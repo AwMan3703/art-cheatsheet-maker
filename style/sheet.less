@@ -1,0 +1,41 @@
+
+#content-body {
+	background-color: var(--color-background-main);
+}
+
+#section-contentHeader > h1 {
+	border: none;
+	font-size: xxx-large;
+}
+#section-contentHeader > input[type="text"] {
+	border: none;
+	font-size: larger;
+}
+
+.cs-section {
+	&:extend(.material);
+	&:extend(.flex-vert);
+	padding-inline: 10px !important;
+	gap: 10px;
+}
+.cs-section:not(:has(.cs-item)) {
+	display: none;
+}
+
+.cs-section-header {
+	&:extend(.flex-hor);
+	align-items: center;
+}
+.cs-section-header > img {
+	height: 3dvh;
+	width: auto;
+	margin: 5px;
+}
+.cs-section-header > h3 {
+	text-transform: capitalize;
+	margin-inline: 12px;
+}
+
+.cs-item {
+	&:extend(.material);
+}

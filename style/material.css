@@ -1,0 +1,21 @@
+.flex-vert {
+  display: flex;
+  flex-direction: column;
+}
+.flex-hor {
+  display: flex;
+  flex-direction: row;
+}
+.round-corners,
+.material {
+  border-radius: 20px;
+}
+.darkmode .icon-mono.display-mode-dynamic-icon {
+  filter: contrast(0) brightness(100%);
+}
+.material {
+  background-color: var(--color-layer);
+  padding-inline: 10px;
+  padding-block: 10px;
+}
+/*# sourceMappingURL=material.css.map */
