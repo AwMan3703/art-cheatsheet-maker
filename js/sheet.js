@@ -28,10 +28,23 @@ function addItem(type) {
     if (content.trim().length === 0) {return}
     const e = document.createElement("div")
     e.className = `cs-item item-${type}`
-    e.innerText = content
 
+    const paragraph = document.createElement("p")
+    paragraph.innerText = content
+    e.appendChild(paragraph)
+
+    const btnWrapper = document.createElement("div")
+    const xIcon = document.createElement("img")
     const xBtn = document.createElement("button")
+    xIcon.src = "assets/pencil.png"
+    xBtn.appendChild(xIcon)
+    const editIcon = document.createElement("img")
     const editBtn = document.createElement("button")
+    editIcon.src = "assets/x.png"
+    editBtn.appendChild(editIcon)
+    btnWrapper.appendChild(xBtn)
+    btnWrapper.appendChild(editBtn)
+    e.appendChild(btnWrapper)
 
     const p = document.getElementById(`section-${csItemTypes[type]}`)
     p.appendChild(e)
