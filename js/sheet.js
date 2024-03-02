@@ -37,3 +37,13 @@ function addItem(type) {
     p.appendChild(e)
     return e
 }
+
+function addImage(parent, files) {
+    const reader = new FileReader()
+    for (const i in files) {
+        const f = URL.createObjectURL(files[i])
+        const img = document.createElement("img")
+        img.src = f
+        parent.appendChild(img)
+    }
+}
