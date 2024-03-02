@@ -77,15 +77,14 @@
 #controls {
   position: fixed;
   bottom: 0;
-  width: 90%;
   display: grid;
   grid-template-rows: 1fr 0.25fr;
   grid-template-columns: 1fr 20%;
   gap: 10px;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
-  margin-inline: 10%;
-  overflow: scroll;
+  margin-inline: 5%;
+  overflow-y: auto;
 }
 .controls-panel {
   background-color: var(--color-unlayer) !important;
