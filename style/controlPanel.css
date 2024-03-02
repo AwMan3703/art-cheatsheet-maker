@@ -1,6 +1,7 @@
 :root {
   --color-layer: rgba(0, 0, 0, 0.05);
   --color-unlayer: rgba(255, 255, 255, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.1);
   --color-background-main: #ffffff;
   --color-border-main: #7a7a7a;
   --color-text-main: #212121;
@@ -9,11 +10,14 @@
 .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
   --color-unlayer: rgba(0, 0, 0, 0.25);
+  /* Actually nah, keep the same shadow color regardless of set display mode */
+  /*--color-shadow: rgba(0, 0, 0, 0.15);*/
   --color-background-main: #24242a;
   --color-border-main: #3e3e3e;
   --color-text-main: #f2f2f2;
   --color-text-secondary: rgba(242, 242, 242, 0.5);
 }
+/* Global variables / Config */
 .flex-vert {
   display: flex;
   flex-direction: column;
@@ -24,19 +28,44 @@
 }
 .round-corners,
 .material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
 #controls,
 .controls-panel {
   border-radius: 20px;
+}
+.backdrop-blur,
+#controls {
+  backdrop-filter: blur(60px);
 }
 .darkmode .icon-mono.display-mode-dynamic-icon {
   filter: contrast(0) brightness(100%);
 }
 .material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
 #controls,
 .controls-panel {
   background-color: var(--color-layer);
-  padding-inline: 10px;
-  padding-block: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+.material-border {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-border-main);
+}
+.material-shadow,
+#controls {
+  box-shadow: 0 5px 15px 10px var(--color-shadow);
+}
+.material-shadow.soft {
+  box-shadow: 0 3px 8px 5px var(--color-shadow);
+}
+.scrollbar-visible::-webkit-scrollbar {
+  display: flex;
+  position: fixed;
+}
+.scrollbar-visible::-webkit-scrollbar-track {
+  width: 50% !important;
 }
 #download-point:not(.available) {
   display: none;

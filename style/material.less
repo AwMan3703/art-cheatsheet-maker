@@ -1,4 +1,5 @@
 
+@import "globals";
 @import "colors";
 
 .flex-vert {
@@ -14,6 +15,10 @@
 	border-radius: 20px;
 }
 
+.backdrop-blur {
+	backdrop-filter: blur(60px);
+}
+
 .darkmode .icon-mono.display-mode-dynamic-icon {
 	filter: contrast(0) brightness(100%);
 }
@@ -21,6 +26,26 @@
 .material {
 	&:extend(.round-corners);
 	background-color: var(--color-layer);
-	padding-inline: 10px;
-	padding-block: 10px;
+	padding: @padding;
+	gap: @padding;
 }
+
+.material-border {
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--color-border-main);
+}
+
+.material-shadow {
+	box-shadow: 0 5px 15px 10px var(--color-shadow);
+}
+.material-shadow.soft {
+	box-shadow: 0 3px 8px 5px var(--color-shadow);
+}
+
+.scrollbar-visible::-webkit-scrollbar {
+	display: flex;
+	position: fixed;
+}
+.scrollbar-visible::-webkit-scrollbar-thumb { &:extend(.material); }
+.scrollbar-visible::-webkit-scrollbar-track { width: 50% !important; }

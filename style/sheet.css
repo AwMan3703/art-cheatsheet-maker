@@ -1,6 +1,8 @@
+/* Global variables / Config */
 :root {
   --color-layer: rgba(0, 0, 0, 0.05);
   --color-unlayer: rgba(255, 255, 255, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.1);
   --color-background-main: #ffffff;
   --color-border-main: #7a7a7a;
   --color-text-main: #212121;
@@ -9,6 +11,8 @@
 .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
   --color-unlayer: rgba(0, 0, 0, 0.25);
+  /* Actually nah, keep the same shadow color regardless of set display mode */
+  /*--color-shadow: rgba(0, 0, 0, 0.15);*/
   --color-background-main: #24242a;
   --color-border-main: #3e3e3e;
   --color-text-main: #f2f2f2;
@@ -20,22 +24,30 @@
   flex-direction: column;
 }
 .flex-hor,
-.cs-section-header {
+.cs-section-header,
+.image-carousel {
   display: flex;
   flex-direction: row;
 }
 .round-corners,
 .material,
+.image-carousel > img,
+.scrollbar-visible::-webkit-scrollbar-thumb,
 .cs-section,
-.cs-item {
+.cs-item,
+.image-carousel {
   border-radius: 20px;
+}
+.backdrop-blur {
+  backdrop-filter: blur(60px);
 }
 .darkmode .icon-mono.display-mode-dynamic-icon {
   filter: contrast(0) brightness(100%);
 }
 .material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
 .cs-section,
-.cs-item {
+.cs-item,
   background-color: var(--color-layer);
   padding-inline: 10px;
   padding-block: 10px;
@@ -51,10 +63,6 @@
   border: none;
   font-size: larger;
 }
-.cs-section {
-  padding-inline: 10px !important;
-  gap: 10px;
-}
 .cs-section:not(:has(.cs-item)) {
   display: none;
 }
@@ -68,6 +76,24 @@
 }
 .cs-section-header > h3 {
   text-transform: capitalize;
-  margin-inline: 12px;
+  margin-inline: 10px;
+}
+.image-carousel:not(:has(img)) {
+  display: none;
+}
+.image-carousel {
+  height: 100px;
+  justify-content: left;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+#section-mainImage > .image-carousel {
+  height: calc(100px * 3);
+}
+#section-mainImage > #upload-button {
+  margin-block-start: 10px;
+}
+.image-carousel > img {
+  height: 100%;
 }
 /*# sourceMappingURL=sheet.css.map */

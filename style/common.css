@@ -4,9 +4,11 @@ button {
   all: unset;
 }
 /* ----------------- */
+/* Global variables / Config */
 :root {
   --color-layer: rgba(0, 0, 0, 0.05);
   --color-unlayer: rgba(255, 255, 255, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.1);
   --color-background-main: #ffffff;
   --color-border-main: #7a7a7a;
   --color-text-main: #212121;
@@ -15,6 +17,8 @@ button {
 .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
   --color-unlayer: rgba(0, 0, 0, 0.25);
+  /* Actually nah, keep the same shadow color regardless of set display mode */
+  /*--color-shadow: rgba(0, 0, 0, 0.15);*/
   --color-background-main: #24242a;
   --color-border-main: #3e3e3e;
   --color-text-main: #f2f2f2;
@@ -31,17 +35,41 @@ main {
 }
 .round-corners,
 .material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
 button {
   border-radius: 20px;
+}
+.backdrop-blur {
+  backdrop-filter: blur(60px);
 }
 .darkmode .icon-mono.display-mode-dynamic-icon {
   filter: contrast(0) brightness(100%);
 }
 .material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
 button {
   background-color: var(--color-layer);
-  padding-inline: 10px;
-  padding-block: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+.material-border {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-border-main);
+}
+.material-shadow {
+  box-shadow: 0 5px 15px 10px var(--color-shadow);
+}
+.material-shadow.soft,
+button:hover {
+  box-shadow: 0 3px 8px 5px var(--color-shadow);
+}
+.scrollbar-visible::-webkit-scrollbar {
+  display: flex;
+  position: fixed;
+}
+.scrollbar-visible::-webkit-scrollbar-track {
+  width: 50% !important;
 }
 * {
   font-family: system-ui, "Arial";
@@ -56,15 +84,25 @@ body {
   background-color: var(--color-background-main);
 }
 button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   padding: 7px !important;
   cursor: pointer;
   transition: box-shadow 0.2s ease;
 }
-button:hover {
-  box-shadow: 0 0 15px 10px var(--color-layer);
-}
 button:active {
-  box-shadow: 0 0 50px 0 var(--color-layer);
+  box-shadow: 0 0 30px 0 var(--color-layer);
+}
+button > img {
+  width: 20px;
+  opacity: 0.5;
+}
+button > img.icon-mono {
+  opacity: 0.75;
+}
+button:hover > img {
+  opacity: 1 !important;
 }
 input::placeholder {
   color: var(--color-text-secondary);

@@ -5,7 +5,7 @@ input, button {
 }
 /* ----------------- */
 
-
+@import "globals";
 @import "colors";
 @import "material";
 
@@ -26,16 +26,22 @@ body {
 
 button {
 	&:extend(.material);
+	display: flex;
+	align-items: center;
+	gap: 7px;
+
 	padding: 7px !important;
 	cursor: pointer;
 	transition: box-shadow .2s ease;
 }
-button:hover {
-	box-shadow: 0 0 15px 10px var(--color-layer);
+button:hover { &:extend(.material-shadow.soft); }
+button:active { box-shadow: 0 0 30px 0 var(--color-layer); }
+button > img {
+	width: 20px;
+	opacity: .5;
 }
-button:active {
-	box-shadow: 0 0 50px 0 var(--color-layer);
-}
+button > img.icon-mono { opacity: .75; }
+button:hover > img { opacity: 1 !important; }
 
 input::placeholder { color: var(--color-text-secondary); }
 h1, h2, h3, h4, h5, h6 {

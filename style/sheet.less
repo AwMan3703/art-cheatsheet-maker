@@ -1,4 +1,5 @@
 
+@import "globals";
 @import "colors";
 @import "material";
 
@@ -18,8 +19,6 @@
 .cs-section {
 	&:extend(.material);
 	&:extend(.flex-vert);
-	padding-inline: 10px !important;
-	gap: 10px;
 }
 .cs-section:not(:has(.cs-item)) {
 	display: none;
@@ -36,7 +35,7 @@
 }
 .cs-section-header > h3 {
 	text-transform: capitalize;
-	margin-inline: 12px;
+	margin-inline: @padding;
 }
 
 .cs-item {
