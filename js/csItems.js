@@ -16,19 +16,18 @@ const csItemTypes= {
     "" : "csItemType:EMPTY-STRING"
 }
 
-const csItemIconPath = `assets/icons/`
 const csItemIconMap = {
     // type : "path/to/icon.png"
-    [csItemTypes.location] : `${csItemIconPath}location.png`,
-    [csItemTypes.commission] : `${csItemIconPath}king.png`,
-    [csItemTypes.history] : `${csItemIconPath}history.png`,
-    [csItemTypes.size] : `${csItemIconPath}ruler.png`,
-    [csItemTypes.description] : `${csItemIconPath}text.png`,
-    [csItemTypes.style] : `${csItemIconPath}brush.png`,
-    [csItemTypes.colors] : `${csItemIconPath}palette.png`,
-    [csItemTypes.light] : `${csItemIconPath}sun.png`,
-    [csItemTypes.hypothesis] : `${csItemIconPath}question_mark.png`,
-    [csItemTypes.documents] : `${csItemIconPath}sheet.png`,
-    [csItemTypes.texts] : `${csItemIconPath}book.png`,
-    [csItemTypes[""]] : `${csItemIconPath}sparkles.png`
+    [csItemTypes.location] : `assets/location.png`,
+    [csItemTypes.commission] : `assets/king.png`,
+    [csItemTypes.history] : `assets/history.png`,
+    [csItemTypes.size] : `assets/ruler.png`,
+    [csItemTypes.description] : `assets/text.png`,
+    [csItemTypes.style] : `assets/brush.png`,
+    [csItemTypes.colors] : `assets/palette.png`,
+    [csItemTypes.light] : `assets/sun.png`,
+    [csItemTypes.hypothesis] : `assets/question-mark.png`,
+    [csItemTypes.documents] : `assets/sheet.png`,
+    [csItemTypes.texts] : `assets/book.png`,
+    [csItemTypes[""]] : `assets/sparkles.png`
 }

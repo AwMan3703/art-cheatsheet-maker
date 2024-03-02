@@ -1,21 +1,39 @@
 
-// Screenshot [element], then pass it as an HTMLCanvasElement to [callback]
-const screenshot = (element, callback) => {
+
+// Prepare/restore an element for/after screenshot
+const preScreenshot = () => {
+    // remove dark mode if active
     const body_class = document.body.className
     document.body.classList.remove("darkmode")
 
+    // hide all screenshot-hidden elements
     const hidden_elements = document.querySelectorAll('.screenshot-hidden')
-    const setDisplayAll = (value) => {
-        for (let i = 0; i < hidden_elements.length; i++) {
-            const element = hidden_elements[i]
-            element.style.display = value
-        }}
+    hidden_elements.forEach(e => { e.style.display = 'none' })
 
-    setDisplayAll('none')
+    // hide all scrollbars
+    const scrollbars = document.querySelectorAll('::-webkit-scrollbar')
+    scrollbars.forEach(e => { e.style.display = 'none' })
+
+    return {
+        body_class : body_class,
+        hidden_elements : hidden_elements,
+        scrollbars : scrollbars
+    }
+}
+const postScreenshot = (data) => {
+    // restore body display mode
+    document.body.className = data.body_class
+    // show screenshot-hidden elements
+    data.hidden_elements.forEach(e => { e.style.display = '' })
+    // show previously hidden scrollbars
+    data.scrollbars.forEach(e => { e.style.display = '' })
+}
+// Screenshot [element], then pass it as an HTMLCanvasElement to [callback]
+const screenshot = (element, callback) => {
+    const data = preScreenshot()
     html2canvas(element).then(callback)
-    setDisplayAll('')
+    postScreenshot(data)
 
-    document.body.className = body_class
 }
 
 function exportSheet() {
