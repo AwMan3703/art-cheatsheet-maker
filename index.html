@@ -24,6 +24,11 @@
                 <input id="input-date-year" type="number" min="-9999" max="9999">
                 <input id="input-location" placeholder="Location" type="text">
             </section>
+            <section id="section-mainImage">
+                <div class="image-carousel scrollbar-visible">
+                </div>
+                <button id="upload-button" onclick="getFiles('image/*', true, f => { addImage(document.querySelector('#section-mainImage > .image-carousel'), f) })"><img class="icon-mono display-mode-dynamic-icon" src="assets/camera-plus.png">Add image</button>
+            </section>
         </main>
         <div id="controls-wrapper">
             <div id="controls">

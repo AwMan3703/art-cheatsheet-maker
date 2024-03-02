@@ -42,6 +42,22 @@
 	&:extend(.material);
 }
 
+.image-carousel:not(:has(img)) {
+	display: none;
+}
 .image-carousel {
-
+	&:extend(.material);
+	&:extend(.flex-hor);
+	height: @imageCarousel-height;
+	justify-content: left;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+#section-mainImage > .image-carousel { height: calc(@imageCarousel-height * 3) }
+#section-mainImage > #upload-button { margin-block-start: @padding }
+.image-carousel > img {
+	&:extend(.round-corners);
+	&:extend(.material-border);
+	&:extend(.material-shadow.soft);
+	height: 100%;
 }

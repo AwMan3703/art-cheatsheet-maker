@@ -48,9 +48,30 @@
 .scrollbar-visible::-webkit-scrollbar-thumb,
 .cs-section,
 .cs-item,
+.image-carousel {
   background-color: var(--color-layer);
-  padding-inline: 10px;
-  padding-block: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+.material-border,
+.image-carousel > img {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-border-main);
+}
+.material-shadow {
+  box-shadow: 0 5px 15px 10px var(--color-shadow);
+}
+.material-shadow.soft,
+.image-carousel > img {
+  box-shadow: 0 3px 8px 5px var(--color-shadow);
+}
+.scrollbar-visible::-webkit-scrollbar {
+  display: flex;
+  position: fixed;
+}
+.scrollbar-visible::-webkit-scrollbar-track {
+  width: 50% !important;
 }
 #content-body {
   background-color: var(--color-background-main);
