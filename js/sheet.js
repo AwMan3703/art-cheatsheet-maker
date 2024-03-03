@@ -28,7 +28,7 @@ function addItem(type) {
     if (content.trim().length === 0) {return}
 
     const e = document.createElement("div")
-    const itemID = `csItem-UUID:${crypto.randomUUID()}`
+    const itemID = `csItem-UUID-${crypto.randomUUID()}`
     e.id = itemID
     e.className = `cs-item item-${type}`
 
@@ -38,6 +38,17 @@ function addItem(type) {
     e.appendChild(paragraph)
 
     const btnWrapper = document.createElement("div")
+    btnWrapper.className = "csItem-options-wrapper"
+
+    const editBtn = document.createElement("button")
+    editBtn.onclick = _ => editItem(itemID)
+    const editIcon = document.createElement("img")
+    editIcon.className = "icon-mono display-mode-dynamic-icon"
+    editIcon.src = "assets/pencil.png"
+    editBtn.appendChild(editIcon)
+
+    const xBtn = document.createElement("button")
+    xBtn.onclick = _ => deleteItem(itemID)
     const xIcon = document.createElement("img")
     xIcon.className = "icon-mono display-mode-dynamic-icon"
     xIcon.src = "assets/x.png"
@@ -50,6 +61,15 @@ function addItem(type) {
     const p = document.getElementById(`section-${csItemTypes[type]}`)
     p.appendChild(e)
     return e
+}
+
+function editItem(eID) {
+    const e = document.querySelector(`#${eID} > p`)
+    e.innerText = window.prompt(`editing ${eID}`, e.innerText)
+}
+
+function deleteItem(eID) {
+    document.getElementById(eID).remove()
 }
 
 function addImage(parent, files) {
