@@ -75,6 +75,7 @@
 }
 #content-body {
   background-color: var(--color-background-main);
+  min-height: 100dvh;
 }
 #section-contentHeader > h1 {
   border: none;
@@ -98,6 +99,12 @@
 .cs-section-header > h3 {
   text-transform: capitalize;
   margin-inline: 10px;
+}
+.cs-item {
+  padding: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
 }
 .image-carousel:not(:has(img)) {
   display: none;

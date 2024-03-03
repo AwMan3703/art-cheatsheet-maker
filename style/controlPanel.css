@@ -70,12 +70,8 @@
 #download-point:not(.available) {
   display: none;
 }
-#controls-wrapper {
-  display: flex;
-  justify-content: center;
-}
 #controls {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   display: grid;
   grid-template-rows: 1fr 0.25fr;

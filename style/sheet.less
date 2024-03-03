@@ -5,6 +5,7 @@
 
 #content-body {
 	background-color: var(--color-background-main);
+	min-height: 100dvh;
 }
 
 #section-contentHeader > h1 {
@@ -40,6 +41,10 @@
 
 .cs-item {
 	&:extend(.material);
+	padding: 0 !important;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
 }
 
 .image-carousel:not(:has(img)) {

@@ -26,24 +26,25 @@ function addItemSections(parent) {
 function addItem(type) {
     const content = window.prompt("New item's content:", "no content")
     if (content.trim().length === 0) {return}
+
     const e = document.createElement("div")
+    const itemID = `csItem-UUID:${crypto.randomUUID()}`
+    e.id = itemID
     e.className = `cs-item item-${type}`
 
     const paragraph = document.createElement("p")
+    paragraph.style.margin = "10px"
     paragraph.innerText = content
     e.appendChild(paragraph)
 
     const btnWrapper = document.createElement("div")
     const xIcon = document.createElement("img")
-    const xBtn = document.createElement("button")
-    xIcon.src = "assets/pencil.png"
+    xIcon.className = "icon-mono display-mode-dynamic-icon"
+    xIcon.src = "assets/x.png"
     xBtn.appendChild(xIcon)
-    const editIcon = document.createElement("img")
-    const editBtn = document.createElement("button")
-    editIcon.src = "assets/x.png"
-    editBtn.appendChild(editIcon)
-    btnWrapper.appendChild(xBtn)
+
     btnWrapper.appendChild(editBtn)
+    btnWrapper.appendChild(xBtn)
     e.appendChild(btnWrapper)
 
     const p = document.getElementById(`section-${csItemTypes[type]}`)

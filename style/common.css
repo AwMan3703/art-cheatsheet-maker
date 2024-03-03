@@ -83,6 +83,9 @@ body {
   min-height: 100vh;
   background-color: var(--color-background-main);
 }
+p {
+  margin: 0;
+}
 button {
   display: flex;
   align-items: center;
