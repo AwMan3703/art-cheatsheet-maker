@@ -73,7 +73,6 @@ function deleteItem(eID) {
 }
 
 function addImage(parent, files) {
-    const reader = new FileReader()
     for (const i in files) {
         const f = URL.createObjectURL(files[i])
         const img = document.createElement("img")
