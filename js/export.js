@@ -32,6 +32,8 @@ const postScreenshot = (data) => {
 const screenshot = (element, callback) => {
     const data = preScreenshot()
     html2canvas(element).then(callback)
+    // FIXME:
+    //  <input>'s content gets offset and cropped when being captured
     postScreenshot(data)
 
 }
