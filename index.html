@@ -16,16 +16,16 @@
                 <input id="main-title" type="text" placeholder="Name here">
                 <div id="main-data">
                     <input id="input-author" placeholder="Author name" type="text">
-                    <input id="input-date-day" placeholder="Day" type="number" min="1" max="31">/
-                    <input id="input-date-month" placeholder="Month" type="number" min="1" max="12">/
-                    <input id="input-date-year" placeholder="Year" type="number" min="-9999" max="9999">
+                    <label id="date-label" for="input-date-day">Date:</label>
+                    <input id="input-date-day" placeholder="DD" type="number" min="1" max="31">/
+                    <input id="input-date-month" placeholder="MM" type="number" min="1" max="12">/
+                    <input id="input-date-year" placeholder="YYYY" type="number" min="-9999" max="9999">
                     <input id="input-location" placeholder="Location" type="text">
                 </div>
             </section>
-            <section id="section-mainImage">
+            <section id="section-mainImage" class="imageCarousel-wrapper">
                 <div class="image-carousel scrollbar-visible">
                 </div>
-                <button id="upload-button" onclick="getFiles('image/*', true, f => { addImage(document.querySelector('#section-mainImage > .image-carousel'), f) })"><img class="icon-mono display-mode-dynamic-icon" src="assets/camera-plus.png">Add image</button>
             </section>
         </main>
         <div id="controls">
