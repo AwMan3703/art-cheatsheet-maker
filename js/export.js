@@ -2,40 +2,20 @@
 
 // Prepare/restore an element for/after screenshot
 const preScreenshot = () => {
-    // remove dark mode if active
-    const body_class = document.body.className
-    document.body.classList.remove("darkmode")
-
-    // hide all screenshot-hidden elements
-    const hidden_elements = document.querySelectorAll('.screenshot-hidden')
-    hidden_elements.forEach(e => { e.style.display = 'none' })
-
-    // hide all scrollbars
-    const scrollbars = document.querySelectorAll('::-webkit-scrollbar')
-    scrollbars.forEach(e => { e.style.display = 'none' })
-
-    return {
-        body_class : body_class,
-        hidden_elements : hidden_elements,
-        scrollbars : scrollbars
-    }
+    // Add screenshot class, so that structure and styles can be modified
+    document.body.classList.add("during-screenshot")
 }
-const postScreenshot = (data) => {
-    // restore body display mode
-    document.body.className = data.body_class
-    // show screenshot-hidden elements
-    data.hidden_elements.forEach(e => { e.style.display = '' })
-    // show previously hidden scrollbars
-    data.scrollbars.forEach(e => { e.style.display = '' })
+const postScreenshot = () => {
+    // restore body structure and styles
+    document.body.classList.remove("during-screenshot")
 }
 // Screenshot [element], then pass it as an HTMLCanvasElement to [callback]
 const screenshot = (element, callback) => {
-    const data = preScreenshot()
+    preScreenshot()
     html2canvas(element).then(callback)
     // FIXME:
     //  <input>'s content gets offset and cropped when being captured
-    postScreenshot(data)
-
+    postScreenshot()
 }
 
 function exportSheet() {
