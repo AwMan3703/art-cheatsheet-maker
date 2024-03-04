@@ -1,11 +1,18 @@
 
-// Run this script on document load
+// Run this script on document load - also holds global variables
 
-function startup() {
+let CONFIG = {}
+
+function startup(configData) {
     const itemGenerationPanel = document.getElementById("add-element-panel")
     addItemGenerationButtons(itemGenerationPanel)
     const contentBody = document.getElementById("content-body")
     addItemSections(contentBody)
+    const imageCarousels = document.getElementsByClassName("imageCarousel-wrapper")
+    forAllElements(imageCarousels, addImageCarouselOptions)
+
+    CONFIG = configData
 }
 
-startup()
+console.log("Fetching config data...")
+fetchjson("../config.json", startup)
