@@ -21,10 +21,12 @@
 .flex-vert {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 .flex-hor {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 .round-corners,
 .material,
@@ -58,7 +60,7 @@
   box-shadow: 0 5px 15px 10px var(--color-shadow);
 }
 .material-shadow.soft {
-  box-shadow: 0 3px 8px 5px var(--color-shadow);
+  box-shadow: 0 1px 8px 5px var(--color-shadow-soft);
 }
 .scrollbar-visible::-webkit-scrollbar {
   display: flex;
@@ -90,6 +92,7 @@
 .controls-panel {
   background-color: var(--color-unlayer) !important;
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: inherit;
 }

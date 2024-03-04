@@ -23,12 +23,14 @@
 .cs-section {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 .flex-hor,
 .cs-section-header,
 .image-carousel {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 .round-corners,
 .material,
@@ -64,8 +66,9 @@
   box-shadow: 0 5px 15px 10px var(--color-shadow);
 }
 .material-shadow.soft,
+.cs-item .csItem-options-wrapper > button:hover,
 .image-carousel > img {
-  box-shadow: 0 3px 8px 5px var(--color-shadow);
+  box-shadow: 0 1px 8px 5px var(--color-shadow-soft);
 }
 .scrollbar-visible::-webkit-scrollbar {
   display: flex;
@@ -83,7 +86,7 @@
 #section-contentHeader > #main-title {
   display: block;
   border: none;
-  font-size: 9dvh;
+  font-size: 6dvh;
   font-weight: bold;
 }
 #section-contentHeader > #main-data {
@@ -93,6 +96,9 @@
 #section-contentHeader input[type="text"] {
   border: none;
   font-size: larger;
+}
+#date-label.during-screenshot {
+  display: none;
 }
 .cs-section:not(:has(.cs-item)) {
   display: none;
@@ -115,11 +121,17 @@
   justify-content: space-between;
   overflow: hidden;
 }
+.cs-item > p {
+  flex-wrap: wrap;
+}
 .cs-item .csItem-options-wrapper {
   display: inline-flex;
 }
 .cs-item .csItem-options-wrapper > button {
   border-radius: 0 !important;
+}
+.cs-item .csItem-options-wrapper > button:hover {
+  translate: 0 0;
 }
 .image-carousel:not(:has(img)) {
   display: none;

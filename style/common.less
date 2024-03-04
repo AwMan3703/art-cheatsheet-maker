@@ -38,10 +38,16 @@ button {
 
 	padding: 7px !important;
 	cursor: pointer;
-	transition: box-shadow .2s ease;
+	transition: box-shadow .2s ease, translate .2s ease;
 }
-button:hover { &:extend(.material-shadow.soft); }
-button:active { box-shadow: 0 0 30px 0 var(--color-layer); }
+button:hover {
+	&:extend(.material-shadow.soft);
+	translate: 0px -1px;
+}
+button:active {
+	&:extend(.material-shadow);
+	translate: 0 1px;
+}
 button > img {
 	width: 20px;
 	opacity: .5;
