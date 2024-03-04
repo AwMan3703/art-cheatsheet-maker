@@ -9,6 +9,7 @@ button {
   --color-layer: rgba(0, 0, 0, 0.05);
   --color-unlayer: rgba(255, 255, 255, 0.6);
   --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-soft: rgba(0, 0, 0, 0.035);
   --color-background-main: #ffffff;
   --color-border-main: #7a7a7a;
   --color-text-main: #212121;
