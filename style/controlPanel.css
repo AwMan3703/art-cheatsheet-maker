@@ -82,6 +82,11 @@
   margin-inline: 5%;
   overflow-y: auto;
 }
+@media only screen and (hover: none) and (pointer: coarse) {
+  #controls {
+    margin-inline: 0;
+  }
+}
 .controls-panel {
   background-color: var(--color-unlayer) !important;
   display: flex;

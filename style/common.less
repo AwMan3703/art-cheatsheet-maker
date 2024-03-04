@@ -11,7 +11,11 @@ input, button {
 
 * {
 	font-family: system-ui, "Arial";
+	font-size: @fontsize;
 	color: var(--color-text-main);
+}
+@media only screen and (hover: none) and (pointer: coarse) {
+	* { font-size: calc((@fontsize / 4) * 3) }
 }
 
 html {
@@ -48,10 +52,4 @@ button:hover > img { opacity: 1 !important; }
 input::placeholder { color: var(--color-text-secondary); }
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
-}
-
-main {
-	&:extend(.flex-vert);
-	gap: 20px;
-	padding: 20px;
 }

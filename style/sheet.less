@@ -4,15 +4,24 @@
 @import "material";
 
 #content-body {
+	&:extend(.flex-vert);
+	gap: 20px;
+	padding: @padding;
 	background-color: var(--color-background-main);
 	min-height: 100dvh;
 }
 
-#section-contentHeader > h1 {
+#section-contentHeader > #main-title {
+	display: block;
 	border: none;
-	font-size: xxx-large;
+	font-size: @fontsize * 3;
+	font-weight: bold;
 }
-#section-contentHeader > input[type="text"] {
+#section-contentHeader > #main-data {
+	display: inline-flex;
+	gap: @padding * 2;
+}
+#section-contentHeader input[type="text"] {
 	border: none;
 	font-size: larger;
 }

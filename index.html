@@ -13,15 +13,14 @@
     <body>
         <main id="content-body">
             <section id="section-contentHeader">
-                <h1 id="main-title" contenteditable>[Name]</h1>
-                <input id="input-author" placeholder="Author name" type="text">
-                <label class="screenshot-hidden" for="input-date-day">Day:</label>
-                <input id="input-date-day" type="number" min="1" max="31">/
-                <label class="screenshot-hidden" for="input-date-month">Month:</label>
-                <input id="input-date-month" type="number" min="1" max="12">/
-                <label class="screenshot-hidden" for="input-date-year">Year:</label>
-                <input id="input-date-year" type="number" min="-9999" max="9999">
-                <input id="input-location" placeholder="Location" type="text">
+                <input id="main-title" type="text" placeholder="Name here">
+                <div id="main-data">
+                    <input id="input-author" placeholder="Author name" type="text">
+                    <input id="input-date-day" placeholder="Day" type="number" min="1" max="31">/
+                    <input id="input-date-month" placeholder="Month" type="number" min="1" max="12">/
+                    <input id="input-date-year" placeholder="Year" type="number" min="-9999" max="9999">
+                    <input id="input-location" placeholder="Location" type="text">
+                </div>
             </section>
             <section id="section-mainImage">
                 <div class="image-carousel scrollbar-visible">

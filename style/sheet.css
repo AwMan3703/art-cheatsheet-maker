@@ -19,6 +19,7 @@
   --color-text-secondary: rgba(242, 242, 242, 0.5);
 }
 .flex-vert,
+#content-body,
 .cs-section {
   display: flex;
   flex-direction: column;
@@ -74,14 +75,22 @@
   width: 50% !important;
 }
 #content-body {
+  gap: 20px;
+  padding: 10px;
   background-color: var(--color-background-main);
   min-height: 100dvh;
 }
-#section-contentHeader > h1 {
+#section-contentHeader > #main-title {
+  display: block;
   border: none;
-  font-size: xxx-large;
+  font-size: 9dvh;
+  font-weight: bold;
 }
-#section-contentHeader > input[type="text"] {
+#section-contentHeader > #main-data {
+  display: inline-flex;
+  gap: 20px;
+}
+#section-contentHeader input[type="text"] {
   border: none;
   font-size: larger;
 }
