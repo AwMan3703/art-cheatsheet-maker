@@ -145,10 +145,21 @@
 #section-mainImage > .image-carousel {
   height: calc(100px * 3);
 }
-#section-mainImage > #upload-button {
+#section-mainImage > .image-carousel-options {
   margin-block-start: 10px;
+}
+#section-mainImage > .image-carousel-options.during-screenshot {
+  display: none;
 }
 .image-carousel > img {
   height: 100%;
+  background-size: contain;
+}
+.image-carousel > img::after {
+  content: "";
+  display: block;
+  width: 20px;
+  background-image: url("assets/x.png");
+  background-size: contain;
 }
 /*# sourceMappingURL=sheet.css.map */

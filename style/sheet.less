@@ -67,6 +67,8 @@
 	&:extend(.material-shadow.soft);
 	translate: 0 0;
 }
+
+.image-carousel:not(:has(img)) { display: none }
 .image-carousel {
 	&:extend(.material);
 	&:extend(.flex-hor);
@@ -76,10 +78,20 @@
 	overflow-y: hidden;
 }
 #section-mainImage > .image-carousel { height: calc(@imageCarousel-height * 3) }
-#section-mainImage > #upload-button { margin-block-start: @padding }
+#section-mainImage > .image-carousel-options { margin-block-start: @padding }
+#section-mainImage > .image-carousel-options.during-screenshot { display: none }
+
 .image-carousel > img {
 	&:extend(.round-corners);
 	&:extend(.material-border);
 	&:extend(.material-shadow.soft);
 	height: 100%;
+	background-size: contain;
+}
+.image-carousel > img::after {
+	content: "";
+	display: block;
+	width: 20px;
+	background-image: url("assets/x.png");
+	background-size: contain;
 }

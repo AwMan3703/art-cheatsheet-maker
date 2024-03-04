@@ -23,6 +23,35 @@ function addItemSections(parent) {
     })
 }
 
+function addImageCarouselOptions(e) {
+    const wrapper = document.createElement("div")
+    wrapper.className = "flex-hor image-carousel-options"
+
+    const btnUpload = document.createElement("button")
+    btnUpload.className = "imageCarousel-button-upload"
+    btnUpload.onclick = () => { getFiles('image/*', true, f => { addImages(e.querySelector('.image-carousel'), f) }) }
+    const iconUpload = document.createElement("img")
+    iconUpload.className = "icon-mono display-mode-dynamic-icon"
+    iconUpload.src = "assets/camera-plus.png"
+    iconUpload.alt = "+"
+    btnUpload.appendChild(iconUpload)
+    btnUpload.appendChild(document.createTextNode("Add image"))
+
+    const btnLink = document.createElement("button")
+    btnLink.className = "imageCarousel-button-link"
+    btnLink.onclick = () => { fetchimage(promptValidURL('Image URL:'), b => { addImages(e.querySelector('.image-carousel'), [b]) }) }
+    const iconLink = document.createElement("img")
+    iconLink.className = "icon-mono display-mode-dynamic-icon"
+    iconLink.src = "assets/link.png"
+    iconLink.alt = "+"
+    btnLink.appendChild(iconLink)
+    btnLink.appendChild(document.createTextNode("Add image from link"))
+
+    wrapper.appendChild(btnUpload)
+    wrapper.appendChild(btnLink)
+    e.appendChild(wrapper)
+}
+
 function addItem(type) {
     const content = window.prompt("New item's content:", "no content")
     if (content.trim().length === 0) {return}
@@ -84,3 +113,5 @@ function addImages(parent, files) {
         parent.appendChild(img)
     }
 }
+
+    // TODO: Implement x button on images via ::after pseudoelement
