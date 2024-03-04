@@ -38,7 +38,7 @@ function addItem(type) {
     e.appendChild(paragraph)
 
     const btnWrapper = document.createElement("div")
-    btnWrapper.className = "csItem-options-wrapper"
+    btnWrapper.className = "csItem-options-wrapper screenshot-hidden"
 
     const editBtn = document.createElement("button")
     editBtn.onclick = _ => editItem(itemID)
@@ -65,18 +65,22 @@ function addItem(type) {
 
 function editItem(eID) {
     const e = document.querySelector(`#${eID} > p`)
-    e.innerText = window.prompt(`editing ${eID}`, e.innerText)
+    const nt = window.prompt(`editing ${eID}`, e.innerText)
+    if (nt==null || nt==="") { return }
+    e.innerText = nt
 }
 
 function deleteItem(eID) {
-    document.getElementById(eID).remove()
+    const e = document.getElementById(eID)
+    if (document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.deleteWarningLengthThreshold) {
+        if (!confirm(`Do you want to delete ${eID}?`)) { return } }
+    e.remove()
 }
 
-function addImage(parent, files) {
+function addImages(parent, files) {
     for (const i in files) {
-        const f = URL.createObjectURL(files[i])
         const img = document.createElement("img")
-        img.src = f
+        img.src = URL.createObjectURL(files[i])
         parent.appendChild(img)
     }
 }
