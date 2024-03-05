@@ -118,7 +118,11 @@ button > img.icon-mono {
 button:hover > img {
   opacity: 1 !important;
 }
+input {
+  font-weight: bolder;
+}
 input::placeholder {
+  font-weight: normal;
   color: var(--color-text-secondary);
 }
 h1,

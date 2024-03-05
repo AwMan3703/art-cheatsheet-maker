@@ -16,6 +16,7 @@
 	font-size: @fontsize * 3;
 	font-weight: bold;
 }
+#section-contentHeader > #main-title::placeholder { font-weight: bold; }
 #section-contentHeader > #main-data {
 	display: inline-flex;
 	gap: @padding * 2;
@@ -80,16 +81,20 @@
 #section-mainImage > .image-carousel-options { margin-block-start: @padding }
 #section-mainImage > .image-carousel-options.during-screenshot { display: none }
 
-.image-carousel > img {
+.carousel-image {
 	&:extend(.round-corners);
 	&:extend(.material-border);
 	&:extend(.material-shadow.soft);
 	height: 100%;
-	background-size: contain;
+	display: inline;
+	overflow: hidden;
 }
 .image-carousel > img::after {
 	content: "";
 	display: block;
+.carousel-image > img {
+	height: 100%;
+}
 	width: 20px;
 	background-image: url("assets/x.png");
 	background-size: contain;
