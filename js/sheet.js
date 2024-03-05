@@ -94,9 +94,7 @@ function addItem(type) {
 
 function editItem(eID) {
     const e = document.querySelector(`#${eID} > p`)
-    const nt = window.prompt(`editing ${eID}`, e.innerText)
-    if (nt==null || nt==="") { return }
-    e.innerText = nt
+    editDialog(e)
 }
 
 function deleteItem(eID) {

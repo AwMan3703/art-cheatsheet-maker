@@ -150,4 +150,6 @@ const isObject = (obj) => typeof obj === 'object' && obj instanceof Object && !A
 
 const firstLetterUpper = (text) => {return text[0].toUpperCase() + text.substring(1, text.length)}
 
+const dialogParent = document.getElementById("dialog-level")
+
 /* --------------------------- */
