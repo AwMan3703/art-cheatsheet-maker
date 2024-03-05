@@ -8,6 +8,8 @@
   --color-border-main: #7a7a7a;
   --color-text-main: #212121;
   --color-text-secondary: rgba(33, 33, 33, 0.5);
+  --shadow-main: 0 5px 15px 10px var(--color-shadow);
+  --shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
 }
 .darkmode:not(.screenshot) {
   --color-layer: rgba(255, 255, 255, 0.05);
@@ -55,13 +57,6 @@
   border-width: 2px;
   border-color: var(--color-border-main);
 }
-.material-shadow,
-#controls {
-  box-shadow: 0 5px 15px 10px var(--color-shadow);
-}
-.material-shadow.soft {
-  box-shadow: 0 1px 8px 5px var(--color-shadow-soft);
-}
 .scrollbar-visible::-webkit-scrollbar {
   display: flex;
   position: fixed;
@@ -83,6 +78,7 @@
   border-bottom-left-radius: 0 !important;
   margin-inline: 5%;
   overflow-y: auto;
+  box-shadow: var(--shadow-main);
 }
 @media only screen and (hover: none) and (pointer: coarse) {
   #controls {

@@ -64,7 +64,7 @@
 }
 .cs-item .csItem-options-wrapper > button { border-radius: 0 !important; }
 .cs-item .csItem-options-wrapper > button:hover {
-	&:extend(.material-shadow.soft);
+	box-shadow: var(--shadow-soft);
 	translate: 0 0;
 }
 
@@ -84,10 +84,10 @@
 .carousel-image {
 	&:extend(.round-corners);
 	&:extend(.material-border);
-	&:extend(.material-shadow.soft);
 	height: 100%;
 	display: inline;
 	overflow: hidden;
+	box-shadow: var(--shadow-soft);
 }
 .carousel-image > img {
 	height: 100%;

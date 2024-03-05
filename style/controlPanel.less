@@ -14,12 +14,12 @@
 
 	&:extend(.material);
 	&:extend(.backdrop-blur);
-	&:extend(.material-shadow);
 	border-bottom-right-radius: 0 !important;
 	border-bottom-left-radius: 0 !important;
 
 	margin-inline: 5%;
 	overflow-y: auto;
+	box-shadow: var(--shadow-main);
 }
 @media only screen and (hover: none) and (pointer: coarse) {
 	#controls { margin-inline: 0; }
