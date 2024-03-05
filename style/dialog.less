@@ -1,0 +1,54 @@
+
+@import "globals";
+@import "material";
+
+#dialog-level:has(.dialog-wrapper) {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100dvw;
+	height: 100dvh;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+	user-select: none;
+}
+
+.dialog-wrapper {
+	&:extend(.material);
+	&:extend(.round-corners);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 50%;
+	background-color: var(--color-background-main);
+
+	padding: @padding + 10px;
+	box-shadow: var(--shadow-main);
+}
+
+.dialog-wrapper hr { margin-block: @padding * 2; }
+
+.dialog-title { font-size: xx-large; }
+.dialog-description { font-size: large; }
+.dialog-inputs-wrapper {}
+.dialog-options-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+.dialog-options-button { padding: @padding + 10px !important; }
+.dialog-options-buttonAbort {}
+.dialog-options-buttonComplete { font-weight: bold; }
+
+.dialog-input { margin-block-end: @padding + 10px; }
+.dialog-input-field {
+	&:extend(.round-corners);
+	display: inline;
+	background-color: var(--color-layer);
+	padding: @padding;
+}
+.dialog-input-title {
+	display: inline;
+	margin-inline-end: @padding;
+}
+.dialog-input-description {}
