@@ -1,3 +1,4 @@
+/* Global variables / Config */
 :root {
   --color-layer: rgba(0, 0, 0, 0.05);
   --color-unlayer: rgba(255, 255, 255, 0.6);
@@ -17,4 +18,4 @@
   --color-text-main: #f2f2f2;
   --color-text-secondary: rgba(242, 242, 242, 0.5);
 }
-/*# sourceMappingURL=colors.css.map */
+/*# sourceMappingURL=globals.css.map */
