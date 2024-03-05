@@ -108,10 +108,23 @@ function deleteItem(eID) {
 
 function addImages(parent, files) {
     for (const i in files) {
+        const wrapper = document.createElement("div")
+        wrapper.className = "carousel-image"
+
         const img = document.createElement("img")
         img.src = URL.createObjectURL(files[i])
-        parent.appendChild(img)
+        wrapper.appendChild(img)
+
+        const xBtn = document.createElement("button")
+        xBtn.className = "deleteBtn"
+        xBtn.onclick = () => { wrapper.remove() }
+        const xIcon = document.createElement("img")
+        xIcon.className = "icon-mono display-mode-dynamic-icon"
+        xIcon.src = "assets/x.png"
+        xBtn.appendChild(xIcon)
+        wrapper.appendChild(xBtn)
+
+        parent.appendChild(wrapper)
     }
 }
 
-    // TODO: Implement x button on images via ::after pseudoelement

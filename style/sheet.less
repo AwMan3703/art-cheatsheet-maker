@@ -89,13 +89,16 @@
 	display: inline;
 	overflow: hidden;
 }
-.image-carousel > img::after {
-	content: "";
-	display: block;
 .carousel-image > img {
 	height: 100%;
 }
+.carousel-image > .deleteBtn {
+	position: absolute;
 	width: 20px;
-	background-image: url("assets/x.png");
-	background-size: contain;
+	height: auto;
+	background-color: var(--color-background-main);
+	opacity: .75;
+	margin: @padding;
+	border: none;
 }
+.during-screenshot .carousel-image > .deleteBtn { display: none; }

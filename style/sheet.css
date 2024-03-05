@@ -34,7 +34,7 @@
 }
 .round-corners,
 .material,
-.image-carousel > img,
+.carousel-image,
 .scrollbar-visible::-webkit-scrollbar-thumb,
 .cs-section,
 .cs-item,
@@ -162,11 +162,16 @@
 .carousel-image > img {
   height: 100%;
 }
-.image-carousel > img::after {
-  content: "";
-  display: block;
+.carousel-image > .deleteBtn {
+  position: absolute;
   width: 20px;
-  background-image: url("assets/x.png");
-  background-size: contain;
+  height: auto;
+  background-color: var(--color-background-main);
+  opacity: 0.75;
+  margin: 10px;
+  border: none;
+}
+.during-screenshot .carousel-image > .deleteBtn {
+  display: none;
 }
 /*# sourceMappingURL=sheet.css.map */
