@@ -64,3 +64,8 @@ function forAllElements(collection, fn) {
 // Converts the first letter of the string to uppercase
 function capitalize(text) {
     return text[0].toUpperCase() + text.substring(1, text.length)}
+
+// Returns a standardized UUID string
+function getUUID(object) {
+    return `cs${capitalize(object)}-UUID-${crypto.randomUUID()}`
+}

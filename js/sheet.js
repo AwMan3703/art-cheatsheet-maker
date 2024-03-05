@@ -57,7 +57,7 @@ function addItem(type) {
     if (content.trim().length === 0) {return}
 
     const e = document.createElement("div")
-    const itemID = `csItem-UUID-${crypto.randomUUID()}`
+    const itemID = getUUID("item")
     e.id = itemID
     e.className = `cs-item item-${type}`
 
