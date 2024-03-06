@@ -39,7 +39,6 @@ Default options:
     abortDialog - returns null
 */
 function Dialog(parent, structure) {
-    if (!structure.title) throw new Error("Malformed dialog structure - required field <title> missing")
     const addhr = () => wrapper.appendChild(document.createElement("hr"))
 
     const wrapper = document.createElement("div")
@@ -47,16 +46,20 @@ function Dialog(parent, structure) {
     wrapper.id = `dialog-${crypto.randomUUID()}`
 
     // Build the title
-    const title = document.createElement("h1")
-    title.className = "dialog-title"
-    title.innerText = firstLetterUpper(structure.title)
-    wrapper.appendChild(title)
+    if (!isEmptyString(structure.title)) {
+        const title = document.createElement("h1")
+        title.className = "dialog-title"
+        title.innerText = firstLetterUpper(structure.title)
+        wrapper.appendChild(title)
+    }
 
     // Build the description
-    const description = document.createElement("p")
-    description.className = "dialog-description"
-    description.innerHTML = structure.description
-    wrapper.appendChild(description)
+    if (!isEmptyString(structure.description)) {
+        const description = document.createElement("p")
+        description.className = "dialog-description"
+        description.innerHTML = structure.description
+        wrapper.appendChild(description)
+    }
 
     addhr()
 
@@ -144,11 +147,11 @@ const createInputField = (id, class_string, title_string, description_string, ty
     return wrapper
 }
 
-const isEmptyString = (str) => {return !str.replace(/\s/g, '').length}
+const isEmptyString = (str) => {return str===undefined || str.replace(/\s/g, '')===""}
 
 const isObject = (obj) => typeof obj === 'object' && obj instanceof Object && !Array.isArray(obj) && obj.constructor !== Date;
 
-const firstLetterUpper = (text) => {return text[0].toUpperCase() + text.substring(1, text.length)}
+const firstLetterUpper = (text) => {return !isEmptyString(text) ? text[0].toUpperCase() + text.substring(1, text.length) : ""}
 
 const dialogParent = document.getElementById("dialog-level")
 
