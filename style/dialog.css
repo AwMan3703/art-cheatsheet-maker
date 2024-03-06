@@ -70,7 +70,7 @@
   width: 100dvw;
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
   user-select: none;
 }
 .dialog-wrapper {
@@ -94,7 +94,7 @@
 }
 .dialog-options-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .dialog-options-button {
   padding: 20px !important;
