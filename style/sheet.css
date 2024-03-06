@@ -28,8 +28,7 @@
   gap: 10px;
 }
 .flex-hor,
-.cs-section-header,
-.image-carousel {
+.cs-section-header {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -139,6 +138,7 @@
   justify-content: left;
   overflow-x: auto;
   overflow-y: hidden;
+  white-space: nowrap;
 }
 #section-mainImage > .image-carousel {
   height: calc(100px * 3);
@@ -150,21 +150,28 @@
   display: none;
 }
 .carousel-image {
+  position: relative;
   height: 100%;
-  display: inline;
+  display: inline-block;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
+  margin-inline-end: 10px;
+}
+.carousel-image:last-child {
+  margin-inline-end: revert;
 }
 .carousel-image > img {
+  display: inline;
   height: 100%;
 }
 .carousel-image > .deleteBtn {
   position: absolute;
+  top: 10px;
+  right: 10px;
   width: 20px;
-  height: auto;
+  height: 20px;
   background-color: var(--color-background-main);
   opacity: 0.75;
-  margin: 10px;
   border: none;
 }
 .during-screenshot .carousel-image > .deleteBtn {

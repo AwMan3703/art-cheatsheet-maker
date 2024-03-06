@@ -71,11 +71,11 @@
 .image-carousel:not(:has(img)) { display: none }
 .image-carousel {
 	&:extend(.material);
-	&:extend(.flex-hor);
 	height: @imageCarousel-height;
 	justify-content: left;
 	overflow-x: auto;
 	overflow-y: hidden;
+	white-space: nowrap;
 }
 #section-mainImage > .image-carousel { height: calc(@imageCarousel-height * 3) }
 #section-mainImage > .image-carousel-options { margin-block-start: @padding }
@@ -84,21 +84,26 @@
 .carousel-image {
 	&:extend(.round-corners);
 	&:extend(.material-border);
+	position: relative;
 	height: 100%;
-	display: inline;
+	display: inline-block;
 	overflow: hidden;
 	box-shadow: var(--shadow-soft);
+	margin-inline-end: @padding;
 }
+.carousel-image:last-child { margin-inline-end: revert }
 .carousel-image > img {
+	display: inline;
 	height: 100%;
 }
 .carousel-image > .deleteBtn {
 	position: absolute;
+	top: @padding;
+	right: @padding;
 	width: 20px;
-	height: auto;
+	height: 20px;
 	background-color: var(--color-background-main);
-	opacity: .75;
-	margin: @padding;
+	opacity: 0.75;
 	border: none;
 }
 .during-screenshot .carousel-image > .deleteBtn { display: none; }
