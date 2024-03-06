@@ -25,7 +25,9 @@
 	border: none;
 	font-size: larger;
 }
-#date-label.during-screenshot { display: none }
+.during-screenshot #date-label { display: none }
+.during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))),
+.during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))) { display: none }
 
 .cs-section {
 	&:extend(.material);
@@ -55,18 +57,15 @@
 	overflow: hidden;
 }
 
-.cs-item > p {
-	flex-wrap: wrap;
-}
+.cs-item > p { flex-wrap: wrap }
 
-.cs-item .csItem-options-wrapper {
-	display: inline-flex;
-}
-.cs-item .csItem-options-wrapper > button { border-radius: 0 !important; }
+.cs-item .csItem-options-wrapper { display: inline-flex }
+.cs-item .csItem-options-wrapper > button { border-radius: 0 !important }
 .cs-item .csItem-options-wrapper > button:hover {
 	box-shadow: var(--shadow-soft);
 	translate: 0 0;
 }
+.during-screenshot .csItem-options-wrapper { display: none }
 
 .image-carousel:not(:has(img)) { display: none }
 .image-carousel {
@@ -79,7 +78,7 @@
 }
 #section-mainImage > .image-carousel { height: calc(@imageCarousel-height * 3) }
 #section-mainImage > .image-carousel-options { margin-block-start: @padding }
-#section-mainImage > .image-carousel-options.during-screenshot { display: none }
+.during-screenshot #section-mainImage > .image-carousel-options { display: none }
 
 .carousel-image {
 	&:extend(.round-corners);
