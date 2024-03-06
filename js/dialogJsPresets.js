@@ -87,5 +87,3 @@ const editItemDialog = (item, callbackYes, callbackNo, title) => {
         }
     )
 }
-
-alertDialog("Page is incomplete", "pot kettle")
