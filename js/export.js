@@ -12,9 +12,6 @@ const postScreenshot = () => {
 // Screenshot [element], then pass it as an HTMLCanvasElement to [callback]
 const screenshot = (element, callback) => {
     preScreenshot()
-    // FIXME:
-    //  <input>'s content gets offset and cropped when being captured
-    //html2canvas(element).then(callback) // old method
     domtoimage.toPng(element)
         .then ((dataUrl) => { callback(dataUrl) })
         .catch((error) => { console.error('Oops, something went wrong while rendering!', error) });
@@ -25,17 +22,6 @@ function exportSheet() {
     const sheet = document.getElementById("content-body")
     const downloadButton = document.getElementById("download-point")
 
-    // html2canvas compatible method
-    /*const toDownloadButton = (canvas) => {
-        downloadButton.href = canvas.toDataURL("img/jpeg")
-        downloadButton.classList.add("available")
-        downloadButton.download = document.getElementById("main-title").innerText
-
-        downloadButton.addEventListener("click", () => {
-            downloadButton.classList.remove("available")
-        })
-    }*/
-    // dom-to-image compatible method
     const toDownloadButton = (dataUrl) => {
         downloadButton.href = dataUrl
         downloadButton.classList.add("available")
