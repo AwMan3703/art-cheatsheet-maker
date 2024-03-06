@@ -17,7 +17,7 @@ button {
   --shadow-main: 0 5px 15px 10px var(--color-shadow);
   --shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
 }
-.darkmode:not(.screenshot) {
+:not(.during-screenshot) .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
   --color-unlayer: rgba(0, 0, 0, 0.25);
   /* Keep the same shadow color regardless of set display mode */
