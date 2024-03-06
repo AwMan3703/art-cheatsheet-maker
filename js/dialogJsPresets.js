@@ -15,10 +15,10 @@ const alertDialog = (title, description) => {
     )
 }
 
-const yesNoDialog = (title, callbackYes, callbackNo, description) => {
+const yesNoDialog = (callbackYes, callbackNo, title, description) => {
     Dialog(dialogParent,
         {
-            title: title,
+            title: title ? title : "Confirm?",
             description: description,
             options: {
                 completeDialog: {
@@ -34,10 +34,10 @@ const yesNoDialog = (title, callbackYes, callbackNo, description) => {
     )
 }
 
-const textInputDialog = (callbackYes, callbackNo, title, label) => {
+const textInputDialog = (callbackYes, callbackNo, title, label, yesLabel) => {
     Dialog(dialogParent,
         {
-            title: title,
+            title: title ? title : "Text input",
             inputs: {
                 [label]: {
                     type: "text"
@@ -45,7 +45,7 @@ const textInputDialog = (callbackYes, callbackNo, title, label) => {
             },
             options: {
                 completeDialog: {
-                    label: "Add",
+                    label: yesLabel ? yesLabel : "Confirm",
                     callback: (data) => {
                         const t = data[label].value
                         callbackYes(t)

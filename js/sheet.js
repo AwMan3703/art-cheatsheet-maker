@@ -63,7 +63,7 @@ function addImageCarouselOptions(e) {
 function addItem(type) {
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
-    }, null, "New item")
+    }, null, "New item", "content:", "Add")
 }
 function appendItem(type, content) {
     const e = document.createElement("div")
@@ -113,8 +113,9 @@ function editItem(eID) {
 function deleteItem(eID) {
     const e = document.getElementById(eID)
     if (document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.deleteWarningLengthThreshold) {
-        yesNoDialog(`Do you want to delete this ${e.parentNode.parentNode.querySelector(".cs-section-header > h3").innerText} entry?`,
-            () => {e.remove()}, null, "If you confirm, the item will be permanently deleted")
+        yesNoDialog(() => {e.remove()}, null,
+            `Do you want to delete this ${e.parentNode.querySelector("h3").innerText} entry?`,
+            "If you confirm, the item will be permanently deleted")
     } else { e.remove() }
 }
 
@@ -130,8 +131,8 @@ function addImages(parent, files) {
         const xBtn = document.createElement("button")
         xBtn.className = "deleteBtn"
         xBtn.onclick = () => {
-            yesNoDialog(`Delete image?`,
-                () => {wrapper.remove()}, null, "If you confirm, the image will be permanently deleted")
+            yesNoDialog(() => {wrapper.remove()}, null,
+                `Delete image?`, "If you confirm, the image will be permanently deleted")
         }
         const xIcon = document.createElement("img")
         xIcon.className = "icon-mono display-mode-dynamic-icon"
