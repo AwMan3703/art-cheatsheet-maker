@@ -12,9 +12,14 @@ const postScreenshot = () => {
 // Screenshot [element], then pass it as an HTMLCanvasElement to [callback]
 const screenshot = (element, callback) => {
     preScreenshot()
-    domtoimage.toPng(element)
+
+    const screenshotOptions = {
+        quality: 0.99
+    }
+    domtoimage.toJpeg(element, screenshotOptions)
         .then ((dataUrl) => { callback(dataUrl) })
         .catch((error) => { console.error('Oops, something went wrong while rendering!', error) });
+
     postScreenshot()
 }
 
