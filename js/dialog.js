@@ -33,10 +33,11 @@ Input data:
     attributes : { } [all HTML attributes to apply to the input, format: {"attrName" : "attrValue"}]
 
 Default options:
-    completeDialog - returns an object in which:
+    completeDialog - calls the callback function, passing an object in which:
         - the keys correspond to the ones in the <inputs> field
         - the values hold the dialog's HTMLInput elements, so that their value can be read
-    abortDialog - returns null
+    abortDialog - calls the callback function, passing null
+
 */
 function Dialog(parent, structure) {
     const addhr = () => wrapper.appendChild(document.createElement("hr"))
@@ -61,14 +62,14 @@ function Dialog(parent, structure) {
         wrapper.appendChild(description)
     }
 
-    addhr()
+    if (isObject(structure.inputs)) addhr()
 
     // Build the input fields
     const inputMap = {} // structure.inputs.[name] -> HTMLInputElement.id
     const inputsClass = `${wrapper.id}-input-field`
     const inputs = document.createElement("div")
     inputs.className = "dialog-inputs-wrapper"
-    for (const [name, options] of Object.entries(structure.inputs)) {
+    if (isObject(structure.inputs)) for (const [name, options] of Object.entries(structure.inputs)) {
         const id = `dialog-input-${name}-${crypto.randomUUID()}`
         inputMap[name] = id
         inputs.appendChild(createInputField(id, inputsClass, name, options.description, options.type, options.defaultValue, options.attributes))
@@ -93,17 +94,21 @@ function Dialog(parent, structure) {
     }
     options.appendChild(optionAbort)
 
-    const optionComplete = document.createElement("button")
-    optionComplete.className = "dialog-options-button dialog-options-buttonComplete"
-    optionComplete.innerText = structure.options.completeDialog.label
-    optionComplete.onclick = () => {
-        const results = {}
-        for (const [name, id] of Object.entries(inputMap)) {
-            results[name] = document.getElementById(id)
+    if (isObject(structure.options.completeDialog)) {
+        const optionComplete = document.createElement("button")
+        optionComplete.className = "dialog-options-button dialog-options-buttonComplete"
+        optionComplete.innerText = structure.options.completeDialog.label
+        optionComplete.onclick = () => {
+            const results = {}
+            for (const [name, id] of Object.entries(inputMap)) {
+                results[name] = document.getElementById(id)
+            }
+            callbackWrapper(() => {
+                structure.options.completeDialog.callback(results)
+            })
         }
-        callbackWrapper(() => { structure.options.completeDialog.callback(results) })
+        options.appendChild(optionComplete)
     }
-    options.appendChild(optionComplete)
 
     // Wrap options together
     wrapper.appendChild(options)
@@ -122,7 +127,7 @@ const createInputField = (id, class_string, title_string, description_string, ty
     const input = document.createElement("input")
     input.className = `${class_string} dialog-input-field`
     input.type = type
-    input.value = default_
+    input.value = !isEmptyString(default_) ? default_ : null
     input.id = id
     if (isObject(attributes)) for (const [k, v] of Object.entries(attributes)) {
         input.setAttribute(k, v)

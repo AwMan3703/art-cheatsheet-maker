@@ -11,10 +11,11 @@ function validURL(url) {
 }
 
 // Prompts the user, then asserts the input to be a valid URL
-const promptValidURL = function(message, _default) {
-    const t = window.prompt(message, _default)
-    if (!validURL(t)) { throw new URIError(`Invalid URL: '${t}'`) }
-    else { return t }
+const promptValidURL = function(title, label, callback) {
+    textInputDialog((text) => {
+        if (!validURL(text)) { throw new URIError(`Invalid URL: '${text}'`) }
+        else { callback(text) }
+    }, null, title, label)
 }
 
 // Fetches data from a json file, then runs the callback passing it as an object

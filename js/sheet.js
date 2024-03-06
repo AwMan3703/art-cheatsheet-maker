@@ -39,7 +39,15 @@ function addImageCarouselOptions(e) {
 
     const btnLink = document.createElement("button")
     btnLink.className = "imageCarousel-button-link"
-    btnLink.onclick = () => { fetchimage(promptValidURL('Image URL:'), b => { addImages(e.querySelector('.image-carousel'), [b]) }) }
+    btnLink.onclick = () => {
+        promptValidURL("Link an image", "Image URL:", (url) => {
+                fetchimage(url,
+                    b => { addImages(e.querySelector('.image-carousel'), [b]) }
+                )
+            }
+        )
+
+    }
     const iconLink = document.createElement("img")
     iconLink.className = "icon-mono display-mode-dynamic-icon"
     iconLink.src = "assets/link.png"
@@ -53,9 +61,11 @@ function addImageCarouselOptions(e) {
 }
 
 function addItem(type) {
-    const content = window.prompt("New item's content:", "no content")
-    if (content.trim().length === 0) {return}
-
+    textInputDialog((text) => {
+        if (!isEmptyString(text)) appendItem(type, text)
+    }, null, "New item")
+}
+function appendItem(type, content) {
     const e = document.createElement("div")
     const itemID = getUUID("item")
     e.id = itemID
@@ -94,14 +104,18 @@ function addItem(type) {
 
 function editItem(eID) {
     const e = document.querySelector(`#${eID} > p`)
-    editDialog(e)
+    editItemDialog(e, (nt) => {
+        if (nt==null || nt.trim()==="") { return }
+        e.innerText = nt
+    }, null, `edit ${e.parentNode.parentNode.querySelector(".cs-section-header > h3").innerText} entry`)
 }
 
 function deleteItem(eID) {
     const e = document.getElementById(eID)
     if (document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.deleteWarningLengthThreshold) {
-        if (!confirm(`Do you want to delete ${eID}?`)) { return } }
-    e.remove()
+        yesNoDialog(`Do you want to delete this ${e.parentNode.parentNode.querySelector(".cs-section-header > h3").innerText} entry?`,
+            () => {e.remove()}, null, "If you confirm, the item will be permanently deleted")
+    } else { e.remove() }
 }
 
 function addImages(parent, files) {
@@ -115,7 +129,10 @@ function addImages(parent, files) {
 
         const xBtn = document.createElement("button")
         xBtn.className = "deleteBtn"
-        xBtn.onclick = () => { wrapper.remove() }
+        xBtn.onclick = () => {
+            yesNoDialog(`Delete image?`,
+                () => {wrapper.remove()}, null, "If you confirm, the image will be permanently deleted")
+        }
         const xIcon = document.createElement("img")
         xIcon.className = "icon-mono display-mode-dynamic-icon"
         xIcon.src = "assets/x.png"

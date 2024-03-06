@@ -1,32 +1,91 @@
 
 // Shorthands for generating dialogs
-const editDialog = (element) => {
+const alertDialog = (title, description) => {
     Dialog(dialogParent,
         {
-            title : `edit ${element.id}`,
-            description : "Edit the text, then hit \"Save\" to write the changes you made",
-            inputs : {
-                "text-input" : {
-                    type : "text",
-                    defaultValue : element.innerText
-                }
-            },
-            options : {
-                completeDialog : {
-                    label : "Save",
-                    callback : (data) => {
-                        const nt = data["text-input"].value
-                        if (nt==null || nt.trim()==="") { return }
-                        element.innerText = nt
-                    }
-                },
-                abortDialog : {
-                    label : "Cancel",
-                    callback : () => {}
+            title: title,
+            description: description,
+            options: {
+                abortDialog: {
+                    label: "Okay",
+                    callback: () => {}
                 }
             }
         }
     )
 }
 
-// TODO : swap out all window.prompt's for modular dialogs
+const yesNoDialog = (title, callbackYes, callbackNo, description) => {
+    Dialog(dialogParent,
+        {
+            title: title,
+            description: description,
+            options: {
+                completeDialog: {
+                    label: "Confirm",
+                    callback: callbackYes ? callbackYes : () => {}
+                },
+                abortDialog: {
+                    label: "Cancel",
+                    callback: callbackNo ? callbackNo : () => {}
+                }
+            }
+        }
+    )
+}
+
+const textInputDialog = (callbackYes, callbackNo, title, label) => {
+    Dialog(dialogParent,
+        {
+            title: title,
+            inputs: {
+                [label]: {
+                    type: "text"
+                }
+            },
+            options: {
+                completeDialog: {
+                    label: "Add",
+                    callback: (data) => {
+                        const t = data[label].value
+                        callbackYes(t)
+                    }
+                },
+                abortDialog: {
+                    label: "Cancel",
+                    callback: callbackNo ? callbackNo : () => {}
+                }
+            }
+        }
+    )
+}
+
+const editItemDialog = (item, callbackYes, callbackNo, title) => {
+    Dialog(dialogParent,
+        {
+            title: !isEmptyString(title) ? title : `edit ${item.parentNode.id}`,
+            description: "Edit the text, then hit \"Save\" to complete.",
+            inputs: {
+                "edit content:": {
+                    type: "text",
+                    defaultValue: item.innerText
+                }
+            },
+            options: {
+                completeDialog: {
+                    label: "Save",
+                    callback: (data) => {
+                        const nt = data["edit content:"].value
+                        callbackYes(nt)
+                    }
+                },
+                abortDialog: {
+                    label: "Cancel",
+                    callback: callbackNo ? callbackNo : () => {}
+                }
+            }
+        }
+    )
+}
+
+alertDialog("Page is incomplete", "pot kettle")
