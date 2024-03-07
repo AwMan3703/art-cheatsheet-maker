@@ -13,6 +13,7 @@ const csItemTypes= {
     hypothesis : "csItemType:HYPOTHESIS",
     documents : "csItemType:DOCUMENTS",
     texts : "csItemType:TEXTS",
+    architecture: "csItemType:ARCHITECTURE",
     "" : "csItemType:EMPTY-STRING"
 }
 
@@ -29,5 +30,6 @@ const csItemIconMap = {
     [csItemTypes.hypothesis] : `assets/question-mark.png`,
     [csItemTypes.documents] : `assets/sheet.png`,
     [csItemTypes.texts] : `assets/book.png`,
+    [csItemTypes.architecture] : `assets/temple.png`,
     [csItemTypes[""]] : `assets/sparkles.png`
 }
