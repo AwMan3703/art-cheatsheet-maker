@@ -3,15 +3,20 @@
 
 let CONFIG = {}
 
+function checkConfig(data) {
+    if (Object.keys(data).length===0) console.warn(`Config seems to be empty (${JSON.stringify(data)}). If this is intended, you can ignore this message.`); return false;
+}
 function startup(configData) {
+    CONFIG = configData
+    console.log("Config data loaded")
+    checkConfig({})
+
     const itemGenerationPanel = document.getElementById("add-element-panel")
     addItemGenerationButtons(itemGenerationPanel)
     const contentBody = document.getElementById("content-body")
     addItemSections(contentBody)
     const imageCarousels = document.getElementsByClassName("imageCarousel-wrapper")
     forAllElements(imageCarousels, addImageCarouselOptions)
-
-    CONFIG = configData
 }
 
 console.log("Fetching config data...")

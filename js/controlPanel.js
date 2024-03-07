@@ -1,9 +1,9 @@
 
 function addItemGenerationButtons(parent) {
     const exclude = [""]
-    Object.keys(csItemTypes).forEach((key) => {
+    Object.keys(CONFIG.sheet.items.types).forEach((key) => {
         if (exclude.includes(key)) { return }
-        const type = csItemTypes[key]
+        const type = CONFIG.sheet.items.types[key]
         const e = document.createElement("button")
         e.setAttribute("onclick", `addItem("${key}")`)
         e.className = "item-gen-button"

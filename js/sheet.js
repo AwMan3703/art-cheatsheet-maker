@@ -1,21 +1,20 @@
 
 function addItemSections(parent) {
     const exclude = [""]
-    Object.keys(csItemTypes).forEach((key) => {
+    Object.keys(CONFIG.sheet.items.types).forEach((key) => {
         if (exclude.includes(key)) {return}
-        const type = csItemTypes[key]
         const e = document.createElement("section")
         e.className = "cs-section"
-        e.id = `section-${type}`
+        e.id = `section-${key}`
 
         const header = document.createElement("div")
         header.className = "cs-section-header"
         const icon = document.createElement("img")
         icon.className = "icon-mono display-mode-dynamic-icon"
-        icon.src = csItemIconMap[type]
+        icon.src = `${CONFIG.sheet.items.icon_root}${CONFIG.sheet.items.types[key].icon}`
         header.appendChild(icon)
         const title = document.createElement("h3")
-        title.innerText = `${key}`
+        title.innerText = CONFIG.sheet.items.types[key].names.section_title
         header.appendChild(title)
 
         e.appendChild(header)
@@ -63,13 +62,14 @@ function addImageCarouselOptions(e) {
 function addItem(type) {
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
-    }, null, `New ${type} entry`, "content:", "Add")
+    }, null, `New ${type}`, "content:", "Add")
 }
 function appendItem(type, content) {
     const e = document.createElement("div")
+    e.className = `cs-item item-${type}`
+    e.dataset.itemtype = type
     const itemID = getUUID("item")
     e.id = itemID
-    e.className = `cs-item item-${type}`
 
     const paragraph = document.createElement("p")
     paragraph.style.margin = "10px"
@@ -97,7 +97,7 @@ function appendItem(type, content) {
     btnWrapper.appendChild(xBtn)
     e.appendChild(btnWrapper)
 
-    const p = document.getElementById(`section-${csItemTypes[type]}`)
+    const p = document.getElementById(`section-${type}`)
     p.appendChild(e)
     return e
 }
@@ -107,12 +107,12 @@ function editItem(eID) {
     editItemDialog(e, (nt) => {
         if (nt==null || nt.trim()==="") { return }
         e.innerText = nt
-    }, null, `edit ${e.parentNode.parentNode.querySelector(".cs-section-header > h3").innerText} entry`)
+    }, null, `Edit ${e.parentNode.dataset.itemtype}`)
 }
 
 function deleteItem(eID) {
     const e = document.getElementById(eID)
-    if (document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.deleteWarningLengthThreshold) {
+    if (document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.editing.deleteWarningLengthThreshold) {
         yesNoDialog(() => {e.remove()}, null,
             `Do you want to delete this ${e.parentNode.querySelector("h3").innerText} entry?`,
             "If you confirm, the item will be permanently deleted")

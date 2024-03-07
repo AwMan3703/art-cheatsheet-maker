@@ -1,5 +1,56 @@
 {
 	"sheet" : {
-		"deleteWarningLengthThreshold" : 25
+		"editing" : {
+			"deleteWarningLengthThreshold" : 25
+		},
+		"items" : {
+			"icon_root" : "assets/",
+			"types" : {
+				"commission" : {
+					"names" : { "singular" : "commission", "plural" : "commissions", "section_title" : "commissions" },
+					"icon" : "king.png"
+				},
+				"history" : {
+					"names" : { "singular" : "history", "plural" : "histories", "section_title" : "history" },
+					"icon" : "history.png"
+				},
+				"size" : {
+					"names" : { "singular" : "size", "plural" : "sizes", "section_title" : "size" },
+					"icon" : "ruler.png"
+				},
+				"description" : {
+					"names" : { "singular" : "description", "plural" : "descriptions", "section_title" : "description" },
+					"icon" : "text.png"
+				},
+				"style" : {
+					"names" : { "singular" : "style", "plural" : "styles", "section_title" : "style" },
+					"icon" : "shapes.png"
+				},
+				"color" : {
+					"names" : { "singular" : "color", "plural" : "colors", "section_title" : "colors" },
+					"icon" : "palette.png"
+				},
+				"light" : {
+					"names" : { "singular" : "light", "plural" : "lights", "section_title" : "light" },
+					"icon" : "sun.png"
+				},
+				"hypothesis" : {
+					"names" : { "singular" : "hypothesis", "plural" : "hypotheses", "section_title" : "hypotheses" },
+					"icon" : "question-mark.png"
+				},
+				"document" : {
+					"names" : { "singular" : "document", "plural" : "documents", "section_title" : "" },
+					"icon" : "sheet.png"
+				},
+				"text" : {
+					"names" : { "singular" : "text", "plural" : "texts", "section_title" : "" },
+					"icon" : "book.png"
+				},
+				"architecture" : {
+					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "" },
+					"icon" : "temple.png"
+				}
+			}
+		}
 	}
 }
