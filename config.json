@@ -39,15 +39,15 @@
 					"icon" : "question-mark.png"
 				},
 				"document" : {
-					"names" : { "singular" : "document", "plural" : "documents", "section_title" : "" },
+					"names" : { "singular" : "document", "plural" : "documents", "section_title" : "documents" },
 					"icon" : "sheet.png"
 				},
 				"text" : {
-					"names" : { "singular" : "text", "plural" : "texts", "section_title" : "" },
+					"names" : { "singular" : "text", "plural" : "texts", "section_title" : "texts" },
 					"icon" : "book.png"
 				},
 				"architecture" : {
-					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "" },
+					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "architectures" },
 					"icon" : "temple.png"
 				}
 			}
