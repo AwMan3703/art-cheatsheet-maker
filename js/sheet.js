@@ -63,7 +63,7 @@ function addImageCarouselOptions(e) {
 function addItem(type) {
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
-    }, null, "New item", "content:", "Add")
+    }, null, `New ${type} entry`, "content:", "Add")
 }
 function appendItem(type, content) {
     const e = document.createElement("div")

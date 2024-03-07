@@ -13,22 +13,21 @@ const postScreenshot = () => {
 const screenshot = (element, callback) => {
     preScreenshot()
 
-    const screenshotOptions = {
-        quality: 0.99
-    }
-    domtoimage.toJpeg(element, screenshotOptions)
-        .then ((dataUrl) => { callback(dataUrl) })
+    domtoimage.toBlob(element)
+        .then ((dataUrl) => {
+            // After the screenshot is taken
+            callback(dataUrl)
+            postScreenshot()
+        })
         .catch((error) => { console.error('Oops, something went wrong while rendering!', error) });
-
-    postScreenshot()
 }
 
 function exportSheet() {
     const sheet = document.getElementById("content-body")
     const downloadButton = document.getElementById("download-point")
 
-    const toDownloadButton = (dataUrl) => {
-        downloadButton.href = dataUrl
+    const toDownloadButton = (blob) => {
+        downloadButton.href = URL.createObjectURL(blob)
         downloadButton.classList.add("available")
         downloadButton.download = document.getElementById("main-title").innerText
 

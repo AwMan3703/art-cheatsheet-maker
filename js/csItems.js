@@ -23,7 +23,7 @@ const csItemIconMap = {
     [csItemTypes.history] : `assets/history.png`,
     [csItemTypes.size] : `assets/ruler.png`,
     [csItemTypes.description] : `assets/text.png`,
-    [csItemTypes.style] : `assets/brush.png`,
+    [csItemTypes.style] : `assets/style.png`,
     [csItemTypes.colors] : `assets/palette.png`,
     [csItemTypes.light] : `assets/sun.png`,
     [csItemTypes.hypothesis] : `assets/question-mark.png`,
