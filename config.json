@@ -49,6 +49,10 @@
 				"architecture" : {
 					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "architectures" },
 					"icon" : "temple.png"
+				},
+				"material" : {
+					"names" : { "singular" : "material", "plural" : "materials", "section_title" : "materials" },
+					"icon" : "materials.png"
 				}
 			}
 		}
