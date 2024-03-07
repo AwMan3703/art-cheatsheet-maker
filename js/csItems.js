@@ -19,17 +19,15 @@ const csItemTypes= {
 
 const csItemIconMap = {
     // type : "path/to/icon.png"
-    [csItemTypes.location] : `assets/location.png`,
     [csItemTypes.commission] : `assets/king.png`,
     [csItemTypes.history] : `assets/history.png`,
     [csItemTypes.size] : `assets/ruler.png`,
     [csItemTypes.description] : `assets/text.png`,
-    [csItemTypes.style] : `assets/style.png`,
+    [csItemTypes.style] : `assets/shapes.png`,
     [csItemTypes.colors] : `assets/palette.png`,
     [csItemTypes.light] : `assets/sun.png`,
     [csItemTypes.hypothesis] : `assets/question-mark.png`,
     [csItemTypes.documents] : `assets/sheet.png`,
     [csItemTypes.texts] : `assets/book.png`,
-    [csItemTypes.architecture] : `assets/temple.png`,
-    [csItemTypes[""]] : `assets/sparkles.png`
+    [csItemTypes.architecture] : `assets/temple.png`
 }
