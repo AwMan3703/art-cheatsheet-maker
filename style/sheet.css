@@ -119,6 +119,7 @@
   padding: 0 !important;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   overflow: hidden;
 }
 .cs-item > p {
@@ -126,15 +127,20 @@
 }
 .cs-item .csItem-options-wrapper {
   display: inline-flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
-.cs-item .csItem-options-wrapper > button {
+.cs-item .csItem-btn-wrapper {
+  display: inline-flex;
+}
+.cs-item .csItem-btn-wrapper > button {
   border-radius: 0 !important;
 }
-.cs-item .csItem-options-wrapper > button:hover {
+.cs-item .csItem-btn-wrapper > button:hover {
   box-shadow: var(--shadow-soft);
   translate: 0 0;
 }
-.during-screenshot .csItem-options-wrapper {
+.during-screenshot .csItem-btn-wrapper {
   display: none;
 }
 .image-carousel:not(:has(img)) {
@@ -142,6 +148,7 @@
 }
 .image-carousel {
   height: 100px;
+  width: 100%;
   justify-content: left;
   overflow-x: auto;
   overflow-y: hidden;
@@ -153,7 +160,7 @@
 #section-mainImage > .image-carousel-options {
   margin-block-start: 10px;
 }
-.during-screenshot #section-mainImage > .image-carousel-options {
+.during-screenshot .image-carousel-options {
   display: none;
 }
 .carousel-image {

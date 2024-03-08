@@ -76,8 +76,15 @@ function appendItem(type, content) {
     paragraph.innerText = content
     e.appendChild(paragraph)
 
+    const carouselWrapper = document.createElement("div")
+    carouselWrapper.className = "imageCarousel-wrapper"
+    const carousel = document.createElement("div")
+    carousel.className = "image-carousel scrollbar-visible"
+    addImageCarouselOptions(carouselWrapper)
+    carouselWrapper.appendChild(carousel)
+
     const btnWrapper = document.createElement("div")
-    btnWrapper.className = "csItem-options-wrapper screenshot-hidden"
+    btnWrapper.className = "csItem-btn-wrapper"
 
     const editBtn = document.createElement("button")
     editBtn.onclick = _ => editItem(itemID)
@@ -95,7 +102,12 @@ function appendItem(type, content) {
 
     btnWrapper.appendChild(editBtn)
     btnWrapper.appendChild(xBtn)
-    e.appendChild(btnWrapper)
+
+    const optionsWrapper = document.createElement("div")
+    optionsWrapper.className = "csItem-options-wrapper"
+    optionsWrapper.appendChild(carouselWrapper)
+    optionsWrapper.appendChild(btnWrapper)
+    e.appendChild(optionsWrapper)
 
     const p = document.getElementById(`section-${type}`)
     p.appendChild(e)
@@ -112,7 +124,12 @@ function editItem(eID) {
 
 function deleteItem(eID) {
     const e = document.getElementById(eID)
-    if (document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.editing.deleteWarningLengthThreshold) {
+    console.log(document.querySelectorAll(`#${eID} .image-carousel .carousel-image`))
+    console.log(CONFIG.sheet.editing.deleteWarningWhenImagePresent)
+    if (
+        document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.editing.deleteWarningLengthThreshold ||
+        document.querySelectorAll(`#${eID} .image-carousel .carousel-image`).length > 0 && CONFIG.sheet.editing.deleteWarningWhenImagePresent
+    ) {
         yesNoDialog(() => {e.remove()}, null,
             `Do you want to delete this ${e.parentNode.querySelector("h3").innerText} entry?`,
             "If you confirm, the item will be permanently deleted")

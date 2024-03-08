@@ -1,7 +1,8 @@
 {
 	"sheet" : {
 		"editing" : {
-			"deleteWarningLengthThreshold" : 25
+			"deleteWarningLengthThreshold" : 25,
+			"deleteWarningWhenImagePresent" : true
 		},
 		"items" : {
 			"icon_root" : "assets/",
