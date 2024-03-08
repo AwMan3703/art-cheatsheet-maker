@@ -9,7 +9,7 @@ function checkConfig(data) {
 function startup(configData) {
     CONFIG = configData
     console.log("Config data loaded")
-    checkConfig({})
+    checkConfig(CONFIG)
 
     const itemGenerationPanel = document.getElementById("add-element-panel")
     addItemGenerationButtons(itemGenerationPanel)
