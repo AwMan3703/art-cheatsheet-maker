@@ -103,11 +103,8 @@ function appendItem(type, content) {
     btnWrapper.appendChild(editBtn)
     btnWrapper.appendChild(xBtn)
 
-    const optionsWrapper = document.createElement("div")
-    optionsWrapper.className = "csItem-options-wrapper"
-    optionsWrapper.appendChild(carouselWrapper)
-    optionsWrapper.appendChild(btnWrapper)
-    e.appendChild(optionsWrapper)
+    e.appendChild(carouselWrapper)
+    e.appendChild(btnWrapper)
 
     const p = document.getElementById(`section-${type}`)
     p.appendChild(e)

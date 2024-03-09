@@ -50,18 +50,11 @@
 .cs-item {
 	&:extend(.material);
 	padding: 0 !important;
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr fit-content(50dvw) max-content;
 	justify-content: space-between;
 	align-items: stretch;
 	overflow: hidden;
-}
-
-.cs-item > p { flex-wrap: wrap }
-
-.cs-item .csItem-options-wrapper {
-	display: inline-flex;
-	justify-content: flex-end;
-	gap: @padding;
 }
 
 .cs-item .csItem-btn-wrapper { display: inline-flex }
@@ -72,14 +65,17 @@
 }
 .during-screenshot .csItem-btn-wrapper { display: none }
 
-.imageCarousel-wrapper { margin-block: calc(@padding / 2) }
+.cs-item .csItem-btn-wrapper { justify-self: end }
+
+.imageCarousel-wrapper {
+	margin-block: calc(@padding / 2);
+	overflow: hidden;
+}
 
 .image-carousel:not(:has(img)) { display: none }
 .image-carousel {
 	&:extend(.material);
 	height: @imageCarousel-height;
-	// FIXME: image carousels overflow when too many images are inputted, and ignore overflow attribute
-	width: 100%;
 	justify-content: left;
 	overflow-x: auto;
 	overflow-y: hidden;

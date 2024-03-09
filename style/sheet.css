@@ -118,18 +118,11 @@
 }
 .cs-item {
   padding: 0 !important;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr fit-content(50dvw) max-content;
   justify-content: space-between;
   align-items: stretch;
   overflow: hidden;
-}
-.cs-item > p {
-  flex-wrap: wrap;
-}
-.cs-item .csItem-options-wrapper {
-  display: inline-flex;
-  justify-content: flex-end;
-  gap: 10px;
 }
 .cs-item .csItem-btn-wrapper {
   display: inline-flex;
@@ -144,15 +137,18 @@
 .during-screenshot .csItem-btn-wrapper {
   display: none;
 }
+.cs-item .csItem-btn-wrapper {
+  justify-self: end;
+}
 .imageCarousel-wrapper {
   margin-block: calc(10px / 2);
+  overflow: hidden;
 }
 .image-carousel:not(:has(img)) {
   display: none;
 }
 .image-carousel {
   height: 100px;
-  width: 100%;
   justify-content: left;
   overflow-x: auto;
   overflow-y: hidden;
