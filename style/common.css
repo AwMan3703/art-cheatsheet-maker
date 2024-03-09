@@ -111,15 +111,15 @@ button > img.icon-mono {
 button:hover > img {
   opacity: 1 !important;
 }
-input {
-  font-weight: bolder;
-}
 input::placeholder {
   font-weight: normal;
   color: var(--color-text-secondary);
 }
 .during-screenshot input:placeholder-shown {
   display: none;
+}
+label {
+  opacity: 0.35 !important;
 }
 h1,
 h2,

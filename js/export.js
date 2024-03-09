@@ -14,9 +14,9 @@ const screenshot = (element, callback) => {
     preScreenshot()
 
     domtoimage.toBlob(element)
-        .then ((dataUrl) => {
+        .then ((data) => {
             // After the screenshot is taken
-            callback(dataUrl)
+            callback(data)
             postScreenshot()
         })
         .catch((error) => { console.error('Oops, something went wrong while rendering!', error) });

@@ -20,11 +20,9 @@
 #section-contentHeader > #main-data {
 	display: inline-flex;
 	gap: @padding * 2;
+	font-size: xx-large !important;
 }
-#section-contentHeader input[type="text"] {
-	border: none;
-	font-size: larger;
-}
+#input-date-group, #date-label { all: inherit }
 .during-screenshot #date-label { display: none }
 .during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))),
 .during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))) { display: none }
@@ -73,6 +71,8 @@
 	translate: 0 0;
 }
 .during-screenshot .csItem-btn-wrapper { display: none }
+
+.imageCarousel-wrapper { margin-block: calc(@padding / 2) }
 
 .image-carousel:not(:has(img)) { display: none }
 .image-carousel {

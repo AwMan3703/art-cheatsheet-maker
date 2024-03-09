@@ -88,10 +88,11 @@
 #section-contentHeader > #main-data {
   display: inline-flex;
   gap: 20px;
+  font-size: xx-large !important;
 }
-#section-contentHeader input[type="text"] {
-  border: none;
-  font-size: larger;
+#input-date-group,
+#date-label {
+  all: inherit;
 }
 .during-screenshot #date-label {
   display: none;
@@ -142,6 +143,9 @@
 }
 .during-screenshot .csItem-btn-wrapper {
   display: none;
+}
+.imageCarousel-wrapper {
+  margin-block: calc(10px / 2);
 }
 .image-carousel:not(:has(img)) {
   display: none;
