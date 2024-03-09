@@ -51,8 +51,8 @@
 	&:extend(.material);
 	padding: 0 !important;
 	display: grid;
-	grid-template-columns: 1fr fit-content(50dvw) max-content;
-	justify-content: space-between;
+	grid-template-columns: 1fr fit-content(50%) max-content;
+	justify-content: end;
 	align-items: stretch;
 	overflow: hidden;
 }
@@ -88,7 +88,7 @@
 	overflow-y: hidden;
 	white-space: nowrap;
 }
-#section-mainImage > .image-carousel { height: calc(@imageCarousel-height * 3) }
+#section-mainImage .image-carousel { height: calc(@imageCarousel-height * 3) }
 .during-screenshot .image-carousel {
 	background-color: transparent;
 }
@@ -105,13 +105,15 @@
 	&:extend(.round-corners);
 	&:extend(.material-border);
 	position: relative;
-	height: 100%;
+	height: @imageCarousel-height;
 	display: inline-block;
 	overflow: hidden;
 	box-shadow: var(--shadow-soft);
 	margin-inline-end: @padding;
 }
 .carousel-image:last-child { margin-inline-end: revert }
+#section-mainImage .image-carousel > .carousel-image { height: calc(@imageCarousel-height * 3) }
+
 .carousel-image > img {
 	display: inline;
 	height: 100%;
