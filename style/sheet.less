@@ -56,6 +56,9 @@
 	align-items: stretch;
 	overflow: hidden;
 }
+.during-screenshot .cs-item {
+	grid-template-columns: 1fr fit-content(50%) 0fr;
+}
 
 .cs-item .csItem-btn-wrapper { display: inline-flex }
 .cs-item .csItem-btn-wrapper > button { border-radius: 0 !important }
@@ -71,6 +74,10 @@
 	margin-block: calc(@padding / 2);
 	overflow: hidden;
 }
+.during-screenshot .imageCarousel-wrapper {
+	height: fit-content;
+	overflow: visible;
+}
 
 .image-carousel:not(:has(img)) { display: none }
 .image-carousel {
@@ -82,6 +89,15 @@
 	white-space: nowrap;
 }
 #section-mainImage > .image-carousel { height: calc(@imageCarousel-height * 3) }
+.during-screenshot .image-carousel {
+	background-color: transparent;
+}
+.during-screenshot *:not(#section-mainImage) .image-carousel {
+	white-space: unset;
+	height: fit-content;
+	overflow: visible;
+}
+
 #section-mainImage > .image-carousel-options { margin-block-start: @padding }
 .during-screenshot .image-carousel-options { display: none }
 

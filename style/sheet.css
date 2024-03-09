@@ -124,6 +124,9 @@
   align-items: stretch;
   overflow: hidden;
 }
+.during-screenshot .cs-item {
+  grid-template-columns: 1fr fit-content(50%) 0fr;
+}
 .cs-item .csItem-btn-wrapper {
   display: inline-flex;
 }
@@ -144,6 +147,10 @@
   margin-block: calc(10px / 2);
   overflow: hidden;
 }
+.during-screenshot .imageCarousel-wrapper {
+  height: fit-content;
+  overflow: visible;
+}
 .image-carousel:not(:has(img)) {
   display: none;
 }
@@ -156,6 +163,14 @@
 }
 #section-mainImage > .image-carousel {
   height: calc(100px * 3);
+}
+.during-screenshot .image-carousel {
+  background-color: transparent;
+}
+.during-screenshot *:not(#section-mainImage) .image-carousel {
+  white-space: unset;
+  height: fit-content;
+  overflow: visible;
 }
 #section-mainImage > .image-carousel-options {
   margin-block-start: 10px;
