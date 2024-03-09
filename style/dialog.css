@@ -70,7 +70,7 @@
   width: 100dvw;
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   user-select: none;
 }
 .dialog-wrapper {
