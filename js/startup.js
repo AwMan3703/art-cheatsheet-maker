@@ -20,4 +20,7 @@ function startup(configData) {
 }
 
 console.log("Fetching config data...")
-fetchjson("../config.json", startup)
+const configPath = "" // Path to config from index.html's path
+// Get the current path, cut out the file name and replace it with config.json
+const configURL = window.location.href.substring(0,window.location.href.indexOf("index.html")) + configPath + "config.json"
+fetchjson(configURL, startup)
