@@ -29,7 +29,7 @@ function exportSheet() {
     const toDownloadButton = (blob) => {
         downloadButton.href = URL.createObjectURL(blob)
         downloadButton.classList.add("available")
-        downloadButton.download = document.getElementById("main-title").innerText
+        downloadButton.download = document.getElementById("main-title").value
 
         downloadButton.addEventListener("click", () => {
             downloadButton.classList.remove("available")
