@@ -43,7 +43,7 @@
                 <a id="download-point" download="unnamed.jpg">Download</a>
             </div>
             <div id="display-panel" class="controls-panel">
-                <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Toggle dark mode</button>
+                <button id="darkmode-button" onclick="toggleClass(document.body, 'darkmode')">Toggle dark mode</button>
             </div>
         </div>
 
@@ -59,7 +59,6 @@
         <script src="js/controlPanel.js"></script>
         <script src="js/sheet.js"></script>
         <script src="js/export.js"></script>
-        <script src="js/displayMode.js"></script>
         <!--finally, run the startup script-->
         <script src="js/startup.js"></script>
     </body>

@@ -1,4 +1,13 @@
 
+// Add or remove class C from element E
+function toggleClass(e, c) {
+    if (e.classList.contains(c)) {
+        e.classList.remove(c)
+    } else {
+        e.classList.add(c)
+    }
+}
+
 // Checks if the given URL is valid
 function validURL(url) {
     const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
