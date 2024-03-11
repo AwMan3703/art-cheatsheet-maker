@@ -121,8 +121,6 @@ function editItem(eID) {
 
 function deleteItem(eID) {
     const e = document.getElementById(eID)
-    console.log(document.querySelectorAll(`#${eID} .image-carousel .carousel-image`))
-    console.log(CONFIG.sheet.editing.deleteWarningWhenImagePresent)
     if (
         document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.editing.deleteWarningLengthThreshold ||
         document.querySelectorAll(`#${eID} .image-carousel .carousel-image`).length > 0 && CONFIG.sheet.editing.deleteWarningWhenImagePresent
