@@ -3,13 +3,8 @@
 //  - passes true if the class was added
 //  - passes false if the class was removed
 function toggleClass(e, c, cb) {
-    if (e.classList.contains(c)) {
-        e.classList.remove(c)
-        if (cb) cb(false)
-    } else {
-        e.classList.add(c)
-        if (cb) cb(true)
-    }
+    const b = e.classList.toggle(c)
+    if (cb) cb(b)
 }
 
 // Checks if the given URL is valid
