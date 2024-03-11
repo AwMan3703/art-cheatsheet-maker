@@ -1,10 +1,14 @@
 
-// Add or remove class C from element E
-function toggleClass(e, c) {
+// Add or remove class C from element E - optionally calls callback CB
+//  - passes true if the class was added
+//  - passes false if the class was removed
+function toggleClass(e, c, cb) {
     if (e.classList.contains(c)) {
         e.classList.remove(c)
+        if (cb) cb(false)
     } else {
         e.classList.add(c)
+        if (cb) cb(true)
     }
 }
 
