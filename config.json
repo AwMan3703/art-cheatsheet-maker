@@ -1,4 +1,8 @@
 {
+	"client" : {
+		"developmentMode": true,
+		"developmentModeOutsideLocalhost": false
+	},
 	"sheet" : {
 		"editing" : {
 			"deleteWarningLengthThreshold" : 25,
