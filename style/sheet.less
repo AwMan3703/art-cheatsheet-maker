@@ -18,11 +18,17 @@
 }
 #section-contentHeader > #main-title::placeholder { font-weight: bold; }
 #section-contentHeader > #main-data {
-	display: inline-flex;
+	display: block;
 	gap: @padding * 2;
 	font-size: xx-large !important;
 }
-#input-date-group, #date-label { all: inherit }
+#input-date-group, #date-label {
+	all: inherit
+}
+#input-date-group > * {
+	display: inline-flex;
+	width: unset;
+}
 .during-screenshot #date-label { display: none }
 .during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))),
 .during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))) { display: none }

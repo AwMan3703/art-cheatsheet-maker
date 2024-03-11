@@ -87,13 +87,17 @@
   font-weight: bold;
 }
 #section-contentHeader > #main-data {
-  display: inline-flex;
+  display: block;
   gap: 20px;
   font-size: xx-large !important;
 }
 #input-date-group,
 #date-label {
   all: inherit;
+}
+#input-date-group > * {
+  display: inline-flex;
+  width: unset;
 }
 .during-screenshot #date-label {
   display: none;
