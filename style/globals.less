@@ -1,7 +1,17 @@
 
 /* Global variables / Config */
 
-:root {
+.darkmode {
+  --color-layer: rgba(255, 255, 255, 0.05);
+  --color-unlayer: rgba(0, 0, 0, 0.25);
+  /* Keep the same shadow color regardless of set display mode */
+  --color-background-main: rgb(36, 36, 42);
+  --color-border-main: rgb(62, 62, 62);
+  --color-text-main: rgb(242, 242, 242);
+  --color-text-secondary: rgba(242, 242, 242, 0.5);
+}
+// Keep the .during-screenshot class as last, to avoid themes taking priority over it
+:root, .during-screenshot {
   --color-layer: rgba(0, 0, 0, 0.05);
   --color-unlayer: rgba(255, 255, 255, 0.6);
   --color-shadow: rgba(0, 0, 0, .1);
@@ -14,16 +24,6 @@
   --shadow-main: 0 5px 15px 10px var(--color-shadow);
   --shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
 }
-:not(.during-screenshot) .darkmode {
-  --color-layer: rgba(255, 255, 255, 0.05);
-  --color-unlayer: rgba(0, 0, 0, 0.25);
-  /* Keep the same shadow color regardless of set display mode */
-  --color-background-main: rgb(36, 36, 42);
-  --color-border-main: rgb(62, 62, 62);
-  --color-text-main: rgb(242, 242, 242);
-  --color-text-secondary: rgba(242, 242, 242, 0.5);
-}
-
 
 @fontsize: 2dvh;
 @media only screen and (hover: none) and (pointer: coarse) {
