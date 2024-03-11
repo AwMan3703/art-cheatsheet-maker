@@ -30,7 +30,7 @@ function startup(configData) {
     const imageCarousels = document.getElementsByClassName("imageCarousel-wrapper")
     forAllElements(imageCarousels, addImageCarouselOptions)
 
-    window.onbeforeunload = (ev) => { return true }
+    window.onbeforeunload = CONFIG.client.developmentMode ? null : (ev) => { return true }
 }
 
 console.log("Fetching config data...")
