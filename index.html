@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="style/dialog.css">
         <link rel="stylesheet" href="style/sheet.css">
         <link rel="stylesheet" href="style/controlPanel.css">
+        <link rel="stylesheet" href="style/clientMenu.css">
     </head>
     <body>
         <main id="content-body">
@@ -47,7 +48,25 @@
             </div>
         </div>
 
-        <div id="client-menu"></div>
+        <div id="client-menu">
+            <button id="client-menu-button" onclick="document.getElementById('client-menu').classList.add('menu-open')">
+                <img src="assets/hamburger.png" alt="menu" class="icon-mono display-mode-dynamic-icon">
+            </button>
+
+            <div id="menu-screen-darkener" class="screen-blocker" onclick="document.getElementById('client-menu').classList.remove('menu-open')"></div>
+
+            <div id="client-menu-dropdown">
+                <button onclick="window.open('mailto:brambilladaniele@icloud.com?subject=Cheatsheet%20maker%20feedback')">Send feedback 🥹👉👈</button>
+                <button onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=bug_report.md')">Report a bug</button>
+                <button onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=feature_request.md')">Request a feature</button>
+                <button onclick="navigator.clipboard.writeText(window.location.href.split('?')[0]); alert('link copied!')">Give me visibility 🤓</button>
+
+                <div id="clientInfo-wrapper">
+                    <span id="author" class="client-info">by @AwMan3704 (Twitter)</span>
+                    <span id="version" class="client-info">version unknown</span>
+                </div>
+            </div>
+        </div>
 
         <div id="dialog-screen-darkener" class="screen-blocker"></div>
 
@@ -56,9 +75,9 @@
         <script src="js/utility.js"></script>
         <script src="js/dialog.js"></script>
         <script src="js/dialogJsPresets.js"></script>
-        <script src="js/controlPanel.js"></script>
         <script src="js/sheet.js"></script>
-        <script src="js/export.js"></script>
+        <script src="js/controlPanel.js"></script>
+        <script src="js/clientMenu.js"></script>
         <!--finally, run the startup script-->
         <script src="js/startup.js"></script>
     </body>

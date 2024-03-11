@@ -1,0 +1,152 @@
+/* Global variables / Config */
+.darkmode {
+  --color-layer: rgba(255, 255, 255, 0.05);
+  --color-unlayer: rgba(0, 0, 0, 0.25);
+  /* Keep the same shadow color regardless of set display mode */
+  --color-background-main: #24242a;
+  --color-border-main: #3e3e3e;
+  --color-text-main: #f2f2f2;
+  --color-text-secondary: rgba(242, 242, 242, 0.5);
+}
+:root,
+.during-screenshot {
+  --color-layer: rgba(0, 0, 0, 0.05);
+  --color-unlayer: rgba(255, 255, 255, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-soft: rgba(0, 0, 0, 0.035);
+  --color-background-main: #ffffff;
+  --color-border-main: #7a7a7a;
+  --color-text-main: #212121;
+  --color-text-secondary: rgba(33, 33, 33, 0.5);
+  --color-accent-main: #9f374f;
+  --color-accent-secondary: rgba(159, 55, 79, 0.5);
+  --shadow-main: 0 5px 15px 10px var(--color-shadow);
+  --shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
+}
+.flex-vert {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.flex-hor {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.round-corners,
+.material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
+#client-menu-button,
+#client-menu-dropdown {
+  border-radius: 20px;
+}
+.backdrop-blur {
+  backdrop-filter: blur(60px);
+}
+.darkmode .icon-mono.display-mode-dynamic-icon {
+  filter: contrast(0) brightness(100%);
+}
+.material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
+#client-menu-button,
+#client-menu-dropdown {
+  background-color: var(--color-layer);
+  padding: 10px;
+  gap: 10px;
+}
+.material-border {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-border-main);
+}
+.scrollbar-visible::-webkit-scrollbar {
+  display: flex;
+  position: fixed;
+}
+.scrollbar-visible::-webkit-scrollbar-track {
+  width: 50% !important;
+}
+.screen-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  user-select: none;
+}
+#menu-screen-darkener {
+  backdrop-filter: blur(0);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#client-menu:not(.menu-open) #menu-screen-darkener {
+  display: none;
+}
+#client-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+#client-menu-button {
+  width: 35px;
+  height: 35px;
+  padding: 13px;
+  background-color: var(--color-unlayer);
+  border: solid 5px var(--color-layer);
+  border-radius: 100%;
+  box-shadow: var(--shadow-soft);
+}
+#client-menu-button:hover {
+  box-shadow: var(--shadow-main);
+}
+#client-menu-button > img {
+  width: 100%;
+  height: 100%;
+}
+#client-menu-dropdown {
+  background-color: var(--color-background-main);
+  box-shadow: var(--shadow-main);
+  padding: 15px;
+  text-align: center;
+  translate: 0 3px;
+  opacity: 0;
+  transition: translate 0.2s ease, opacity 0.2s ease;
+}
+.menu-open > #client-menu-dropdown {
+  translate: 0 0;
+  opacity: 1;
+}
+#client-menu-dropdown > button {
+  width: 100%;
+  width: -webkit-fill-available;
+  padding-inline-start: 20px;
+  padding-inline-end: 60px;
+  padding-block: 10px;
+  margin-block-end: 10px;
+}
+#client-menu-dropdown > button:last-child {
+  margin-block-end: 0;
+}
+#clientInfo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 20px;
+}
+.client-info {
+  color: var(--color-text-secondary);
+  user-select: none;
+  margin-block-start: 10px;
+}
+#version.client-info {
+  color: rgba(255, 255, 255, 0.75);
+  background-color: var(--color-accent-main);
+  padding-inline: 15px;
+  padding-block: 2px;
+  border-radius: 1000px;
+}
+/*# sourceMappingURL=clientMenu.css.map */
