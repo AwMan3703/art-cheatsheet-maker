@@ -100,7 +100,7 @@ button {
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 7px !important;
+  padding: 7px;
   cursor: pointer;
   transition: box-shadow 0.2s ease, translate 0.2s ease;
 }

@@ -101,7 +101,7 @@
   justify-content: space-around;
 }
 .dialog-options-button {
-  padding: 20px !important;
+  padding: 20px;
 }
 .dialog-options-buttonComplete {
   font-weight: bold;
