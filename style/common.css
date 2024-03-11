@@ -114,6 +114,7 @@ button:hover > img {
 }
 input {
   width: 100%;
+  width: -webkit-fill-available;
 }
 input::placeholder {
   font-weight: normal;
