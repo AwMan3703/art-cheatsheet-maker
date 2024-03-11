@@ -65,6 +65,16 @@
 .scrollbar-visible::-webkit-scrollbar-track {
   width: 50% !important;
 }
+.screen-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  user-select: none;
+}
 #download-point:not(.available) {
   display: none;
 }

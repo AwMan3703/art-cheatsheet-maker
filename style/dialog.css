@@ -64,7 +64,7 @@
 .scrollbar-visible::-webkit-scrollbar-track {
   width: 50% !important;
 }
-#dialog-screen-darkener:has(.dialog-wrapper) {
+.screen-blocker {
   position: fixed;
   top: 0;
   left: 0;
@@ -73,6 +73,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
   user-select: none;
+}
+#dialog-screen-darkener:not(:has(.dialog-wrapper)) {
+  display: none;
 }
 .dialog-wrapper {
   position: fixed;
