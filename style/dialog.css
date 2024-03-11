@@ -64,7 +64,7 @@
 .scrollbar-visible::-webkit-scrollbar-track {
   width: 50% !important;
 }
-#dialog-level:has(.dialog-wrapper) {
+#dialog-wrapper:has(.dialog-wrapper) {
   position: fixed;
   top: 0;
   left: 0;
