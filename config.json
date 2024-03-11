@@ -11,6 +11,10 @@
 					"names" : { "singular" : "commission", "plural" : "commissions", "section_title" : "commissions" },
 					"icon" : "king.png"
 				},
+				"context" : {
+					"names" : { "singular" : "context", "plural" : "context", "section_title" : "context" },
+					"icon" : "noicon.png"
+				},
 				"history" : {
 					"names" : { "singular" : "history", "plural" : "histories", "section_title" : "history" },
 					"icon" : "history.png"
@@ -22,6 +26,10 @@
 				"description" : {
 					"names" : { "singular" : "description", "plural" : "descriptions", "section_title" : "description" },
 					"icon" : "text.png"
+				},
+				"inspiration" : {
+					"names" : { "singular" : "inspiration", "plural" : "inspirations", "section_title" : "inspiration sources" },
+					"icon" : "noicon.png"
 				},
 				"style" : {
 					"names" : { "singular" : "style", "plural" : "styles", "section_title" : "style" },
@@ -35,6 +43,18 @@
 					"names" : { "singular" : "light", "plural" : "lights", "section_title" : "light" },
 					"icon" : "sun.png"
 				},
+				"architecture" : {
+					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "architectures" },
+					"icon" : "temple.png"
+				},
+				"material" : {
+					"names" : { "singular" : "material", "plural" : "materials", "section_title" : "materials" },
+					"icon" : "materials.png"
+				},
+				"interpretation" : {
+					"names" : { "singular" : "interpretation", "plural" : "interpretations", "section_title" : "interpretations" },
+					"icon" : "noicon.png"
+				},
 				"hypothesis" : {
 					"names" : { "singular" : "hypothesis", "plural" : "hypotheses", "section_title" : "hypotheses" },
 					"icon" : "question-mark.png"
@@ -44,16 +64,8 @@
 					"icon" : "sheet.png"
 				},
 				"text" : {
-					"names" : { "singular" : "text", "plural" : "texts", "section_title" : "texts" },
-					"icon" : "book.png"
-				},
-				"architecture" : {
-					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "architectures" },
-					"icon" : "temple.png"
-				},
-				"material" : {
-					"names" : { "singular" : "material", "plural" : "materials", "section_title" : "materials" },
-					"icon" : "materials.png"
+					"names": {"singular": "text", "plural": "texts", "section_title": "texts" },
+					"icon": "book.png"
 				}
 			}
 		}
