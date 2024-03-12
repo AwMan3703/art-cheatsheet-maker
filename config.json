@@ -18,7 +18,7 @@
 				},
 				"context" : {
 					"names" : { "singular" : "context", "plural" : "context", "section_title" : "context" },
-					"icon" : "noicon.png"
+					"icon" : "dashed-square.png"
 				},
 				"history" : {
 					"names" : { "singular" : "history", "plural" : "histories", "section_title" : "history" },
@@ -34,7 +34,7 @@
 				},
 				"inspiration" : {
 					"names" : { "singular" : "inspiration", "plural" : "inspirations", "section_title" : "inspiration sources" },
-					"icon" : "noicon.png"
+					"icon" : "bubble.png"
 				},
 				"style" : {
 					"names" : { "singular" : "style", "plural" : "styles", "section_title" : "style" },
@@ -58,7 +58,7 @@
 				},
 				"interpretation" : {
 					"names" : { "singular" : "interpretation", "plural" : "interpretations", "section_title" : "interpretations" },
-					"icon" : "noicon.png"
+					"icon" : "magnifying-lens.png"
 				},
 				"hypothesis" : {
 					"names" : { "singular" : "hypothesis", "plural" : "hypotheses", "section_title" : "hypotheses" },
