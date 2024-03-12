@@ -110,24 +110,31 @@
 #section-contentHeader > #main-title::placeholder {
   font-weight: bold;
 }
-#section-contentHeader > #main-data {
-  display: block;
-  gap: 20px;
-  font-size: xx-large !important;
+#main-data > *[id$="wrapper"],
+#main-data > *[id$="wrapper"]:has(input) {
+  display: flex;
+  gap: 10px;
+  font-size: xx-large;
 }
-#input-date-group,
+#main-data > *[id$="wrapper"]::before,
+#main-data > *[id$="wrapper"]:has(input)::before {
+  content: " ";
+  width: 23px;
+  background: var(--icon) center / contain no-repeat;
+}
+#input-date-wrapper,
 #date-label {
   all: inherit;
 }
-#input-date-group > * {
+#input-date-wrapper > * {
   display: inline-flex;
   width: unset;
 }
 .during-screenshot #date-label {
   display: none;
 }
-.during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))),
-.during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))) {
+.during-screenshot #input-date-wrapper:not(:has(#input-date-year:not(:placeholder-shown))),
+.during-screenshot #input-date-wrapper:not(:has(#input-date-year:not(:placeholder-shown))) {
   display: none;
 }
 .cs-section:not(:has(.cs-item)) {
@@ -201,7 +208,7 @@
   height: fit-content;
   overflow: visible;
 }
-#section-mainImage > .image-carousel-options {
+#section-mainImage > .image-carousel:has(.carousel-image) ~ .image-carousel-options {
   margin-block-start: 10px;
 }
 .during-screenshot .image-carousel-options {

@@ -17,19 +17,29 @@
 	font-weight: bold;
 }
 #section-contentHeader > #main-title::placeholder { font-weight: bold; }
-#section-contentHeader > #main-data {
-	display: block;
-	gap: @padding * 2;
-	font-size: xx-large !important;
+
+#main-data > *[id$="wrapper"],
+#main-data > *[id$="wrapper"]:has(input) {
+	display: flex;
+	gap: @padding;
+	font-size: xx-large;
 }
-#input-date-group, #date-label { all: inherit }
-#input-date-group > * {
+
+#main-data > *[id$="wrapper"]::before,
+#main-data > *[id$="wrapper"]:has(input)::before {
+	content: " ";
+	width: 23px;
+	background: var(--icon) center/contain no-repeat;
+}
+
+#input-date-wrapper, #date-label { all: inherit }
+#input-date-wrapper > * {
 	display: inline-flex;
 	width: unset;
 }
 .during-screenshot #date-label { display: none }
-.during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))),
-.during-screenshot #input-date-group:not(:has(#input-date-year:not(:placeholder-shown))) { display: none }
+.during-screenshot #input-date-wrapper:not(:has(#input-date-year:not(:placeholder-shown))),
+.during-screenshot #input-date-wrapper:not(:has(#input-date-year:not(:placeholder-shown))) { display: none }
 
 .cs-section {
 	&:extend(.material);
@@ -102,7 +112,7 @@
 	overflow: visible;
 }
 
-#section-mainImage > .image-carousel-options { margin-block-start: @padding }
+#section-mainImage > .image-carousel:has(.carousel-image)~.image-carousel-options { margin-block-start: @padding }
 .during-screenshot .image-carousel-options { display: none }
 
 .carousel-image {
