@@ -7,6 +7,8 @@
   --color-border-main: #3e3e3e;
   --color-text-main: #f2f2f2;
   --color-text-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-inverted-main: #212121;
+  --color-text-inverted-secondary: rgba(33, 33, 33, 0.5);
 }
 :root,
 .during-screenshot {
@@ -18,6 +20,12 @@
   --color-border-main: #7a7a7a;
   --color-text-main: #212121;
   --color-text-secondary: rgba(33, 33, 33, 0.5);
+  --color-text-inverted-main: #f2f2f2;
+  --color-text-inverted-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-light-main: #f2f2f2;
+  --color-text-light-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-dark-main: #212121;
+  --color-text-dark-secondary: rgba(33, 33, 33, 0.5);
   --color-accent-main: #9f374f;
   --color-accent-secondary: rgba(159, 55, 79, 0.5);
   --shadow-main: 0 5px 15px 10px var(--color-shadow);
@@ -120,6 +128,18 @@
   translate: 0 0;
   opacity: 1;
 }
+#client-menu-dropdown > button#feedbackButton {
+  --bgImgUrl: url("../assets/menu-feedbackButton-background.png");
+}
+#client-menu-dropdown > button#featureRequestButton {
+  --bgImgUrl: url("../assets/menu-featureRequestButton-background.png");
+}
+#client-menu-dropdown > button#issueReportButton {
+  --bgImgUrl: url("../assets/menu-issueReportButton-background.png");
+}
+#client-menu-dropdown > button#shareButton {
+  --bgImgUrl: url("../assets/menu-shareButton-background.png");
+}
 #client-menu-dropdown > button {
   width: 100%;
   width: -webkit-fill-available;
@@ -127,9 +147,17 @@
   padding-inline-end: 60px;
   padding-block: 10px;
   margin-block-end: 10px;
+  text-shadow: 0 0 15px var(--color-text-inverted-main);
+  --bgImgUrl: url("assets/noicon.png");
+  background: linear-gradient(90deg, rgba(var(--color-background-main), 0.5) 0%, var(--color-background-main) 80%), repeat -3px -3px/28px var(--bgImgUrl);
+  background-clip: border-box;
+  border: solid 2px var(--color-text-secondary);
 }
 #client-menu-dropdown > button:last-child {
   margin-block-end: 0;
+}
+#client-menu-dropdown > button:hover {
+  box-shadow: var(--shadow-main);
 }
 #clientInfo-wrapper {
   display: flex;
@@ -143,7 +171,7 @@
   margin-block-start: 10px;
 }
 #version.client-info {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-text-inverted-secondary);
   background-color: var(--color-accent-main);
   padding-inline: 15px;
   padding-block: 2px;

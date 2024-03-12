@@ -51,6 +51,10 @@
 	opacity: 1;
 }
 
+#client-menu-dropdown > button#feedbackButton { --bgImgUrl: url("../assets/menu-feedbackButton-background.png") }
+#client-menu-dropdown > button#featureRequestButton { --bgImgUrl: url("../assets/menu-featureRequestButton-background.png") }
+#client-menu-dropdown > button#issueReportButton { --bgImgUrl: url("../assets/menu-issueReportButton-background.png") }
+#client-menu-dropdown > button#shareButton { --bgImgUrl: url("../assets/menu-shareButton-background.png") }
 #client-menu-dropdown > button {
 	width: 100%;
 	width: -webkit-fill-available;
@@ -58,9 +62,16 @@
 	padding-inline-end: @padding + 50px;
 	padding-block: @padding;
 	margin-block-end: @padding;
+
+	text-shadow: 0 0 15px var(--color-text-inverted-main);
+	--bgImgUrl: url("assets/noicon.png");
+	background: linear-gradient(90deg, rgba(var(--color-background-main), .5) 0%, var(--color-background-main) 80%),
+				repeat -3px -3px/28px var(--bgImgUrl);
+	background-clip: border-box;
+	border: solid 2px var(--color-text-secondary);
 }
 #client-menu-dropdown > button:last-child { margin-block-end: 0 }
-
+#client-menu-dropdown > button:hover { box-shadow: var(--shadow-main) }
 
 #clientInfo-wrapper {
 	display: flex;
@@ -74,7 +85,7 @@
 	margin-block-start: @padding;
 }
 #version.client-info {
-	color: rgba(255, 255, 255, .75);
+	color: var(--color-text-inverted-secondary);
 	background-color: var(--color-accent-main);
 	padding-inline: 15px;
 	padding-block: 2px;

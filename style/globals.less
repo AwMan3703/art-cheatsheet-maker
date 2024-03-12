@@ -4,22 +4,38 @@
 .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
   --color-unlayer: rgba(0, 0, 0, 0.25);
+
   /* Keep the same shadow color regardless of set display mode */
+
   --color-background-main: rgb(36, 36, 42);
+
   --color-border-main: rgb(62, 62, 62);
   --color-text-main: rgb(242, 242, 242);
   --color-text-secondary: rgba(242, 242, 242, 0.5);
+
+  --color-text-inverted-main: rgb(33, 33, 33);
+  --color-text-inverted-secondary: rgba(33, 33, 33, 0.5);
 }
 // Keep the .during-screenshot class as last, to avoid themes taking priority over it
 :root, .during-screenshot {
   --color-layer: rgba(0, 0, 0, 0.05);
   --color-unlayer: rgba(255, 255, 255, 0.6);
+
   --color-shadow: rgba(0, 0, 0, .1);
   --color-shadow-soft: rgba(0, 0, 0, .035);
+
   --color-background-main: rgb(255, 255, 255);
+
   --color-border-main: rgb(122, 122, 122);
   --color-text-main: rgb(33, 33, 33);
   --color-text-secondary: rgba(33, 33, 33, 0.5);
+  --color-text-inverted-main: rgb(242, 242, 242);
+  --color-text-inverted-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-light-main: rgb(242, 242, 242);
+  --color-text-light-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-dark-main: rgb(33, 33, 33);
+  --color-text-dark-secondary: rgba(33, 33, 33, 0.5);
+
   --color-accent-main: rgb(159, 55, 79);
   --color-accent-secondary: rgba(159, 55, 79, 0.5);
 
