@@ -56,14 +56,20 @@
             <div id="menu-screen-darkener" class="screen-blocker" onclick="document.getElementById('client-menu').classList.remove('menu-open')"></div>
 
             <div id="client-menu-dropdown">
-                <button id="feedbackButton" onclick="window.open('mailto:oilseed_mending0y@icloud.com?subject=Cheatsheet%20maker%20feedback')">Send feedback 🥹👉👈</button>
-                <button id="featureRequestButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=feature_request.md')">Request a feature</button>
-                <button id="issueReportButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=bug_report.md')">Report a bug</button>
-                <button id="shareButton" onclick="navigator.clipboard.writeText(window.location.href.split('?')[0]); alert('link copied!')">Give me visibility 🤓</button>
+                <div id="client-options">
+                    <button>Config</button>
+                </div>
+
+                <div id="meta-links">
+                    <button id="feedbackButton" onclick="window.open('mailto:oilseed_mending0y@icloud.com?subject=Cheatsheet%20maker%20feedback')">Send feedback 🥹👉👈</button>
+                    <button id="featureRequestButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=feature_request.md')">Request a feature</button>
+                    <button id="issueReportButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=bug_report.md')">Report a bug</button>
+                    <button id="shareButton" onclick="navigator.clipboard.writeText(window.location.href.split('?')[0]); alert('link copied!')">Give me visibility 🤓</button>
+                </div>
 
                 <div id="clientInfo-wrapper">
-                    <span id="author" class="client-info">by @AwMan3704 (Twitter)</span>
-                    <span id="version" class="client-info">version unknown</span>
+                    <span id="author">by @AwMan3704 (Twitter)</span>
+                    <span id="version">version unknown</span>
                 </div>
             </div>
         </div>
