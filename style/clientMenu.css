@@ -1,7 +1,9 @@
 /* Global variables / Config */
 .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
+  --color-layer-heavy: rgba(255, 255, 255, 0.5);
   --color-unlayer: rgba(0, 0, 0, 0.25);
+  --color-unlayer-heavy: rgba(0, 0, 0, 0.5);
   /* Keep the same shadow color regardless of set display mode */
   --color-background-main: #24242a;
   --color-border-main: #3e3e3e;
@@ -13,7 +15,9 @@
 :root,
 .during-screenshot {
   --color-layer: rgba(0, 0, 0, 0.05);
+  --color-layer-heavy: rgba(0, 0, 0, 0.5);
   --color-unlayer: rgba(255, 255, 255, 0.6);
+  --color-unlayer-heavy: rgba(255, 255, 255, 0.95);
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-shadow-soft: rgba(0, 0, 0, 0.035);
   --color-background-main: #ffffff;
@@ -149,9 +153,9 @@
   margin-block-end: 10px;
   text-shadow: 0 0 15px var(--color-text-inverted-main);
   --bgImgUrl: url("assets/noicon.png");
-  background: linear-gradient(90deg, rgba(var(--color-background-main), 0.5) 0%, var(--color-background-main) 80%), repeat -3px -3px/28px var(--bgImgUrl);
-  background-clip: border-box;
-  border: solid 2px var(--color-text-secondary);
+  background: linear-gradient(90deg, var(--color-background-main), var(--color-unlayer-heavy), var(--color-unlayer)), repeat -3px -3px/28px var(--bgImgUrl);
+  background-clip: padding-box;
+  border: solid 5px var(--color-layer);
 }
 #client-menu-dropdown > button:last-child {
   margin-block-end: 0;
@@ -171,7 +175,7 @@
   margin-block-start: 10px;
 }
 #version.client-info {
-  color: var(--color-text-inverted-secondary);
+  color: var(--color-text-light-secondary);
   background-color: var(--color-accent-main);
   padding-inline: 15px;
   padding-block: 2px;

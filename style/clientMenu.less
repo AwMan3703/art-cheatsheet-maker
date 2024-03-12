@@ -65,10 +65,11 @@
 
 	text-shadow: 0 0 15px var(--color-text-inverted-main);
 	--bgImgUrl: url("assets/noicon.png");
-	background: linear-gradient(90deg, rgba(var(--color-background-main), .5) 0%, var(--color-background-main) 80%),
+	// FIXME: this bitch not displaying the way i want it to
+	background: linear-gradient(90deg, var(--color-background-main), var(--color-unlayer-heavy), var(--color-unlayer)),
 				repeat -3px -3px/28px var(--bgImgUrl);
-	background-clip: border-box;
-	border: solid 2px var(--color-text-secondary);
+	background-clip: padding-box;
+	border: solid 5px var(--color-layer);
 }
 #client-menu-dropdown > button:last-child { margin-block-end: 0 }
 #client-menu-dropdown > button:hover { box-shadow: var(--shadow-main) }
@@ -85,7 +86,7 @@
 	margin-block-start: @padding;
 }
 #version.client-info {
-	color: var(--color-text-inverted-secondary);
+	color: var(--color-text-light-secondary);
 	background-color: var(--color-accent-main);
 	padding-inline: 15px;
 	padding-block: 2px;

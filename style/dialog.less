@@ -18,20 +18,21 @@
 	box-shadow: var(--shadow-main);
 }
 
-.dialog-wrapper hr { margin-block: @padding * 2; }
+.dialog-wrapper hr { margin-block: @padding * 2 }
 
-.dialog-title { font-size: xx-large; }
-.dialog-description { font-size: large; }
+.dialog-title { font-size: xx-large }
+.dialog-description { font-size: large }
 .dialog-inputs-wrapper {}
 .dialog-options-wrapper {
 	display: flex;
 	justify-content: space-around;
 }
-.dialog-options-button { padding: @padding + 10px; }
+.dialog-options-button { padding: @padding + 10px }
 .dialog-options-buttonAbort {}
-.dialog-options-buttonComplete { font-weight: bold; }
+.dialog-options-buttonComplete { font-weight: bold }
+.dialog-options-buttonComplete:hover { background-color: var(--color-accent-main) }
 
-.dialog-input { margin-block-end: @padding + 10px; }
+.dialog-input { margin-block-end: @padding + 10px }
 .dialog-input-field {
 	&:extend(.round-corners);
 	display: inline;

@@ -3,7 +3,9 @@
 
 .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
+  --color-layer-heavy: rgba(255, 255, 255, 0.5);
   --color-unlayer: rgba(0, 0, 0, 0.25);
+  --color-unlayer-heavy: rgba(0, 0, 0, 0.5);
 
   /* Keep the same shadow color regardless of set display mode */
 
@@ -19,7 +21,9 @@
 // Keep the .during-screenshot class as last, to avoid themes taking priority over it
 :root, .during-screenshot {
   --color-layer: rgba(0, 0, 0, 0.05);
+  --color-layer-heavy: rgba(0, 0, 0, 0.5);
   --color-unlayer: rgba(255, 255, 255, 0.6);
+  --color-unlayer-heavy: rgba(255, 255, 255, .95);
 
   --color-shadow: rgba(0, 0, 0, .1);
   --color-shadow-soft: rgba(0, 0, 0, .035);
