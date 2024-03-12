@@ -2,8 +2,8 @@
 .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
   --color-layer-heavy: rgba(255, 255, 255, 0.5);
-  --color-unlayer: rgba(0, 0, 0, 0.25);
-  --color-unlayer-heavy: rgba(0, 0, 0, 0.5);
+  --color-unlayer: rgba(0, 0, 0, 0.3);
+  --color-unlayer-heavy: rgba(0, 0, 0, 0.75);
   /* Keep the same shadow color regardless of set display mode */
   --color-background-main: #24242a;
   --color-border-main: #3e3e3e;
@@ -121,6 +121,7 @@
   font-weight: bold;
 }
 .dialog-options-buttonComplete:hover {
+  color: var(--color-text-light-main);
   background-color: var(--color-accent-main);
 }
 .dialog-input {

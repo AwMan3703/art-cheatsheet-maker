@@ -29,7 +29,7 @@ function startup(configData) {
     addItemSections(contentBody)
     const imageCarousels = document.getElementsByClassName("imageCarousel-wrapper")
     forAllElements(imageCarousels, addImageCarouselOptions)
-    const versionLabel = document.querySelector("#version.client-info")
+    const versionLabel = document.querySelector("#clientInfo-wrapper > #version")
     versionLabel.innerText = `v${CONFIG.client.version}${CONFIG.client.developmentMode ? "dev" : ""}`
 
     window.onbeforeunload = CONFIG.client.developmentMode ? null : (ev) => { return true }

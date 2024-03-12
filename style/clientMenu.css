@@ -2,8 +2,8 @@
 .darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
   --color-layer-heavy: rgba(255, 255, 255, 0.5);
-  --color-unlayer: rgba(0, 0, 0, 0.25);
-  --color-unlayer-heavy: rgba(0, 0, 0, 0.5);
+  --color-unlayer: rgba(0, 0, 0, 0.3);
+  --color-unlayer-heavy: rgba(0, 0, 0, 0.75);
   /* Keep the same shadow color regardless of set display mode */
   --color-background-main: #24242a;
   --color-border-main: #3e3e3e;
@@ -35,7 +35,9 @@
   --shadow-main: 0 5px 15px 10px var(--color-shadow);
   --shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
 }
-.flex-vert {
+.flex-vert,
+#client-menu-dropdown,
+#client-menu-dropdown > * {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -120,6 +122,7 @@
   height: 100%;
 }
 #client-menu-dropdown {
+  gap: 25px;
   background-color: var(--color-background-main);
   box-shadow: var(--shadow-main);
   padding: 15px;
@@ -132,53 +135,53 @@
   translate: 0 0;
   opacity: 1;
 }
-#client-menu-dropdown > button#feedbackButton {
+#client-menu-dropdown > * {
+  align-items: stretch;
+}
+button#feedbackButton {
   --bgImgUrl: url("../assets/menu-feedbackButton-background.png");
 }
-#client-menu-dropdown > button#featureRequestButton {
+button#featureRequestButton {
   --bgImgUrl: url("../assets/menu-featureRequestButton-background.png");
 }
-#client-menu-dropdown > button#issueReportButton {
+button#issueReportButton {
   --bgImgUrl: url("../assets/menu-issueReportButton-background.png");
 }
-#client-menu-dropdown > button#shareButton {
+button#shareButton {
   --bgImgUrl: url("../assets/menu-shareButton-background.png");
 }
-#client-menu-dropdown > button {
+#client-menu-dropdown > #meta-links > button {
   width: 100%;
   width: -webkit-fill-available;
   padding-inline-start: 20px;
   padding-inline-end: 60px;
   padding-block: 10px;
-  margin-block-end: 10px;
   text-shadow: 0 0 15px var(--color-text-inverted-main);
-  --bgImgUrl: url("assets/noicon.png");
   background: linear-gradient(90deg, var(--color-background-main), var(--color-unlayer-heavy), var(--color-unlayer)), repeat -3px -3px/28px var(--bgImgUrl);
   background-clip: padding-box;
   border: solid 5px var(--color-layer);
-}
-#client-menu-dropdown > button:last-child {
-  margin-block-end: 0;
 }
 #client-menu-dropdown > button:hover {
   box-shadow: var(--shadow-main);
 }
 #clientInfo-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-block-start: 20px;
-}
-.client-info {
-  color: var(--color-text-secondary);
   user-select: none;
-  margin-block-start: 10px;
+  align-items: center;
 }
-#version.client-info {
+#clientInfo-wrapper > * {
+  color: var(--color-text-secondary);
+}
+#clientInfo-wrapper > *:hover {
+  color: unset;
+}
+#clientInfo-wrapper > #version {
   color: var(--color-text-light-secondary);
   background-color: var(--color-accent-main);
   padding-inline: 15px;
   padding-block: 2px;
   border-radius: 1000px;
+}
+#clientInfo-wrapper > #version:hover {
+  color: var(--color-text-light-main);
 }
 /*# sourceMappingURL=clientMenu.css.map */
