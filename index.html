@@ -18,15 +18,21 @@
             <section id="section-contentHeader">
                 <input id="main-title" type="text" placeholder="Object name">
                 <div id="main-data">
-                    <input id="input-author" placeholder="Author name" type="text">
-                    <div id="input-date-group">
-                        <label id="date-label" for="input-date-group">Date:</label>
+                    <div id="input-author-wrapper" style="--icon: url('../assets/artist.png')">
+                        <input id="input-author" placeholder="Author name" type="text">
+                    </div>
+                    <div id="input-date-wrapper" style="--icon: url('../assets/clock.png')">
+                        <label id="date-label" for="input-date-wrapper">Date:</label>
                         <input id="input-date-day" placeholder="DD" type="number" min="1" max="31">/
                         <input id="input-date-month" placeholder="MM" type="number" min="1" max="12">/
                         <input id="input-date-year" placeholder="YYYY" type="number" min="-9999" max="9999">
                     </div>
-                    <input id="input-location" placeholder="Location" type="text">
-                    <input id="input-subject" placeholder="Subject" type="text">
+                    <div id="input-location-wrapper" style="--icon: url('../assets/pin.png')">
+                        <input id="input-location" placeholder="Location" type="text">
+                    </div>
+                    <div id="input-subject-wrapper" style="--icon: url('../assets/subject.png')">
+                        <input id="input-subject" placeholder="Subject" type="text">
+                    </div>
                 </div>
             </section>
             <section id="section-mainImage" class="imageCarousel-wrapper">
