@@ -6,7 +6,7 @@
 	backdrop-filter: blur(0);
 	background-color: rgba(0, 0, 0, .3);
 }
-#client-menu:not(.menu-open) #menu-screen-darkener { display: none }
+#client-menu:not(.menu-open) *:not(#client-menu-button, #client-menu-button > *) { display: none; }
 
 #client-menu {
 	position: fixed;
