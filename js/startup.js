@@ -26,8 +26,12 @@ function startup(configData) {
     CONFIG = checkConfig(configData)
     console.info("Config data loaded")
 
-    if (CONFIG.client.developmentMode) console.info("Debug mode is enabled")
+    if (CONFIG.client.developmentMode) console.info("Development mode is enabled")
 
+    // Apply config
+    if (!CONFIG.client.developmentMode) document.getElementById("client-debug-options").remove()
+    const clientMenuOptions = document.querySelectorAll("#client-menu-dropdown > #client-options > button")
+    clientMenuOptions.forEach((o) => { updateClientMenuOption(o) })
     const itemGenerationPanel = document.getElementById("add-element-panel")
     addItemGenerationButtons(itemGenerationPanel)
     const contentBody = document.getElementById("content-body")
