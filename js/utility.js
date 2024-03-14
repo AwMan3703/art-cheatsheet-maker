@@ -1,4 +1,8 @@
 
+// If the element is in the array, it gets removed – if not, it gets added
+const arrayToggle = (arr, val) =>
+    arr.includes(val) ? arr.filter(el => el !== val) : [...arr, val]
+
 // Add or remove class C from element E - optionally calls callback CB
 //  - passes true if the class was added
 //  - passes false if the class was removed

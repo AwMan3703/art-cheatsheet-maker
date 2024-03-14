@@ -114,7 +114,7 @@ button {
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 7px;
+  padding-block: 7px;
   cursor: pointer;
   transition: box-shadow 0.2s, translate 0.1s, background-color 0.2s;
 }
@@ -148,7 +148,7 @@ input::placeholder {
   display: none;
 }
 label {
-  opacity: 0.2 !important;
+  opacity: 0.3 !important;
 }
 h1,
 h2,

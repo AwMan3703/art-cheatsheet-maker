@@ -94,9 +94,10 @@
   backdrop-filter: blur(0);
   background-color: rgba(0, 0, 0, 0.3);
 }
-#client-menu:not(.menu-open) #menu-screen-darkener {
+#client-menu:not(.menu-open) *:not(#client-menu-button, #client-menu-button > *) {
   display: none;
 }
+/* ------------------ GENERAL ------------------ */
 #client-menu {
   position: fixed;
   top: 20px;
@@ -138,6 +139,48 @@
 #client-menu-dropdown > * {
   align-items: stretch;
 }
+#client-menu-dropdown > button:hover {
+  box-shadow: var(--shadow-main);
+}
+/* ------------------ OPTIONS ------------------ */
+#client-options > button {
+  justify-content: space-between;
+}
+#client-options > button.setting-bool::after {
+  color: var(--color-text-light-main);
+  padding-inline: calc(10px);
+  padding-block: calc(10px / 8);
+  text-transform: uppercase;
+  border-radius: 1000px;
+  /* off by default */
+  content: "off";
+  background-color: #b60000;
+}
+#client-options > button.setting-bool.setting-bool-active::after {
+  content: "on";
+  background-color: green;
+}
+/* ------------------ DEBUG OPTIONS ------------------ */
+#client-debug-options > button {
+  justify-content: center;
+}
+#client-debug-options #client-option-debug-screenshotMode::after {
+  color: var(--color-text-light-main);
+  padding-inline: calc(10px);
+  padding-block: calc(10px / 8);
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 10px;
+  background-image: repeating-linear-gradient(110deg, rgba(255, 255, 0, 0.5) 0, rgba(255, 255, 0, 0.5) 5px, transparent 5px, transparent 12px);
+  /* off by default */
+  content: "off";
+  background-color: #b60000;
+}
+.during-screenshot #client-debug-options #client-option-debug-screenshotMode::after {
+  content: "on";
+  background-color: green;
+}
+/* ------------------ OUTBOUND LINKS ------------------ */
 button#feedbackButton {
   --bgImgUrl: url("../assets/menu-feedbackButton-background.png");
 }
@@ -157,13 +200,11 @@ button#shareButton {
   padding-inline-end: 60px;
   padding-block: 10px;
   text-shadow: 0 0 15px var(--color-text-inverted-main);
-  background: linear-gradient(90deg, var(--color-background-main), var(--color-unlayer-heavy), var(--color-unlayer)), repeat -3px -3px/28px var(--bgImgUrl);
+  background: linear-gradient(90deg, var(--color-background-main), var(--color-unlayer-heavy), var(--color-unlayer) 80%, transparent), repeat -7px 0 / 28px var(--bgImgUrl);
   background-clip: padding-box;
   border: solid 5px var(--color-layer);
 }
-#client-menu-dropdown > button:hover {
-  box-shadow: var(--shadow-main);
-}
+/* ------------------ INFO ------------------ */
 #clientInfo-wrapper {
   user-select: none;
   align-items: center;
@@ -171,17 +212,11 @@ button#shareButton {
 #clientInfo-wrapper > * {
   color: var(--color-text-secondary);
 }
-#clientInfo-wrapper > *:hover {
-  color: unset;
-}
 #clientInfo-wrapper > #version {
   color: var(--color-text-light-secondary);
   background-color: var(--color-accent-main);
   padding-inline: 15px;
   padding-block: 2px;
   border-radius: 1000px;
-}
-#clientInfo-wrapper > #version:hover {
-  color: var(--color-text-light-main);
 }
 /*# sourceMappingURL=clientMenu.css.map */
