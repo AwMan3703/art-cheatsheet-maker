@@ -6,6 +6,9 @@
 		"developmentMode": true,
 		"developmentModeOutsideLocalhost": false
 	},
+	"ui" : {
+		"displayModes" : []
+	},
 	"sheet" : {
 		"editing" : {
 			"deleteWarningLengthThreshold" : 25,

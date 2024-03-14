@@ -40,6 +40,13 @@ function startup(configData) {
     forAllElements(imageCarousels, addImageCarouselOptions)
     const versionLabel = document.querySelector("#clientInfo-wrapper > #version")
     versionLabel.innerText = `v${CONFIG.client.version}${CONFIG.client.developmentMode ? "dev" : ""}`
+    const displayModes = CONFIG.ui.displayModes
+    if (displayModes.length!==0) { for (const dm of displayModes) {
+        document.body.classList.add(dm)
+    } }
+
+    window.onbeforeunload = () => {
+        console.log("Running beforeunload callback...")
 
         // If local config is enabled, save it – if not, delete any copy that might have been previously saved
         if (CONFIG.client.saveLocalConfig) localStorage.setItem(CONFIG.client.localConfigKey, JSON.stringify(CONFIG))

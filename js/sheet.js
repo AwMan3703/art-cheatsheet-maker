@@ -1,4 +1,11 @@
 
+function toggleDisplayMode(dm) {
+    dm = `displaymode-${dm}`
+    const added = document.body.classList.toggle(dm)
+    if (added) CONFIG.ui.displayModes.push(dm)
+    else try { CONFIG.ui.displayModes = CONFIG.ui.displayModes.filter(v => v !== dm) } catch (e) {}
+}
+
 function addItemSections(parent) {
     const exclude = [""]
     Object.keys(CONFIG.sheet.items.types).forEach((key) => {
