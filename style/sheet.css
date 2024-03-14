@@ -151,6 +151,7 @@
   text-transform: capitalize;
   margin-inline: 10px;
 }
+/* ------------------------ ITEMS ------------------------ */
 .cs-item {
   padding: 0;
   display: grid;
@@ -178,6 +179,7 @@
 .cs-item .csItem-btn-wrapper {
   justify-self: end;
 }
+/* ------------------------ CAROUSELS ------------------------ */
 .imageCarousel-wrapper {
   margin-block: calc(10px / 2);
   overflow: hidden;
