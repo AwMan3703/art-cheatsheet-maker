@@ -75,6 +75,14 @@
 
             <div id="client-menu-dropdown">
                 <div id="client-options">
+                    <button id="client-option-saveLocalConfig" class="setting-bool" data-setting="client.saveLocalConfig"
+                            onclick="toggleSaveConfig('client-option-saveLocalConfig')">Save settings: </button>
+                </div>
+
+                <div id="client-debug-options">
+                    Development options
+                    <button id="client-option-debug-screenshotMode" class="setting-bool" data-setting="client.saveLocalConfig"
+                            onclick="toggleClass(document.body, 'during-screenshot')">Screenshot mode:</button>
                 </div>
 
                 <div id="meta-links">

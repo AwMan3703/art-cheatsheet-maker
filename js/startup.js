@@ -17,9 +17,14 @@ function checkConfig(data) {
     return data
 }
 function startup(configData) {
+    console.info("Config data obtained")
+    const localConfig = JSON.parse(localStorage.getItem(configData.client.localConfigKey))
+    console.log(`Local config data ${localConfig!=null ? 'detected' : 'not found - loading default'}`)
+    if (localConfig!=null && localConfig.client.saveLocalConfig) configData = localConfig
+    console.info(`saveLocalConfig is ${configData.client.saveLocalConfig} – ${configData.client.saveLocalConfig ? 'default' : 'if present, local'} config has been discarded`)
     console.log("Checking config data...")
     CONFIG = checkConfig(configData)
-    console.log("Config data loaded")
+    console.info("Config data loaded")
 
     if (CONFIG.client.developmentMode) console.info("Debug mode is enabled")
 
@@ -32,7 +37,13 @@ function startup(configData) {
     const versionLabel = document.querySelector("#clientInfo-wrapper > #version")
     versionLabel.innerText = `v${CONFIG.client.version}${CONFIG.client.developmentMode ? "dev" : ""}`
 
-    window.onbeforeunload = CONFIG.client.developmentMode ? null : (ev) => { return true }
+        // If local config is enabled, save it – if not, delete any copy that might have been previously saved
+        if (CONFIG.client.saveLocalConfig) localStorage.setItem(CONFIG.client.localConfigKey, JSON.stringify(CONFIG))
+        else if (localStorage.getItem(CONFIG.client.localConfigKey)!=null) localStorage.removeItem(CONFIG.client.localConfigKey)
+
+        // If debug mode is not enabled, warn about progress loss before leaving the page
+        if (!CONFIG.client.developmentMode) return true
+    }
 }
 
 console.log("Fetching config data...")

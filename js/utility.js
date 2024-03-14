@@ -7,6 +7,15 @@ function toggleClass(e, c, cb) {
     if (cb) cb(b)
 }
 
+// Gets a nested item from a string key
+// let json = { "my" : { "nested" : { "item" : "myContent" } } }
+// getNestedJSON(json, "my.nested.item") // returns "myContent"
+function getNestedJSON(json, key) {
+    let tmp = json
+    for (const k of key.split('.')) tmp = tmp[k]
+    return tmp
+}
+
 // Checks if the given URL is valid
 function validURL(url) {
     const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol

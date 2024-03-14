@@ -1,6 +1,8 @@
 {
 	"client" : {
 		"version" : "0.1",
+		"saveLocalConfig" : false,
+		"localConfigKey" : "local-config",
 		"developmentMode": true,
 		"developmentModeOutsideLocalhost": false
 	},
