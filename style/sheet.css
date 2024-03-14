@@ -101,6 +101,8 @@
   background-color: var(--color-background-main);
   min-height: 100dvh;
 }
+/* ------------------------ HEADER ------------------------ */
+/* main title */
 #section-contentHeader > #main-title {
   display: block;
   border: none;
@@ -110,33 +112,30 @@
 #section-contentHeader > #main-title::placeholder {
   font-weight: bold;
 }
-#main-data > *[id$="wrapper"],
-#main-data > *[id$="wrapper"]:has(input) {
+/* main data */
+.input-date-separator,
+#main-data > *[id$="wrapper"] {
   display: flex;
+  align-items: baseline;
   gap: 10px;
-  font-size: xx-large;
+  font-size: 4dvh;
 }
-#main-data > *[id$="wrapper"]::before,
-#main-data > *[id$="wrapper"]:has(input)::before {
-  content: " ";
-  width: 23px;
-  background: var(--icon) center / contain no-repeat;
+#main-data *[id$="wrapper"] .main-data-icon {
+  height: 3dvh;
 }
-#input-date-wrapper,
-#date-label {
+#date-label,
+#input-date-wrapper > *:not(.input-date-separator) {
   all: inherit;
 }
-#input-date-wrapper > * {
-  display: inline-flex;
-  width: unset;
-}
-.during-screenshot #date-label {
+/* during screenshot */
+.during-screenshot #main-data :not(#input-date-wrapper) > .main-data-icon:not(:has( + input:not(:placeholder-shown))),
+.during-screenshot #main-data #input-date-wrapper .main-data-icon:not(:has( ~ *[id$="wrapper"] input:not(:placeholder-shown))),
+.during-screenshot #main-data #date-label,
+.during-screenshot #main-data input:placeholder-shown + .input-date-separator,
+.during-screenshot #input-date-middle-separator:not(:has( + #input-dateTo-wrapper > input:not(:placeholder-shown))) {
   display: none;
 }
-.during-screenshot #input-date-wrapper:not(:has(#input-date-year:not(:placeholder-shown))),
-.during-screenshot #input-date-wrapper:not(:has(#input-date-year:not(:placeholder-shown))) {
-  display: none;
-}
+/* ------------------------ SECTIONS ------------------------ */
 .cs-section:not(:has(.cs-item)) {
   display: none;
 }
