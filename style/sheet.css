@@ -61,7 +61,8 @@
   backdrop-filter: blur(60px);
 }
 .displaymode-darkmode .icon-mono.display-mode-dynamic-icon {
-  filter: contrast(0) brightness(100%);
+  filter: contrast(0) brightness(100%) !important;
+  filter: invert(1) !important;
 }
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
