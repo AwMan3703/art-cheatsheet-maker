@@ -16,34 +16,34 @@
     <body>
         <main id="content-body">
             <section id="section-contentHeader">
-                <input id="main-title" type="text" placeholder="Object name">
+                <input id="main-title" type="text" placeholder="Titolo">
                 <div id="main-data">
                     <div id="input-author-wrapper">
                         <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/artist.png">
-                        <input id="input-author" placeholder="Author name" type="text">
+                        <input id="input-author" placeholder="Autore" type="text">
                     </div>
                     <div id="input-date-wrapper">
                         <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/clock.png">
-                        <label id="date-label">Date:</label>
+                        <label id="date-label">Data:</label>
                         <div id="input-dateFrom-wrapper">
-                            <input id="input-dateFrom-day" placeholder="DD" type="number" min="1" max="31"><span class="input-date-separator">/</span>
-                            <input id="input-dateFrom-month" placeholder="MM" type="number" min="1" max="12"><span class="input-date-separator">/</span>
-                            <input id="input-dateFrom-year" placeholder="YYYY" type="number" min="-9999" max="9999">
+                            <input id="input-dateFrom-day" placeholder="gg" type="number" min="1" max="31"><span class="input-date-separator">/</span>
+                            <input id="input-dateFrom-month" placeholder="mm" type="number" min="1" max="12"><span class="input-date-separator">/</span>
+                            <input id="input-dateFrom-year" placeholder="aaaa" type="number" min="-9999" max="9999">
                         </div>
                         <span id="input-date-middle-separator" class="input-date-separator">–</span>
                         <div id="input-dateTo-wrapper">
-                            <input id="input-dateTo-day" placeholder="DD" type="number" min="1" max="31"><span class="input-date-separator">/</span>
-                            <input id="input-dateTo-month" placeholder="MM" type="number" min="1" max="12"><span class="input-date-separator">/</span>
-                            <input id="input-dateTo-year" placeholder="YYYY" type="number" min="-9999" max="9999">
+                            <input id="input-dateTo-day" placeholder="gg" type="number" min="1" max="31"><span class="input-date-separator">/</span>
+                            <input id="input-dateTo-month" placeholder="mm" type="number" min="1" max="12"><span class="input-date-separator">/</span>
+                            <input id="input-dateTo-year" placeholder="aaaa" type="number" min="-9999" max="9999">
                         </div>
                     </div>
                     <div id="input-location-wrapper">
                         <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/pin.png">
-                        <input id="input-location" placeholder="Location" type="text">
+                        <input id="input-location" placeholder="Ubicazione" type="text">
                     </div>
                     <div id="input-subject-wrapper">
                         <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/subject.png">
-                        <input id="input-subject" placeholder="Subject" type="text">
+                        <input id="input-subject" placeholder="Soggetto" type="text">
                     </div>
                 </div>
             </section>
@@ -58,11 +58,11 @@
             <div id="add-element-panel" class="controls-panel">
             </div>
             <div id="export-panel" class="controls-panel">
-                <button id="export-button" onclick="exportSheet()">Export sheet</button>
-                <a id="download-point" download="unnamed.jpg">Download</a>
+                <button id="export-button" onclick="exportSheet()">Esporta scheda</button>
+                <a id="download-point" download="unnamed.jpg">Scarica</a>
             </div>
             <div id="display-panel" class="controls-panel">
-                <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Toggle dark mode</button>
+                <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Modalità scura</button>
             </div>
         </div>
 
@@ -76,25 +76,25 @@
             <div id="client-menu-dropdown">
                 <div id="client-options">
                     <button id="client-option-saveLocalConfig" class="setting-bool" data-setting="client.saveLocalConfig"
-                            onclick="toggleSaveConfig('client-option-saveLocalConfig')">Save settings: </button>
+                            onclick="toggleSaveConfig('client-option-saveLocalConfig')">Salva impostazioni: </button>
                 </div>
 
                 <div id="client-debug-options">
-                    Development options
+                    Opzioni sviluppatore
                     <button id="client-option-debug-screenshotMode" class="setting-bool" data-setting="client.saveLocalConfig"
-                            onclick="toggleClass(document.body, 'during-screenshot')">Screenshot mode:</button>
+                            onclick="toggleClass(document.body, 'during-screenshot')">Modalità screenshot:</button>
                 </div>
 
                 <div id="meta-links">
-                    <button id="feedbackButton" onclick="window.open('mailto:oilseed_mending0y@icloud.com?subject=Cheatsheet%20maker%20feedback')">Send feedback 🥹👉👈</button>
-                    <button id="featureRequestButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=feature_request.md')">Request a feature</button>
-                    <button id="issueReportButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=bug_report.md')">Report a bug</button>
-                    <button id="shareButton" onclick="navigator.clipboard.writeText(window.location.href.split('?')[0]); alert('link copied!')">Give me visibility 🤓</button>
+                    <button id="feedbackButton" onclick="window.open('mailto:oilseed_mending0y@icloud.com?subject=Cheatsheet%20maker%20feedback')">Invia feedback 🥹👉👈</button>
+                    <button id="featureRequestButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=feature_request.md')">Richiedi una funzionalità</button>
+                    <button id="issueReportButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=bug_report.md')">Segnala un bug</button>
+                    <button id="shareButton" onclick="navigator.clipboard.writeText(window.location.href.split('?')[0]); alert('link copied!')">Fammi pubblicità 🤓</button>
                 </div>
 
                 <div id="clientInfo-wrapper">
-                    <span id="author">by @AwMan3704 (Twitter)</span>
-                    <span id="version">version unknown</span>
+                    <span id="author">creato da @AwMan3704 (Twitter)</span>
+                    <span id="version">versione sconosciuta</span>
                 </div>
             </div>
         </div>

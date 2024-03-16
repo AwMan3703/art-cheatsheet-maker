@@ -1,6 +1,6 @@
 {
 	"client" : {
-		"version" : "1.0",
+		"version" : "1.0-it",
 		"saveLocalConfig" : false,
 		"localConfigKey" : "local-config",
 		"developmentMode": true,
@@ -17,64 +17,64 @@
 		"items" : {
 			"icon_root" : "assets/",
 			"types" : {
-				"commission" : {
-					"names" : { "singular" : "commission", "plural" : "commissions", "section_title" : "commissions" },
+				"commissione" : {
+					"names" : { "singular" : "commissione", "plural" : "commissioni", "section_title" : "commissione" },
 					"icon" : "king.png"
 				},
-				"context" : {
-					"names" : { "singular" : "context", "plural" : "context", "section_title" : "context" },
+				"contesto" : {
+					"names" : { "singular" : "contesto", "plural" : "contesti", "section_title" : "contesto" },
 					"icon" : "dashed-square.png"
 				},
-				"history" : {
-					"names" : { "singular" : "history", "plural" : "histories", "section_title" : "history" },
+				"storia" : {
+					"names" : { "singular" : "storia", "plural" : "storie", "section_title" : "storia" },
 					"icon" : "history.png"
 				},
-				"size" : {
-					"names" : { "singular" : "size", "plural" : "sizes", "section_title" : "size" },
+				"dimensione" : {
+					"names" : { "singular" : "dimensione", "plural" : "dimensioni", "section_title" : "dimensioni" },
 					"icon" : "ruler.png"
 				},
-				"description" : {
-					"names" : { "singular" : "description", "plural" : "descriptions", "section_title" : "description" },
+				"descrizione" : {
+					"names" : { "singular" : "descrizione", "plural" : "descrizioni", "section_title" : "descrizione" },
 					"icon" : "text.png"
 				},
-				"inspiration" : {
-					"names" : { "singular" : "inspiration", "plural" : "inspirations", "section_title" : "inspiration sources" },
+				"ispirazione" : {
+					"names" : { "singular" : "ispirazione", "plural" : "ispirazioni", "section_title" : "fonti d'ispirazione" },
 					"icon" : "bubble.png"
 				},
-				"style" : {
-					"names" : { "singular" : "style", "plural" : "styles", "section_title" : "style" },
+				"stile" : {
+					"names" : { "singular" : "stile", "plural" : "stili", "section_title" : "stile" },
 					"icon" : "shapes.png"
 				},
-				"color" : {
-					"names" : { "singular" : "color", "plural" : "colors", "section_title" : "colors" },
+				"colore" : {
+					"names" : { "singular" : "colore", "plural" : "colori", "section_title" : "colori" },
 					"icon" : "palette.png"
 				},
-				"light" : {
-					"names" : { "singular" : "light", "plural" : "lights", "section_title" : "light" },
+				"luce" : {
+					"names" : { "singular" : "luce", "plural" : "luci", "section_title" : "luce" },
 					"icon" : "sun.png"
 				},
-				"architecture" : {
-					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "architectures" },
+				"architettura" : {
+					"names" : { "singular" : "architettura", "plural" : "architetture", "section_title" : "architettura" },
 					"icon" : "temple.png"
 				},
-				"material" : {
-					"names" : { "singular" : "material", "plural" : "materials", "section_title" : "materials" },
+				"materiale" : {
+					"names" : { "singular" : "materiale", "plural" : "materiali", "section_title" : "materiali" },
 					"icon" : "materials.png"
 				},
-				"interpretation" : {
-					"names" : { "singular" : "interpretation", "plural" : "interpretations", "section_title" : "interpretations" },
+				"interpretazione" : {
+					"names" : { "singular" : "interpretazione", "plural" : "interpretazioni", "section_title" : "interpretazioni" },
 					"icon" : "magnifying-lens.png"
 				},
-				"hypothesis" : {
-					"names" : { "singular" : "hypothesis", "plural" : "hypotheses", "section_title" : "hypotheses" },
+				"ipotesi" : {
+					"names" : { "singular" : "ipotesi", "plural" : "ipotesi", "section_title" : "ipotesi" },
 					"icon" : "question-mark.png"
 				},
-				"document" : {
-					"names" : { "singular" : "document", "plural" : "documents", "section_title" : "documents" },
+				"documento" : {
+					"names" : { "singular" : "documento", "plural" : "documenti", "section_title" : "documenti" },
 					"icon" : "sheet.png"
 				},
-				"text" : {
-					"names": {"singular": "text", "plural": "texts", "section_title": "texts" },
+				"testo" : {
+					"names": {"singular": "testo", "plural": "testi", "section_title": "testi" },
 					"icon": "book.png"
 				}
 			}

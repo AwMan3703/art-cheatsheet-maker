@@ -41,12 +41,12 @@ function addImageCarouselOptions(e) {
     iconUpload.src = "assets/camera-plus.png"
     iconUpload.alt = "+"
     btnUpload.appendChild(iconUpload)
-    btnUpload.appendChild(document.createTextNode("Add image"))
+    btnUpload.appendChild(document.createTextNode("Aggiungi immagine"))
 
     const btnLink = document.createElement("button")
     btnLink.className = "imageCarousel-button-link"
     btnLink.onclick = () => {
-        promptValidURL("Link an image", "Image URL:", (url) => {
+        promptValidURL("Aggiungi un'immagine tramite URL", "Link all'immagine:", (url) => {
                 fetchimage(url,
                     b => { addImages(e.querySelector('.image-carousel'), [b]) }
                 )
@@ -59,7 +59,7 @@ function addImageCarouselOptions(e) {
     iconLink.src = "assets/link.png"
     iconLink.alt = "+"
     btnLink.appendChild(iconLink)
-    btnLink.appendChild(document.createTextNode("Add image from link"))
+    btnLink.appendChild(document.createTextNode("Immagine dal link"))
 
     wrapper.appendChild(btnUpload)
     wrapper.appendChild(btnLink)
@@ -69,7 +69,7 @@ function addImageCarouselOptions(e) {
 function addItem(type) {
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
-    }, null, `New ${type}`, "content:", "Add")
+    }, null, `Aggiungi ${type}`, "contenuto:", "Aggiungi")
 }
 function appendItem(type, content) {
     const e = document.createElement("div")
@@ -123,7 +123,7 @@ function editItem(eID) {
     editItemDialog(e, (nt) => {
         if (nt==null || nt.trim()==="") { return }
         e.innerText = nt
-    }, null, `Edit ${e.parentNode.dataset.itemtype}`)
+    }, null, `Modifica ${e.parentNode.dataset.itemtype}`)
 }
 
 function deleteItem(eID) {
@@ -133,8 +133,8 @@ function deleteItem(eID) {
         document.querySelectorAll(`#${eID} .image-carousel .carousel-image`).length > 0 && CONFIG.sheet.editing.deleteWarningWhenImagePresent
     ) {
         yesNoDialog(() => {e.remove()}, null,
-            `Do you want to delete this ${e.parentNode.querySelector("h3").innerText} entry?`,
-            "If you confirm, the item will be permanently deleted")
+            `Vuoi davvero eliminare questo elemento (${e.parentNode.querySelector("h3").innerText})?`,
+            "Se confermi, verrà eliminato permanentemente")
     } else { e.remove() }
 }
 
@@ -151,7 +151,7 @@ function addImages(parent, files) {
         xBtn.className = "deleteBtn"
         xBtn.onclick = () => {
             yesNoDialog(() => {wrapper.remove()}, null,
-                `Delete image?`, "If you confirm, the image will be permanently deleted")
+                `Rimuovere immagine?`, "Se confermi, l'immagine verrà eliminata dalla scheda, ma potrai aggiungerla nuovamente in futuro")
         }
         const xIcon = document.createElement("img")
         xIcon.className = "icon-mono display-mode-dynamic-icon"

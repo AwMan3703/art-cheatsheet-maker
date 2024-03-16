@@ -18,15 +18,15 @@ const alertDialog = (title, description) => {
 const yesNoDialog = (callbackYes, callbackNo, title, description) => {
     Dialog(dialogParent,
         {
-            title: title ? title : "Confirm?",
+            title: title ? title : "Confermare?",
             description: description,
             options: {
                 completeDialog: {
-                    label: "Confirm",
+                    label: "Conferma",
                     callback: callbackYes ? callbackYes : () => {}
                 },
                 abortDialog: {
-                    label: "Cancel",
+                    label: "Annulla",
                     callback: callbackNo ? callbackNo : () => {}
                 }
             }
@@ -37,7 +37,7 @@ const yesNoDialog = (callbackYes, callbackNo, title, description) => {
 const textInputDialog = (callbackYes, callbackNo, title, label, yesLabel) => {
     Dialog(dialogParent,
         {
-            title: title ? title : "Text input",
+            title: title ? title : "Input di testo",
             inputs: {
                 [label]: {
                     type: "text"
@@ -45,14 +45,14 @@ const textInputDialog = (callbackYes, callbackNo, title, label, yesLabel) => {
             },
             options: {
                 completeDialog: {
-                    label: yesLabel ? yesLabel : "Confirm",
+                    label: yesLabel ? yesLabel : "Conferma",
                     callback: (data) => {
                         const t = data[label].value
                         callbackYes(t)
                     }
                 },
                 abortDialog: {
-                    label: "Cancel",
+                    label: "Annulla",
                     callback: callbackNo ? callbackNo : () => {}
                 }
             }
@@ -64,7 +64,7 @@ const editItemDialog = (item, callbackYes, callbackNo, title) => {
     Dialog(dialogParent,
         {
             title: !isEmptyString(title) ? title : `edit ${item.parentNode.id}`,
-            description: "Edit the text, then hit \"Save\" to complete.",
+            description: "Modifica il testo, quindi clicca \"Salva\" per applicare i cambiamenti.",
             inputs: {
                 "edit content:": {
                     type: "text",
@@ -73,14 +73,14 @@ const editItemDialog = (item, callbackYes, callbackNo, title) => {
             },
             options: {
                 completeDialog: {
-                    label: "Save",
+                    label: "Salva",
                     callback: (data) => {
                         const nt = data["edit content:"].value
                         callbackYes(nt)
                     }
                 },
                 abortDialog: {
-                    label: "Cancel",
+                    label: "Annulla",
                     callback: callbackNo ? callbackNo : () => {}
                 }
             }
