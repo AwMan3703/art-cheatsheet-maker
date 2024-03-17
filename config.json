@@ -17,63 +17,63 @@
 		"items" : {
 			"icon_root" : "assets/",
 			"types" : {
-				"commission" : {
+				"csITEMTYPE:commission" : {
 					"names" : { "singular" : "commission", "plural" : "commissions", "section_title" : "commissions" },
 					"icon" : "king.png"
 				},
-				"context" : {
+				"csITEMTYPE:context" : {
 					"names" : { "singular" : "context", "plural" : "context", "section_title" : "context" },
 					"icon" : "dashed-square.png"
 				},
-				"history" : {
+				"csITEMTYPE:history" : {
 					"names" : { "singular" : "history", "plural" : "histories", "section_title" : "history" },
 					"icon" : "history.png"
 				},
-				"size" : {
+				"csITEMTYPE:size" : {
 					"names" : { "singular" : "size", "plural" : "sizes", "section_title" : "size" },
 					"icon" : "ruler.png"
 				},
-				"description" : {
+				"csITEMTYPE:description" : {
 					"names" : { "singular" : "description", "plural" : "descriptions", "section_title" : "description" },
 					"icon" : "text.png"
 				},
-				"inspiration" : {
+				"csITEMTYPE:inspiration" : {
 					"names" : { "singular" : "inspiration", "plural" : "inspirations", "section_title" : "inspiration sources" },
 					"icon" : "bubble.png"
 				},
-				"style" : {
+				"csITEMTYPE:style" : {
 					"names" : { "singular" : "style", "plural" : "styles", "section_title" : "style" },
 					"icon" : "shapes.png"
 				},
-				"color" : {
+				"csITEMTYPE:color" : {
 					"names" : { "singular" : "color", "plural" : "colors", "section_title" : "colors" },
 					"icon" : "palette.png"
 				},
-				"light" : {
+				"csITEMTYPE:light" : {
 					"names" : { "singular" : "light", "plural" : "lights", "section_title" : "light" },
 					"icon" : "sun.png"
 				},
-				"architecture" : {
+				"csITEMTYPE:architecture" : {
 					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "architectures" },
 					"icon" : "temple.png"
 				},
-				"material" : {
+				"csITEMTYPE:material" : {
 					"names" : { "singular" : "material", "plural" : "materials", "section_title" : "materials" },
 					"icon" : "materials.png"
 				},
-				"interpretation" : {
+				"csITEMTYPE:interpretation" : {
 					"names" : { "singular" : "interpretation", "plural" : "interpretations", "section_title" : "interpretations" },
 					"icon" : "magnifying-lens.png"
 				},
-				"hypothesis" : {
+				"csITEMTYPE:hypothesis" : {
 					"names" : { "singular" : "hypothesis", "plural" : "hypotheses", "section_title" : "hypotheses" },
 					"icon" : "question-mark.png"
 				},
-				"document" : {
+				"csITEMTYPE:document" : {
 					"names" : { "singular" : "document", "plural" : "documents", "section_title" : "documents" },
 					"icon" : "sheet.png"
 				},
-				"text" : {
+				"csITEMTYPE:text" : {
 					"names": {"singular": "text", "plural": "texts", "section_title": "texts" },
 					"icon": "book.png"
 				}

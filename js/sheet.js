@@ -9,6 +9,8 @@ function toggleDisplayMode(dm) {
 function addItemSections(parent) {
     const exclude = [""]
     Object.keys(CONFIG.sheet.items.types).forEach((key) => {
+        const type = CONFIG.sheet.items.types[key]
+
         if (exclude.includes(key)) {return}
         const e = document.createElement("section")
         e.className = "cs-section"
@@ -18,10 +20,10 @@ function addItemSections(parent) {
         header.className = "cs-section-header"
         const icon = document.createElement("img")
         icon.className = "icon-mono display-mode-dynamic-icon"
-        icon.src = `${CONFIG.sheet.items.icon_root}${CONFIG.sheet.items.types[key].icon}`
+        icon.src = `${CONFIG.sheet.items.icon_root}${type.icon}`
         header.appendChild(icon)
         const title = document.createElement("h3")
-        title.innerText = CONFIG.sheet.items.types[key].names.section_title
+        title.innerText = type.names.section_title
         header.appendChild(title)
 
         e.appendChild(header)
@@ -69,7 +71,7 @@ function addImageCarouselOptions(e) {
 function addItem(type) {
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
-    }, null, `New ${type}`, "content:", "Add")
+    }, null, `New ${CONFIG.sheet.items.types[type].names.singular}`, "content:", "Add")
 }
 function appendItem(type, content) {
     const e = document.createElement("div")
@@ -120,20 +122,23 @@ function appendItem(type, content) {
 
 function editItem(eID) {
     const e = document.querySelector(`#${eID} > p`)
+    const type = CONFIG.sheet.items.types[e.parentNode.dataset.itemtype]
     editItemDialog(e, (nt) => {
         if (nt==null || nt.trim()==="") { return }
         e.innerText = nt
-    }, null, `Edit ${e.parentNode.dataset.itemtype}`)
+    }, null, `Edit ${type.names.singular}`)
 }
 
 function deleteItem(eID) {
     const e = document.getElementById(eID)
+    const type = CONFIG.sheet.items.types[e.dataset.itemtype]
+    console.warn(e.parentNode)
     if (
         document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.editing.deleteWarningLengthThreshold ||
         document.querySelectorAll(`#${eID} .image-carousel .carousel-image`).length > 0 && CONFIG.sheet.editing.deleteWarningWhenImagePresent
     ) {
         yesNoDialog(() => {e.remove()}, null,
-            `Do you want to delete this ${e.parentNode.querySelector("h3").innerText} entry?`,
+            `Do you want to delete this ${type.names.singular} entry?`,
             "If you confirm, the item will be permanently deleted")
     } else { e.remove() }
 }
