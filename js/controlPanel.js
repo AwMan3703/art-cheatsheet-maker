@@ -7,7 +7,7 @@ function addItemGenerationButtons(parent) {
         const e = document.createElement("button")
         e.setAttribute("onclick", `addItem("${key}")`)
         e.className = "item-gen-button"
-        e.innerText = `+ ${capitalize(key)}`
+        e.innerText = `+ ${capitalize(type.names.singular)}`
         parent.appendChild(e)
     })
 }
