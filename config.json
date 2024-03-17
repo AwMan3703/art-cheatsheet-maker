@@ -17,63 +17,63 @@
 		"items" : {
 			"icon_root" : "assets/",
 			"types" : {
-				"commissione" : {
+				"csITEMTYPE:commission" : {
 					"names" : { "singular" : "commissione", "plural" : "commissioni", "section_title" : "commissione" },
 					"icon" : "king.png"
 				},
-				"contesto" : {
+				"csITEMTYPE:context" : {
 					"names" : { "singular" : "contesto", "plural" : "contesti", "section_title" : "contesto" },
 					"icon" : "dashed-square.png"
 				},
-				"storia" : {
+				"csITEMTYPE:history" : {
 					"names" : { "singular" : "storia", "plural" : "storie", "section_title" : "storia" },
 					"icon" : "history.png"
 				},
-				"dimensione" : {
+				"csITEMTYPE:size" : {
 					"names" : { "singular" : "dimensione", "plural" : "dimensioni", "section_title" : "dimensioni" },
 					"icon" : "ruler.png"
 				},
-				"descrizione" : {
+				"csITEMTYPE:description" : {
 					"names" : { "singular" : "descrizione", "plural" : "descrizioni", "section_title" : "descrizione" },
 					"icon" : "text.png"
 				},
-				"ispirazione" : {
+				"csITEMTYPE:inspiration" : {
 					"names" : { "singular" : "ispirazione", "plural" : "ispirazioni", "section_title" : "fonti d'ispirazione" },
 					"icon" : "bubble.png"
 				},
-				"stile" : {
+				"csITEMTYPE:style" : {
 					"names" : { "singular" : "stile", "plural" : "stili", "section_title" : "stile" },
 					"icon" : "shapes.png"
 				},
-				"colore" : {
+				"csITEMTYPE:color" : {
 					"names" : { "singular" : "colore", "plural" : "colori", "section_title" : "colori" },
 					"icon" : "palette.png"
 				},
-				"luce" : {
+				"csITEMTYPE:light" : {
 					"names" : { "singular" : "luce", "plural" : "luci", "section_title" : "luce" },
 					"icon" : "sun.png"
 				},
-				"architettura" : {
+				"csITEMTYPE:architecture" : {
 					"names" : { "singular" : "architettura", "plural" : "architetture", "section_title" : "architettura" },
 					"icon" : "temple.png"
 				},
-				"materiale" : {
+				"csITEMTYPE:material" : {
 					"names" : { "singular" : "materiale", "plural" : "materiali", "section_title" : "materiali" },
 					"icon" : "materials.png"
 				},
-				"interpretazione" : {
+				"csITEMTYPE:interpretation" : {
 					"names" : { "singular" : "interpretazione", "plural" : "interpretazioni", "section_title" : "interpretazioni" },
 					"icon" : "magnifying-lens.png"
 				},
-				"ipotesi" : {
+				"csITEMTYPE:hypothesis" : {
 					"names" : { "singular" : "ipotesi", "plural" : "ipotesi", "section_title" : "ipotesi" },
 					"icon" : "question-mark.png"
 				},
-				"documento" : {
+				"csITEMTYPE:document" : {
 					"names" : { "singular" : "documento", "plural" : "documenti", "section_title" : "documenti" },
 					"icon" : "sheet.png"
 				},
-				"testo" : {
+				"csITEMTYPE:text" : {
 					"names": {"singular": "testo", "plural": "testi", "section_title": "testi" },
 					"icon": "book.png"
 				}
