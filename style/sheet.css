@@ -1,6 +1,7 @@
 /* Global variables / Config */
 .displaymode-darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
+  --color-layer-double: rgba(255, 255, 255, 0.1);
   --color-layer-heavy: rgba(255, 255, 255, 0.5);
   --color-unlayer: rgba(0, 0, 0, 0.3);
   --color-unlayer-heavy: rgba(0, 0, 0, 0.75);
@@ -15,6 +16,7 @@
 :root,
 .during-screenshot {
   --color-layer: rgba(0, 0, 0, 0.05);
+  --color-layer-double: rgba(0, 0, 0, 0.1);
   --color-layer-heavy: rgba(0, 0, 0, 0.5);
   --color-unlayer: rgba(255, 255, 255, 0.6);
   --color-unlayer-heavy: rgba(255, 255, 255, 0.95);
@@ -161,6 +163,9 @@
   align-items: stretch;
   overflow: hidden;
 }
+.cs-item:hover {
+  background-color: var(--color-layer-double);
+}
 .during-screenshot .cs-item {
   grid-template-columns: 1fr fit-content(50%) 0fr;
 }
@@ -215,6 +220,9 @@
 }
 .during-screenshot .image-carousel-options {
   display: none;
+}
+.cs-item:not(:hover) .image-carousel-options {
+  visibility: hidden;
 }
 .carousel-image {
   position: relative;

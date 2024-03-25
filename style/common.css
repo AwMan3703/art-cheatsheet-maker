@@ -7,6 +7,7 @@ button {
 /* Global variables / Config */
 .displaymode-darkmode {
   --color-layer: rgba(255, 255, 255, 0.05);
+  --color-layer-double: rgba(255, 255, 255, 0.1);
   --color-layer-heavy: rgba(255, 255, 255, 0.5);
   --color-unlayer: rgba(0, 0, 0, 0.3);
   --color-unlayer-heavy: rgba(0, 0, 0, 0.75);
@@ -21,6 +22,7 @@ button {
 :root,
 .during-screenshot {
   --color-layer: rgba(0, 0, 0, 0.05);
+  --color-layer-double: rgba(0, 0, 0, 0.1);
   --color-layer-heavy: rgba(0, 0, 0, 0.5);
   --color-unlayer: rgba(255, 255, 255, 0.6);
   --color-unlayer-heavy: rgba(255, 255, 255, 0.95);
