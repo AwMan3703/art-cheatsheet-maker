@@ -78,6 +78,7 @@
 	align-items: stretch;
 	overflow: hidden;
 }
+.cs-item:hover { background-color: var(--color-layer-double) }
 .during-screenshot .cs-item {
 	grid-template-columns: 1fr fit-content(50%) 0fr;
 }
@@ -125,6 +126,7 @@
 
 #section-mainImage > .image-carousel:has(.carousel-image)~.image-carousel-options { margin-block-start: @padding }
 .during-screenshot .image-carousel-options { display: none }
+.cs-item:not(:hover) .image-carousel-options { visibility: hidden }
 
 .carousel-image {
 	&:extend(.round-corners);
