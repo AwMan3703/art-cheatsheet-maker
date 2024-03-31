@@ -17,9 +17,9 @@ const screenshot = (element, callback) => {
         .then ((data) => {
             // After the screenshot is taken
             callback(data)
-            postScreenshot()
         })
-        .catch((error) => { console.error('Oops, something went wrong while rendering!', error) });
+        .catch((error) => { console.error('Oops, something went wrong while rendering!', error) })
+        .finally(postScreenshot)
 }
 
 function exportSheet() {
