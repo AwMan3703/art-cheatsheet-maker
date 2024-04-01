@@ -12,12 +12,31 @@ function toggleClass(e, c, cb) {
 }
 
 // Gets a nested item from a string key
-// let json = { "my" : { "nested" : { "item" : "myContent" } } }
+// const json = { "my" : { "nested" : { "item" : "myContent" } } }
 // getNestedJSON(json, "my.nested.item") // returns "myContent"
-function getNestedJSON(json, key) {
+function getNestedJSON(json, path) {
     let tmp = json
-    for (const k of key.split('.')) tmp = tmp[k]
+    for (const k of path.split('.')) tmp = tmp[k]
     return tmp
+}
+// Sets a nested item from a string key
+// let json = { "my" : { "nested" : 12 } }
+// setNestedJSON(json, "my.nested.item", "myContent") // returns { "my" : { "nested" : { "item" : "myContent" } } }
+function setNestedJSON(json, path, value) {
+    const steps = path.split('.')
+    let tmp = json
+
+    for (let i = 0; i < steps.length - 1; i++) {
+        const step = steps[i]
+        if (!tmp.hasOwnProperty(step)) {
+            tmp[step] = {}
+        }
+        tmp = tmp[step]
+    }
+
+    tmp[steps[steps.length - 1]] = value
+
+    return json
 }
 
 // Checks if the given URL is valid
