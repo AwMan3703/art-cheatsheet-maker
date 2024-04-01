@@ -59,7 +59,7 @@
 				},
 				"csITEMTYPE:material" : {
 					"names" : { "singular" : "materiale", "plural" : "materiali", "section_title" : "materiali" },
-					"icon" : "material.png"
+					"icon" : "materials.png"
 				},
 				"csITEMTYPE:interpretation" : {
 					"names" : { "singular" : "interpretazione", "plural" : "interpretazioni", "section_title" : "interpretazioni" },
