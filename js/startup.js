@@ -22,11 +22,6 @@ function checkConfig(local) {
 }
 function startup(configData) {
     console.info("Config data obtained")
-    console.log("Generating immutable config data...")
-    for (const path of immutableConfig) {
-        configData = setNestedJSON(configData, path, getNestedJSON(configData, path))
-    }
-    console.info("Immutable config data ready")
     const localConfig = JSON.parse(localStorage.getItem(configData.client.localConfigKey))
     console.log(`Local config data ${localConfig!=null ? 'detected' : 'not found - loading default'}`)
     if (localConfig!=null && localConfig.client.saveLocalConfig) configData = localConfig
@@ -34,6 +29,13 @@ function startup(configData) {
     console.log("Checking config data...")
     CONFIG = checkConfig(configData)
     console.info("Config data loaded")
+    console.log("Restoring immutable config data...")
+    for (const path of immutableConfig) {
+        const immutableValue = getNestedJSON(configData, path)
+        console.log(`   -> reverting local CONFIG.${path} to ${immutableValue}`)
+        configData = setNestedJSON(configData, path, immutableValue)
+    }
+    console.info("Immutable config data ready")
 
     if (CONFIG.client.developmentMode) console.info("Development mode is enabled")
 
