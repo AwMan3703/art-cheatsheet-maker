@@ -2,22 +2,31 @@
 // Run this script on document load - also holds global variables
 
 let CONFIG = {}
+const immutableConfig = [ // Config paths that should NOT be saved locally
+    "client.version",
+    "sheet.items"
+]
 
-function checkConfig(data) {
+function checkConfig(local) {
     // Warn if the config is empty
-    if (Object.keys(data).length===0)
-        console.warn(`Config seems to be empty (loading: ${JSON.stringify(data)}). If this is intended, you can ignore this message.`);
+    if (Object.keys(local).length===0)
+        console.warn(`Config seems to be empty (loading: ${JSON.stringify(local)}). If this is intended, you can ignore this message.`);
 
     // Disable development mode if not on localhost and not explicitly enabled on other domains
-    if (window.location.hostname!=="localhost" && !data.client.developmentModeOutsideLocalhost) {
-        data.client.developmentMode = false
+    if (window.location.hostname!=="localhost" && !local.client.developmentModeOutsideLocalhost) {
+        local.client.developmentMode = false
         console.warn("Development mode was attempted outside of localhost and was disabled automatically. " +
             "To ignore domain and keep it enabled, set [client.developmentModeOutsideLocalhost] to true in config.json")}
 
-    return data
+    return local
 }
 function startup(configData) {
     console.info("Config data obtained")
+    console.log("Generating immutable config data...")
+    for (const path of immutableConfig) {
+        configData = setNestedJSON(configData, path, getNestedJSON(configData, path))
+    }
+    console.info("Immutable config data ready")
     const localConfig = JSON.parse(localStorage.getItem(configData.client.localConfigKey))
     console.log(`Local config data ${localConfig!=null ? 'detected' : 'not found - loading default'}`)
     if (localConfig!=null && localConfig.client.saveLocalConfig) configData = localConfig
