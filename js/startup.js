@@ -22,6 +22,9 @@ function checkConfig(local) {
 }
 function startup(configData) {
     console.info("Config data obtained")
+    console.log("Saving remote config...")
+    const remoteConfigData = {...configData}
+    console.info("Remote config saved")
     const localConfig = JSON.parse(localStorage.getItem(configData.client.localConfigKey))
     console.log(`Local config data ${localConfig!=null ? 'detected' : 'not found - loading default'}`)
     if (localConfig!=null && localConfig.client.saveLocalConfig) configData = localConfig
@@ -31,7 +34,7 @@ function startup(configData) {
     console.info("Config data loaded")
     console.log("Restoring immutable config data...")
     for (const path of immutableConfig) {
-        const immutableValue = getNestedJSON(configData, path)
+        const immutableValue = getNestedJSON(remoteConfigData, path)
         console.log(`   -> reverting local CONFIG.${path} to ${immutableValue}`)
         configData = setNestedJSON(configData, path, immutableValue)
     }
