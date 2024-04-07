@@ -66,7 +66,7 @@ const editItemDialog = (item, callbackYes, callbackNo, title) => {
             title: !isEmptyString(title) ? title : `edit ${item.parentNode.id}`,
             description: "Modifica il testo, quindi clicca \"Salva\" per applicare i cambiamenti.",
             inputs: {
-                "edit content:": {
+                "modifica contenuto:": {
                     type: "text",
                     defaultValue: item.innerText
                 }
@@ -75,7 +75,7 @@ const editItemDialog = (item, callbackYes, callbackNo, title) => {
                 completeDialog: {
                     label: "Salva",
                     callback: (data) => {
-                        const nt = data["edit content:"].value
+                        const nt = data["modifica contenuto:"].value
                         callbackYes(nt)
                     }
                 },
