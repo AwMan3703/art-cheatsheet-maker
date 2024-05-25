@@ -114,6 +114,7 @@
   height: 35px;
   padding: 13px;
   background-color: var(--color-unlayer);
+  backdrop-filter: blur(5px);
   border: solid 5px var(--color-layer);
   border-radius: 100%;
   box-shadow: var(--shadow-soft);
