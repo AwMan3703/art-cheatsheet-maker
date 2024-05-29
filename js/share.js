@@ -9,6 +9,6 @@ function sharePage(title, description, url) {
         navigator.share(shareData)
     } else {
         navigator.clipboard.writeText(url)
-        alert("Url copied to clipboard!")
+        alert("Url copiato negli appunti!")
     }
 }
