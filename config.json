@@ -81,7 +81,18 @@
 			},
 			"dynamicBackgroundsRoot" : "assets/",
 			"dynamicBackgrounds" : {
-				"king" : "king.png"
+				"king" : "king.png",
+				"artist" : "artist.png",
+				"painter" : "artist.png",
+				"sculptor" : "artist.png",
+				"author" : "artist.png",
+				"technique" : "brush.png",
+				"paint" : "brush.png",
+				"location" : "pin.png",
+				"subject" : "subject.png",
+				"frame" : "subject.png",
+				"protagonist" : "subject.png",
+				"character" : "subject.png"
 			}
 		}
   	}
