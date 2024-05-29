@@ -12,10 +12,11 @@
 	"sheet" : {
 		"editing" : {
 			"deleteWarningLengthThreshold" : 25,
-			"deleteWarningWhenImagePresent" : true
+			"deleteWarningWhenImagePresent" : true,
+			"enableDynamicBackgrounds" : true
 		},
 		"items" : {
-			"icon_root" : "assets/",
+			"iconRoot": "assets/",
 			"types" : {
 				"csITEMTYPE:commission" : {
 					"names" : { "singular" : "commission", "plural" : "commissions", "section_title" : "commissions" },
@@ -77,7 +78,11 @@
 					"names": {"singular": "text", "plural": "texts", "section_title": "texts" },
 					"icon": "book.png"
 				}
+			},
+			"dynamicBackgroundsRoot" : "assets/",
+			"dynamicBackgrounds" : {
+				"king" : "king.png"
 			}
 		}
-	}
+  	}
 }

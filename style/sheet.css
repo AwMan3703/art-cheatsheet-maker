@@ -162,9 +162,13 @@
   justify-content: end;
   align-items: stretch;
   overflow: hidden;
+  background-repeat: no-repeat;
 }
 .cs-item:hover {
   background-color: var(--color-layer-double);
+}
+#content-body:not(.dynamic-backgrounds-enabled) .cs-item {
+  background-image: none !important;
 }
 .during-screenshot .cs-item {
   grid-template-columns: 1fr fit-content(50%) 0fr;

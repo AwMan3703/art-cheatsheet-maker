@@ -20,7 +20,7 @@ function addItemSections(parent) {
         header.className = "cs-section-header"
         const icon = document.createElement("img")
         icon.className = "icon-mono display-mode-dynamic-icon"
-        icon.src = `${CONFIG.sheet.items.icon_root}${type.icon}`
+        icon.src = `${CONFIG.sheet.items.iconRoot}${type.icon}`
         header.appendChild(icon)
         const title = document.createElement("h3")
         title.innerText = type.names.section_title
@@ -68,6 +68,12 @@ function addImageCarouselOptions(e) {
     e.appendChild(wrapper)
 }
 
+function getDynamicBackground(string) {
+    console.log('changed dynamic background')
+    const bgasset = CONFIG.sheet.items.dynamicBackgrounds[findLastContainedString(Object.keys(CONFIG.sheet.items.dynamicBackgrounds), string)]
+    return CONFIG.sheet.items.dynamicBackgroundsRoot + bgasset
+}
+
 function addItem(type) {
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
@@ -79,6 +85,7 @@ function appendItem(type, content) {
     e.dataset.itemtype = type
     const itemID = getUUID("item")
     e.id = itemID
+    e.style.backgroundImage = `url("${getDynamicBackground(content)}")`
 
     const paragraph = document.createElement("p")
     paragraph.style.margin = "10px"
@@ -121,18 +128,19 @@ function appendItem(type, content) {
 }
 
 function editItem(eID) {
+    const p = document.getElementById(eID)
     const e = document.querySelector(`#${eID} > p`)
     const type = CONFIG.sheet.items.types[e.parentNode.dataset.itemtype]
     editItemDialog(e, (nt) => {
         if (nt==null || nt.trim()==="") { return }
         e.innerText = nt
+        p.style.backgroundImage = `url("${getDynamicBackground(nt)}")`
     }, null, `Edit ${type.names.singular}`)
 }
 
 function deleteItem(eID) {
     const e = document.getElementById(eID)
     const type = CONFIG.sheet.items.types[e.dataset.itemtype]
-    console.warn(e.parentNode)
     if (
         document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.editing.deleteWarningLengthThreshold ||
         document.querySelectorAll(`#${eID} .image-carousel .carousel-image`).length > 0 && CONFIG.sheet.editing.deleteWarningWhenImagePresent
@@ -167,4 +175,5 @@ function addImages(parent, files) {
         parent.appendChild(wrapper)
     }
 }
+
 

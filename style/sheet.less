@@ -77,11 +77,12 @@
 	justify-content: end;
 	align-items: stretch;
 	overflow: hidden;
+
+	background-repeat: no-repeat;
 }
 .cs-item:hover { background-color: var(--color-layer-double) }
-.during-screenshot .cs-item {
-	grid-template-columns: 1fr fit-content(50%) 0fr;
-}
+#content-body:not(.dynamic-backgrounds-enabled) .cs-item { background-image: none !important }
+.during-screenshot .cs-item { grid-template-columns: 1fr fit-content(50%) 0fr }
 
 .cs-item .csItem-btn-wrapper { display: inline-flex }
 .cs-item .csItem-btn-wrapper > button { border-radius: 0 !important }
