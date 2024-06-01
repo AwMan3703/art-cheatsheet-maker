@@ -118,3 +118,13 @@ function findLastContainedString(array, targetString) {
     }
     return null;
 }
+// Same as `findLastContainedString`, but works on an array of arrays of strings instead of an array of strings
+function findLastContainedStringArrays(obj, targetString) {
+    const keys = Object.keys(obj);
+    for (let i = keys.length - 1; i >= 0; i--) {
+        const key = keys[i];
+        const value = obj[keys[i]];
+        if (findLastContainedString(value, targetString) !== null) return key;
+    }
+    return null;
+}

@@ -69,8 +69,8 @@ function addImageCarouselOptions(e) {
 }
 
 function getDynamicBackground(string) {
-    console.log('changed dynamic background')
-    const bgasset = CONFIG.sheet.items.dynamicBackgrounds[findLastContainedString(Object.keys(CONFIG.sheet.items.dynamicBackgrounds), string)]
+    console.log('computing dynamic background...')
+    const bgasset = findLastContainedStringArrays(CONFIG.sheet.items.dynamicBackgrounds, string)
     return CONFIG.sheet.items.dynamicBackgroundsRoot + `DYNBG-${bgasset}.png`
 }
 
