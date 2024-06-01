@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="style/clientMenu.css">
     </head>
     <body>
-        <main id="content-body">
+        <main id="content-body" class="dynamic-backgrounds-enabled">
             <section id="section-contentHeader">
                 <input id="main-title" type="text" placeholder="Titolo">
                 <div id="main-data">
@@ -75,14 +75,20 @@
 
             <div id="client-menu-dropdown">
                 <div id="client-options">
-                    <button id="client-option-saveLocalConfig" class="setting-bool" data-setting="client.saveLocalConfig"
-                            onclick="toggleSaveConfig('client-option-saveLocalConfig')">Salva impostazioni: </button>
+                    <button id="client-option-saveLocalConfig" class="setting-bool" data-setting="client.saveLocalConfig" onclick="
+                        toggleSaveConfig('client-option-saveLocalConfig')
+                    ">Salva impostazioni: </button>
+
+                    <button id="client-option-enableDynamicBackgrounds" class="setting-bool" data-setting="sheet.editing.enableDynamicBackgrounds" onclick="
+                        toggleDynamicBackgrounds('client-option-enableDynamicBackgrounds')
+                    ">Sfondi dinamici: </button>
                 </div>
 
                 <div id="client-debug-options">
                     Opzioni sviluppatore
-                    <button id="client-option-debug-screenshotMode" class="setting-bool" data-setting="client.saveLocalConfig"
-                            onclick="toggleClass(document.body, 'during-screenshot')">Modalità screenshot:</button>
+                    <button id="client-option-debug-screenshotMode" class="setting-bool" onclick="
+                        toggleClass(document.body, 'during-screenshot')
+                    ">Modalità screenshot:</button>
                 </div>
 
                 <div id="meta-links">

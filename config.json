@@ -12,10 +12,11 @@
 	"sheet" : {
 		"editing" : {
 			"deleteWarningLengthThreshold" : 25,
-			"deleteWarningWhenImagePresent" : true
+			"deleteWarningWhenImagePresent" : true,
+			"enableDynamicBackgrounds" : true
 		},
 		"items" : {
-			"icon_root" : "assets/",
+			"iconRoot": "assets/",
 			"types" : {
 				"csITEMTYPE:commission" : {
 					"names" : { "singular" : "commissione", "plural" : "commissioni", "section_title" : "commissione" },
@@ -77,7 +78,12 @@
 					"names": {"singular": "testo", "plural": "testi", "section_title": "testi" },
 					"icon": "book.png"
 				}
+			},
+			"dynamicBackgroundsRoot" : "assets/",
+			"dynamicBackgrounds" : {
+				"king" : ["king", "queen", "prince", "duke", "monarch", "regin", "monarchy"],
+				"art" : ["artist", "art", "art piece", "statue", "painting", "sculpture", "artwork"]
 			}
 		}
-	}
+  	}
 }

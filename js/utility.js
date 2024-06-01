@@ -110,3 +110,21 @@ function capitalize(text) {
 function getUUID(object) {
     return `cs${capitalize(object)}-UUID-${crypto.randomUUID()}`
 }
+
+// Finds the last occurrence of a string from `array` that is contained in `targetString`, then returns it
+function findLastContainedString(array, targetString) {
+    for (let i = array.length - 1; i >= 0; i--) {
+        if (targetString.includes(array[i])) return array[i];
+    }
+    return null;
+}
+// Same as `findLastContainedString`, but works on an array of arrays of strings instead of an array of strings
+function findLastContainedStringArrays(obj, targetString) {
+    const keys = Object.keys(obj);
+    for (let i = keys.length - 1; i >= 0; i--) {
+        const key = keys[i];
+        const value = obj[keys[i]];
+        if (findLastContainedString(value, targetString) !== null) return key;
+    }
+    return null;
+}
