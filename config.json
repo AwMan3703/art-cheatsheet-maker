@@ -81,18 +81,18 @@
 			},
 			"dynamicBackgroundsRoot" : "assets/",
 			"dynamicBackgrounds" : {
-				"king" : "king.png",
-				"artist" : "artist.png",
-				"painter" : "artist.png",
-				"sculptor" : "artist.png",
-				"author" : "artist.png",
-				"technique" : "brush.png",
-				"paint" : "brush.png",
-				"location" : "pin.png",
-				"subject" : "subject.png",
-				"frame" : "subject.png",
-				"protagonist" : "subject.png",
-				"character" : "subject.png"
+				"king" : "king",
+				"artist" : "artist",
+				"painter" : "artist",
+				"sculptor" : "artist",
+				"author" : "artist",
+				"technique" : "brush",
+				"paint" : "brush",
+				"location" : "pin",
+				"subject" : "subject",
+				"frame" : "subject",
+				"protagonist" : "subject",
+				"character" : "subject"
 			}
 		}
   	}
