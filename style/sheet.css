@@ -163,7 +163,7 @@
   align-items: stretch;
   overflow: hidden;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
 }
 .cs-item:hover {
   background-color: var(--color-layer-double);
