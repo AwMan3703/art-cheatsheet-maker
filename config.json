@@ -81,8 +81,8 @@
 			},
 			"dynamicBackgroundsRoot" : "assets/",
 			"dynamicBackgrounds" : {
-				"king" : ["king", "queen", "prince", "duke", "monarch", "regin", "monarchy"],
-				"art" : ["artist", "art", "art piece", "statue", "painting", "sculpture", "artwork"]
+				"king" : ["re", "regina", "principe", "duca", "monarca", "regno", "monarchia"],
+				"art" : ["artista", "arte", "opera", "statua", "dipinto", "quadro", "scultura"]
 			}
 		}
   	}
