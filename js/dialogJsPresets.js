@@ -1,3 +1,4 @@
+const dialogParent = document.getElementById("dialog-screen-darkener")
 
 // Shorthands for generating dialogs
 const alertDialog = (title, description) => {
@@ -40,7 +41,7 @@ const textInputDialog = (callbackYes, callbackNo, title, label, yesLabel) => {
             title: title ? title : "Input di testo",
             inputs: {
                 [label]: {
-                    type: "text"
+                    type: "textarea"
                 }
             },
             options: {
@@ -67,7 +68,7 @@ const editItemDialog = (item, callbackYes, callbackNo, title) => {
             description: "Modifica il testo, quindi clicca \"Salva\" per applicare i cambiamenti.",
             inputs: {
                 "modifica contenuto:": {
-                    type: "text",
+                    type: "textarea",
                     defaultValue: item.innerText
                 }
             },
