@@ -3,7 +3,8 @@ function toggleDisplayMode(dm) {
     dm = `displaymode-${dm}`
     const added = document.body.classList.toggle(dm)
     if (added) CONFIG.ui.displayModes.push(dm)
-    else try { CONFIG.ui.displayModes = CONFIG.ui.displayModes.filter(v => v !== dm) } catch (e) {}
+    else try { CONFIG.ui.displayModes = CONFIG.ui.displayModes.filter(v => v !== dm) } catch (e) { console.error(e) }
+    return added
 }
 
 function addItemSections(parent) {
