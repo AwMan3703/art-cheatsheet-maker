@@ -19,7 +19,7 @@ function toggleSubwaySurfers() {
     else { subwaysurfers_video.pause() }
 
     const button = document.getElementById("subwaysurfers-button")
-    button.innerText = added ? "Ok stop" : "Distract me"
+    button.innerText = added ? "Ok basta" : "Distraimi"
 }
 
 function toggleSubwaySurfersVolume() {
