@@ -7,24 +7,27 @@ function toggleDisplayMode(dm) {
     return added
 }
 
+const subwaysurfers_video = document.getElementById("subway-surfers-video")
+subwaysurfers_video.onended = _ => {
+    subwaysurfers_video.currentTime = 0
+    subwaysurfers_video.play()
+}
+
 function toggleSubwaySurfers() {
     const added = toggleDisplayMode('subwaysurfers')
+    if (added) { subwaysurfers_video.play() }
+    else { subwaysurfers_video.pause() }
 
-    const video = document.getElementById("subway-surfers-video")
     const button = document.getElementById("subwaysurfers-button")
-    if (added) {
-        video.play()
-        button.innerText = "Ok stop"
-    }
-    else {
-        video.pause()
-        button.innerText = "Distract me"
-    }
+    button.innerText = added ? "Ok stop" : "Distract me"
 }
 
 function toggleSubwaySurfersVolume() {
-    const video = document.getElementById("subway-surfers-video")
-    // TODO: implement muting
+    const added = toggleClass(subwaysurfers_video, 'muted')
+    subwaysurfers_video.muted = !!added;
+
+    const buttonIcon = document.getElementById("subwaysurfers-mute-button-icon")
+    buttonIcon.src = added ? "assets/speaker-off.png" : "assets/speaker.png"
 }
 
 function addItemSections(parent) {
