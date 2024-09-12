@@ -63,6 +63,7 @@
             </div>
             <div id="display-panel" class="controls-panel">
                 <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Modalità scura</button>
+	            <button id="subwaysurfers-button" onclick="toggleSubwaySurfers()">Distraimi</button>
             </div>
         </div>
 
@@ -105,7 +106,14 @@
             </div>
         </div>
 
-        <div id="dialog-screen-darkener" class="screen-blocker"></div>
+                <div id="dialog-screen-darkener" class="screen-blocker"></div>
+            </div>
+            <div id="adhd-content">
+                <video id="subway-surfers-video" src="assets/subway-surfers.mp4"></video>
+                <!--TODO: implement muting-->
+                <!--button id="video-mute-button">mute</button-->
+            </div>
+        </div>
 
         <!--Scripts-->
         <script src="js/lib/dom-to-image.min.js"></script> <!-- Thanks to https://github.com/tsayen -->

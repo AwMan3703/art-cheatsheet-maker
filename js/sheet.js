@@ -3,7 +3,28 @@ function toggleDisplayMode(dm) {
     dm = `displaymode-${dm}`
     const added = document.body.classList.toggle(dm)
     if (added) CONFIG.ui.displayModes.push(dm)
-    else try { CONFIG.ui.displayModes = CONFIG.ui.displayModes.filter(v => v !== dm) } catch (e) {}
+    else try { CONFIG.ui.displayModes = CONFIG.ui.displayModes.filter(v => v !== dm) } catch (e) { console.error(e) }
+    return added
+}
+
+function toggleSubwaySurfers() {
+    const added = toggleDisplayMode('subwaysurfers')
+
+    const video = document.getElementById("subway-surfers-video")
+    const button = document.getElementById("subwaysurfers-button")
+    if (added) {
+        video.play()
+        button.innerText = "Ok stop"
+    }
+    else {
+        video.pause()
+        button.innerText = "Distract me"
+    }
+}
+
+function toggleSubwaySurfersVolume() {
+    const video = document.getElementById("subway-surfers-video")
+    // TODO: implement muting
 }
 
 function addItemSections(parent) {
