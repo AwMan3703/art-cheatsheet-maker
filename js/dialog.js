@@ -124,7 +124,8 @@ const createInputField = (id, class_string, title_string, description_string, ty
     const wrapper = document.createElement("div")
     wrapper.className = "dialog-input"
 
-    const input = document.createElement("input")
+    const input = document.createElement(type==="textarea" ? "textarea" : "input")
+    if (type==="textarea") input.style.width = '90%'
     input.className = `${class_string} dialog-input-field`
     input.type = type
     input.value = !isEmptyString(default_) ? default_ : null
@@ -157,7 +158,5 @@ const isEmptyString = (str) => {return str===undefined || str.replace(/\s/g, '')
 const isObject = (obj) => typeof obj === 'object' && obj instanceof Object && !Array.isArray(obj) && obj.constructor !== Date;
 
 const firstLetterUpper = (text) => {return !isEmptyString(text) ? text[0].toUpperCase() + text.substring(1, text.length) : ""}
-
-const dialogParent = document.getElementById("dialog-screen-darkener")
 
 /* --------------------------- */
