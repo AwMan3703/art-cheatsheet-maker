@@ -15,16 +15,11 @@ subwaysurfers_video.onended = _ => {
 
 function toggleSubwaySurfers() {
     const added = toggleDisplayMode('subwaysurfers')
+    if (added) { subwaysurfers_video.play() }
+    else { subwaysurfers_video.pause() }
 
     const button = document.getElementById("subwaysurfers-button")
-    if (added) {
-        subwaysurfers_video.play()
-        button.innerText = "Ok stop"
-    }
-    else {
-        subwaysurfers_video.pause()
-        button.innerText = "Distract me"
-    }
+    button.innerText = added ? "Ok stop" : "Distract me"
 }
 
 function toggleSubwaySurfersVolume() {
