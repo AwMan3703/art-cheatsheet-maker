@@ -7,17 +7,22 @@ function toggleDisplayMode(dm) {
     return added
 }
 
+const subwaysurfers_video = document.getElementById("subway-surfers-video")
+subwaysurfers_video.onended = _ => {
+    subwaysurfers_video.currentTime = 0
+    subwaysurfers_video.play()
+}
+
 function toggleSubwaySurfers() {
     const added = toggleDisplayMode('subwaysurfers')
 
-    const video = document.getElementById("subway-surfers-video")
     const button = document.getElementById("subwaysurfers-button")
     if (added) {
-        video.play()
+        subwaysurfers_video.play()
         button.innerText = "Ok stop"
     }
     else {
-        video.pause()
+        subwaysurfers_video.pause()
         button.innerText = "Distract me"
     }
 }
