@@ -14,98 +14,108 @@
         <link rel="stylesheet" href="style/clientMenu.css">
     </head>
     <body>
-        <main id="content-body" class="dynamic-backgrounds-enabled">
-            <section id="section-contentHeader">
-                <input id="main-title" type="text" placeholder="Object name">
-                <div id="main-data">
-                    <div id="input-author-wrapper">
-                        <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/artist.png">
-                        <input id="input-author" placeholder="Author name" type="text">
-                    </div>
-                    <div id="input-date-wrapper">
-                        <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/clock.png">
-                        <label id="date-label">Date:</label>
-                        <div id="input-dateFrom-wrapper">
-                            <input id="input-dateFrom-day" placeholder="DD" type="number" min="1" max="31"><span class="input-date-separator">/</span>
-                            <input id="input-dateFrom-month" placeholder="MM" type="number" min="1" max="12"><span class="input-date-separator">/</span>
-                            <input id="input-dateFrom-year" placeholder="YYYY" type="number" min="-9999" max="9999">
+        <div id="page-wrapper" class="flex-hor">
+            <div id="normal-content">
+                <main id="content-body" class="dynamic-backgrounds-enabled">
+                    <section id="section-contentHeader">
+                        <input id="main-title" type="text" placeholder="Object name">
+                        <div id="main-data">
+                            <div id="input-author-wrapper">
+                                <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/artist.png">
+                                <input id="input-author" placeholder="Author name" type="text">
+                            </div>
+                            <div id="input-date-wrapper">
+                                <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/clock.png">
+                                <label id="date-label">Date:</label>
+                                <div id="input-dateFrom-wrapper">
+                                    <input id="input-dateFrom-day" placeholder="DD" type="number" min="1" max="31"><span class="input-date-separator">/</span>
+                                    <input id="input-dateFrom-month" placeholder="MM" type="number" min="1" max="12"><span class="input-date-separator">/</span>
+                                    <input id="input-dateFrom-year" placeholder="YYYY" type="number" min="-9999" max="9999">
+                                </div>
+                                <span id="input-date-middle-separator" class="input-date-separator">–</span>
+                                <div id="input-dateTo-wrapper">
+                                    <input id="input-dateTo-day" placeholder="DD" type="number" min="1" max="31"><span class="input-date-separator">/</span>
+                                    <input id="input-dateTo-month" placeholder="MM" type="number" min="1" max="12"><span class="input-date-separator">/</span>
+                                    <input id="input-dateTo-year" placeholder="YYYY" type="number" min="-9999" max="9999">
+                                </div>
+                            </div>
+                            <div id="input-location-wrapper">
+                                <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/pin.png">
+                                <input id="input-location" placeholder="Location" type="text">
+                            </div>
+                            <div id="input-subject-wrapper">
+                                <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/subject.png">
+                                <input id="input-subject" placeholder="Subject" type="text">
+                            </div>
                         </div>
-                        <span id="input-date-middle-separator" class="input-date-separator">–</span>
-                        <div id="input-dateTo-wrapper">
-                            <input id="input-dateTo-day" placeholder="DD" type="number" min="1" max="31"><span class="input-date-separator">/</span>
-                            <input id="input-dateTo-month" placeholder="MM" type="number" min="1" max="12"><span class="input-date-separator">/</span>
-                            <input id="input-dateTo-year" placeholder="YYYY" type="number" min="-9999" max="9999">
+                    </section>
+                    <section id="section-mainImage" class="imageCarousel-wrapper">
+                        <div class="image-carousel scrollbar-visible">
                         </div>
-                    </div>
-                    <div id="input-location-wrapper">
-                        <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/pin.png">
-                        <input id="input-location" placeholder="Location" type="text">
-                    </div>
-                    <div id="input-subject-wrapper">
-                        <img class="main-data-icon icon-mono display-mode-dynamic-icon" src="assets/subject.png">
-                        <input id="input-subject" placeholder="Subject" type="text">
-                    </div>
-                </div>
-            </section>
-            <section id="section-mainImage" class="imageCarousel-wrapper">
-                <div class="image-carousel scrollbar-visible">
-                </div>
-            </section>
-        </main>
+                    </section>
+                </main>
 
-        <!--Keep these as last elements-->
-        <div id="controls">
-            <div id="add-element-panel" class="controls-panel">
+                <!--Keep these as last elements-->
+                <div id="controls">
+                    <div id="add-element-panel" class="controls-panel">
+                    </div>
+                    <div id="export-panel" class="controls-panel">
+                        <button id="export-button" onclick="exportSheet()">Export sheet</button>
+                        <a id="download-point" download="unnamed.jpg">Download</a>
+                    </div>
+                    <div id="display-panel" class="controls-panel">
+                        <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Toggle dark mode</button>
+                        <button id="subwaysurfers-button" onclick="toggleSubwaySurfers()">Distract me</button>
+                    </div>
+                </div>
+
+                <div id="client-menu">
+                    <button id="client-menu-button" onclick="document.getElementById('client-menu').classList.add('menu-open')">
+                        <img src="assets/hamburger.png" alt="menu" class="icon-mono display-mode-dynamic-icon">
+                    </button>
+
+                    <div id="menu-screen-darkener" class="screen-blocker" onclick="document.getElementById('client-menu').classList.remove('menu-open')"></div>
+
+                    <div id="client-menu-dropdown">
+                        <div id="client-options">
+                            <button id="client-option-saveLocalConfig" class="setting-bool" data-setting="client.saveLocalConfig" onclick="
+                                toggleSaveConfig('client-option-saveLocalConfig')
+                            ">Save settings: </button>
+
+                            <button id="client-option-enableDynamicBackgrounds" class="setting-bool" data-setting="sheet.editing.enableDynamicBackgrounds" onclick="
+                                toggleDynamicBackgrounds('client-option-enableDynamicBackgrounds')
+                            ">Dynamic backgrounds: </button>
+                        </div>
+
+                        <div id="client-debug-options">
+                            Development options
+                            <button id="client-option-debug-screenshotMode" class="setting-bool" onclick="
+                                toggleClass(document.body, 'during-screenshot')
+                            ">Screenshot mode:</button>
+                        </div>
+
+                        <div id="meta-links">
+                            <button id="feedbackButton" onclick="window.open('mailto:oilseed_mending0y@icloud.com?subject=Cheatsheet%20maker%20feedback')">Send feedback 🥹👉👈</button>
+                            <button id="featureRequestButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=feature_request.md')">Request a feature</button>
+                            <button id="issueReportButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=bug_report.md')">Report a bug</button>
+                            <button id="shareButton" onclick="sharePage('Cheatsheet maker', 'Create art history cheatsheets on the fly!', window.location.href)">Give me visibility 🤓</button>
+                        </div>
+
+                        <div id="clientInfo-wrapper">
+                            <span id="author">by @AwMan3704 (Twitter)</span>
+                            <span id="version">version unknown</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dialog-screen-darkener" class="screen-blocker"></div>
             </div>
-            <div id="export-panel" class="controls-panel">
-                <button id="export-button" onclick="exportSheet()">Export sheet</button>
-                <a id="download-point" download="unnamed.jpg">Download</a>
-            </div>
-            <div id="display-panel" class="controls-panel">
-                <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Toggle dark mode</button>
+            <div id="adhd-content">
+                <video id="subway-surfers-video" src="assets/subway-surfers.mp4"></video>
+                <!--TODO: implement muting-->
+                <!--button id="video-mute-button">mute</button-->
             </div>
         </div>
-
-        <div id="client-menu">
-            <button id="client-menu-button" onclick="document.getElementById('client-menu').classList.add('menu-open')">
-                <img src="assets/hamburger.png" alt="menu" class="icon-mono display-mode-dynamic-icon">
-            </button>
-
-            <div id="menu-screen-darkener" class="screen-blocker" onclick="document.getElementById('client-menu').classList.remove('menu-open')"></div>
-
-            <div id="client-menu-dropdown">
-                <div id="client-options">
-                    <button id="client-option-saveLocalConfig" class="setting-bool" data-setting="client.saveLocalConfig" onclick="
-                        toggleSaveConfig('client-option-saveLocalConfig')
-                    ">Save settings: </button>
-
-                    <button id="client-option-enableDynamicBackgrounds" class="setting-bool" data-setting="sheet.editing.enableDynamicBackgrounds" onclick="
-                        toggleDynamicBackgrounds('client-option-enableDynamicBackgrounds')
-                    ">Dynamic backgrounds: </button>
-                </div>
-
-                <div id="client-debug-options">
-                    Development options
-                    <button id="client-option-debug-screenshotMode" class="setting-bool" onclick="
-                        toggleClass(document.body, 'during-screenshot')
-                    ">Screenshot mode:</button>
-                </div>
-
-                <div id="meta-links">
-                    <button id="feedbackButton" onclick="window.open('mailto:oilseed_mending0y@icloud.com?subject=Cheatsheet%20maker%20feedback')">Send feedback 🥹👉👈</button>
-                    <button id="featureRequestButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=feature_request.md')">Request a feature</button>
-                    <button id="issueReportButton" onclick="window.open('https://github.com/AwMan3703/art-cheatsheet-maker/issues/new?template=bug_report.md')">Report a bug</button>
-                    <button id="shareButton" onclick="sharePage('Cheatsheet maker', 'Create art history cheatsheets on the fly!', window.location.href)">Give me visibility 🤓</button>
-                </div>
-
-                <div id="clientInfo-wrapper">
-                    <span id="author">by @AwMan3704 (Twitter)</span>
-                    <span id="version">version unknown</span>
-                </div>
-            </div>
-        </div>
-
-        <div id="dialog-screen-darkener" class="screen-blocker"></div>
 
         <!--Scripts-->
         <script src="js/lib/dom-to-image.min.js"></script> <!-- Thanks to https://github.com/tsayen -->

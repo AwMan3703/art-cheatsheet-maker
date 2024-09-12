@@ -98,6 +98,15 @@
   backdrop-filter: blur(3px);
   user-select: none;
 }
+#page-wrapper {
+  gap: 0;
+}
+#adhd-content {
+  display: none;
+}
+.displaymode-subwaysurfers #adhd-content {
+  display: block;
+}
 #content-body {
   gap: 20px;
   padding: 10px;
@@ -259,5 +268,19 @@
 }
 .during-screenshot .carousel-image > .deleteBtn {
   display: none;
+}
+/* ------------------------ DISTRACTION ------------------------ */
+#subway-surfers-video {
+  height: 100vh;
+}
+#video-mute-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  gap: 10px;
 }
 /*# sourceMappingURL=sheet.css.map */

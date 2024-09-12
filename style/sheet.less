@@ -2,6 +2,20 @@
 @import "globals";
 @import "material";
 
+#page-wrapper {
+	gap: 0;
+}
+
+#normal-content {
+}
+
+#adhd-content {
+	display: none;
+}
+.displaymode-subwaysurfers #adhd-content {
+	display: block;
+}
+
 #content-body {
 	&:extend(.flex-vert);
 	gap: 20px;
@@ -158,3 +172,22 @@
 	border: none;
 }
 .during-screenshot .carousel-image > .deleteBtn { display: none; }
+
+
+/* ------------------------ DISTRACTION ------------------------ */
+
+#subway-surfers-video {
+	height: 100vh;
+}
+
+#video-mute-button {
+	position: fixed;
+	bottom: @padding + 10px;
+	right: @padding + 10px;
+	background-color: white;
+	z-index: 1;
+
+	display: inline-flex;
+	flex-direction: row-reverse;
+	gap: @padding;
+}

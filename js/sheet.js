@@ -7,6 +7,26 @@ function toggleDisplayMode(dm) {
     return added
 }
 
+function toggleSubwaySurfers() {
+    const added = toggleDisplayMode('subwaysurfers')
+
+    const video = document.getElementById("subway-surfers-video")
+    const button = document.getElementById("subwaysurfers-button")
+    if (added) {
+        video.play()
+        button.innerText = "Ok stop"
+    }
+    else {
+        video.pause()
+        button.innerText = "Distract me"
+    }
+}
+
+function toggleSubwaySurfersVolume() {
+    const video = document.getElementById("subway-surfers-video")
+    // TODO: implement muting
+}
+
 function addItemSections(parent) {
     const exclude = [""]
     Object.keys(CONFIG.sheet.items.types).forEach((key) => {
