@@ -9,6 +9,7 @@ const arrayToggle = (arr, val) =>
 function toggleClass(e, c, cb) {
     const b = e.classList.toggle(c)
     if (cb) cb(b)
+    return b
 }
 
 // Gets a nested item from a string key
