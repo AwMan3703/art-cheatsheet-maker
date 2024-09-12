@@ -23,8 +23,11 @@ function toggleSubwaySurfers() {
 }
 
 function toggleSubwaySurfersVolume() {
-    const video = document.getElementById("subway-surfers-video")
-    // TODO: implement muting
+    const added = toggleClass(subwaysurfers_video, 'muted')
+    subwaysurfers_video.muted = !!added;
+
+    const buttonIcon = document.getElementById("subwaysurfers-mute-button-icon")
+    buttonIcon.src = added ? "assets/speaker-off.png" : "assets/speaker.png"
 }
 
 function addItemSections(parent) {
