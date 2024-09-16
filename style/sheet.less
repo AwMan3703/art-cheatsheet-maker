@@ -31,7 +31,7 @@
 #section-contentHeader > #main-title {
 	display: block;
 	border: none;
-	font-size: @fontsize * 3;
+	font-size: calc(@fontsize * 3);
 	font-weight: bold;
 }
 #section-contentHeader > #main-title::placeholder { font-weight: bold; }
@@ -42,9 +42,9 @@
 	display: flex;
 	align-items: baseline;
 	gap: @padding;
-	font-size: @fontsize * 2;
+	font-size: calc(@fontsize * 2);
 }
-#main-data *[id$="wrapper"] .main-data-icon { height: @fontsize * 1.5 }
+#main-data *[id$="wrapper"] .main-data-icon { height: calc(@fontsize * 1.5) }
 
 #date-label,
 #input-date-wrapper > *:not(.input-date-separator) {
@@ -182,8 +182,8 @@
 
 #subwaysurfers-mute-button {
 	position: fixed;
-	bottom: @padding + 10px;
-	right: @padding + 10px;
+	bottom: calc(@padding + 10px);
+	right: calc(@padding + 10px);
 	background-color: white;
 	z-index: 1;
 

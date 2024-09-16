@@ -1,51 +1,12 @@
-/* Global variables / Config */
-.displaymode-darkmode {
-  --color-layer: rgba(255, 255, 255, 0.05);
-  --color-layer-double: rgba(255, 255, 255, 0.1);
-  --color-layer-heavy: rgba(255, 255, 255, 0.5);
-  --color-unlayer: rgba(0, 0, 0, 0.3);
-  --color-unlayer-heavy: rgba(0, 0, 0, 0.75);
-  /* Keep the same shadow color regardless of set display mode */
-  --color-background-main: #24242a;
-  --color-border-main: #3e3e3e;
-  --color-text-main: #f2f2f2;
-  --color-text-secondary: rgba(242, 242, 242, 0.5);
-  --color-text-inverted-main: #212121;
-  --color-text-inverted-secondary: rgba(33, 33, 33, 0.5);
-}
-:root,
-.during-screenshot {
-  --color-layer: rgba(0, 0, 0, 0.05);
-  --color-layer-double: rgba(0, 0, 0, 0.1);
-  --color-layer-heavy: rgba(0, 0, 0, 0.5);
-  --color-unlayer: rgba(255, 255, 255, 0.6);
-  --color-unlayer-heavy: rgba(255, 255, 255, 0.95);
-  --color-shadow: rgba(0, 0, 0, 0.1);
-  --color-shadow-soft: rgba(0, 0, 0, 0.035);
-  --color-background-main: #ffffff;
-  --color-border-main: #7a7a7a;
-  --color-text-main: #212121;
-  --color-text-secondary: rgba(33, 33, 33, 0.5);
-  --color-text-inverted-main: #f2f2f2;
-  --color-text-inverted-secondary: rgba(242, 242, 242, 0.5);
-  --color-text-light-main: #f2f2f2;
-  --color-text-light-secondary: rgba(242, 242, 242, 0.5);
-  --color-text-dark-main: #212121;
-  --color-text-dark-secondary: rgba(33, 33, 33, 0.5);
-  --color-accent-main: #9f374f;
-  --color-accent-secondary: rgba(159, 55, 79, 0.5);
-  --shadow-main: 0 5px 15px 10px var(--color-shadow);
-  --shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
-}
 .flex-vert {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .flex-hor {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .round-corners,
 .material,
@@ -62,8 +23,8 @@
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb {
   background-color: var(--color-layer);
-  padding: 10px;
-  gap: 10px;
+  padding: min(10px, 1vh);
+  gap: calc(min(10px, 1vh) + 2px);
 }
 .material-border {
   border-style: solid;

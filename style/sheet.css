@@ -42,13 +42,13 @@
 .cs-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .flex-hor,
 .cs-section-header {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .round-corners,
 .material,
@@ -72,8 +72,8 @@
 .cs-item,
 .image-carousel {
   background-color: var(--color-layer);
-  padding: 10px;
-  gap: 10px;
+  padding: min(10px, 1vh);
+  gap: calc(min(10px, 1vh) + 2px);
 }
 .material-border,
 .carousel-image {
@@ -109,7 +109,7 @@
 }
 #content-body {
   gap: 20px;
-  padding: 10px;
+  padding: min(10px, 1vh);
   background-color: var(--color-background-main);
   min-height: 100dvh;
 }
@@ -118,7 +118,7 @@
 #section-contentHeader > #main-title {
   display: block;
   border: none;
-  font-size: 6dvh;
+  font-size: calc(max(10pt, 1.25vw, 1vh) * 3);
   font-weight: bold;
 }
 #section-contentHeader > #main-title::placeholder {
@@ -129,11 +129,11 @@
 #main-data > *[id$="wrapper"] {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  font-size: 4dvh;
+  gap: min(10px, 1vh);
+  font-size: calc(max(10pt, 1.25vw, 1vh) * 2);
 }
 #main-data *[id$="wrapper"] .main-data-icon {
-  height: 3dvh;
+  height: calc(max(10pt, 1.25vw, 1vh) * 1.5);
 }
 #date-label,
 #input-date-wrapper > *:not(.input-date-separator) {
@@ -161,7 +161,7 @@
 }
 .cs-section-header > h3 {
   text-transform: capitalize;
-  margin-inline: 10px;
+  margin-inline: min(10px, 1vh);
 }
 /* ------------------------ ITEMS ------------------------ */
 .cs-item {
@@ -201,7 +201,7 @@
 }
 /* ------------------------ CAROUSELS ------------------------ */
 .imageCarousel-wrapper {
-  margin-block: calc(10px / 2);
+  margin-block: calc(min(10px, 1vh) / 2);
   overflow: hidden;
 }
 .during-screenshot .imageCarousel-wrapper {
@@ -230,7 +230,7 @@
   overflow: visible;
 }
 #section-mainImage > .image-carousel:has(.carousel-image) ~ .image-carousel-options {
-  margin-block-start: 10px;
+  margin-block-start: min(10px, 1vh);
 }
 .during-screenshot .image-carousel-options {
   display: none;
@@ -244,7 +244,7 @@
   display: inline-block;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
-  margin-inline-end: 10px;
+  margin-inline-end: min(10px, 1vh);
 }
 .carousel-image:last-child {
   margin-inline-end: revert;
@@ -258,8 +258,8 @@
 }
 .carousel-image > .deleteBtn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: min(10px, 1vh);
+  right: min(10px, 1vh);
   width: 20px;
   height: 20px;
   background-color: var(--color-background-main);
@@ -275,12 +275,12 @@
 }
 #subwaysurfers-mute-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: calc(min(10px, 1vh) + 10px);
+  right: calc(min(10px, 1vh) + 10px);
   background-color: white;
   z-index: 1;
   display: inline-flex;
   flex-direction: row-reverse;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 /*# sourceMappingURL=sheet.css.map */
