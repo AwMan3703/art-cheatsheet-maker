@@ -49,10 +49,7 @@
 	--shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
 }
 
-@fontsize: 2dvh;
-@media only screen and (hover: none) and (pointer: coarse) {
-  @fontsize: 3dvh;
-}
-@padding: 10px;
+@fontsize: max(10pt, 1.25vw, 1vh);
+@padding: min(10px, 1vh);
 
 @imageCarousel-height: 100px;

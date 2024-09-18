@@ -14,11 +14,11 @@
 	min-width: 30%;
 	background-color: var(--color-background-main);
 
-	padding: @padding + 10px;
+	padding: calc(@padding + 10px);
 	box-shadow: var(--shadow-main);
 }
 
-.dialog-wrapper hr { margin-block: @padding * 2 }
+.dialog-wrapper hr { margin-block: calc(@padding * 2) }
 
 .dialog-title { font-size: xx-large }
 .dialog-description { font-size: large }
@@ -27,7 +27,7 @@
 	display: flex;
 	justify-content: space-around;
 }
-.dialog-options-button { padding: @padding + 10px }
+.dialog-options-button { padding: calc(@padding + 10px) }
 .dialog-options-buttonAbort {}
 .dialog-options-buttonComplete { font-weight: bold }
 .dialog-options-buttonComplete:hover {
@@ -35,7 +35,7 @@
 	background-color: var(--color-accent-main);
 }
 
-.dialog-input { margin-block-end: @padding + 10px }
+.dialog-input { margin-block-end: calc(@padding + 10px) }
 .dialog-input-field {
 	&:extend(.round-corners);
 	display: inline;
