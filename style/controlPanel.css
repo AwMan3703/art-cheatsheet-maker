@@ -99,7 +99,7 @@
   position: sticky;
   bottom: 0;
   display: grid;
-  grid-template-rows: 1fr 0.25fr;
+  grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr 20%;
   gap: 10px;
   border-bottom-right-radius: 0 !important;
