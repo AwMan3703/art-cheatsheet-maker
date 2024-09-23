@@ -1,4 +1,16 @@
 
+function getRandomUUID() {
+    // Fallback for crypto.randomUUID() because apparently some devices still don't support it lol
+    try { return crypto.randomUUID() }    // "mom can we get randomUUID()?"
+    catch (e) {                           // "we have randomUUID() at home"
+        alert("LMAO-"+e)
+        console.error(e)
+    }
+    // randomUUID() at home:
+    const r = _ => Math.round(1000000 * Math.random())
+    return `${r()}-${r()}-${r()}-${r()}-${r()}`
+}
+
 // If the element is in the array, it gets removed – if not, it gets added
 const arrayToggle = (arr, val) =>
     arr.includes(val) ? arr.filter(el => el !== val) : [...arr, val]
@@ -106,11 +118,6 @@ function forAllElements(collection, fn) {
 // Converts the first letter of the string to uppercase
 function capitalize(text) {
     return text[0].toUpperCase() + text.substring(1, text.length)}
-
-// Returns a standardized UUID string
-function getUUID(object) {
-    return `cs${capitalize(object)}-UUID-${crypto.randomUUID()}`
-}
 
 // Finds the last occurrence of a string from `array` that is contained in `targetString`, then returns it
 function findLastContainedString(array, targetString) {

@@ -2,6 +2,7 @@
 /* ----- Reset ----- */
 input, button {
 	all: unset;
+	pointer-events: all;
 }
 /* ----------------- */
 
@@ -12,9 +13,6 @@ input, button {
 	font-family: system-ui, "Arial";
 	font-size: @fontsize;
 	color: var(--color-text-main);
-}
-@media only screen and (hover: none) and (pointer: coarse) {
-	* { font-size: calc((@fontsize / 4) * 3) }
 }
 
 html {

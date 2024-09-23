@@ -40,12 +40,12 @@
 .flex-vert {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .flex-hor {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .round-corners,
 .material,
@@ -67,8 +67,8 @@
 #controls,
 .controls-panel {
   background-color: var(--color-layer);
-  padding: 10px;
-  gap: 10px;
+  padding: min(10px, 1vh);
+  gap: calc(min(10px, 1vh) + 2px);
 }
 .material-border {
   border-style: solid;
@@ -99,7 +99,7 @@
   position: sticky;
   bottom: 0;
   display: grid;
-  grid-template-rows: 1fr 0.25fr;
+  grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr 20%;
   gap: 10px;
   border-bottom-right-radius: 0 !important;

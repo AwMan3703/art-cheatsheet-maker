@@ -42,12 +42,12 @@
 #client-menu-dropdown > * {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .flex-hor {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .round-corners,
 .material,
@@ -68,8 +68,8 @@
 #client-menu-button,
 #client-menu-dropdown {
   background-color: var(--color-layer);
-  padding: 10px;
-  gap: 10px;
+  padding: min(10px, 1vh);
+  gap: calc(min(10px, 1vh) + 2px);
 }
 .material-border {
   border-style: solid;
@@ -103,17 +103,17 @@
 /* ------------------ GENERAL ------------------ */
 #client-menu {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: calc(min(10px, 1vh) + 10px);
+  right: calc(min(10px, 1vh) + 10px);
   z-index: 1;
   display: inline-flex;
   flex-direction: row-reverse;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 #client-menu-button {
   width: 35px;
   height: 35px;
-  padding: 13px;
+  padding: calc(min(10px, 1vh) + 3px);
   background-color: var(--color-unlayer);
   backdrop-filter: blur(5px);
   border: solid 5px var(--color-layer);
@@ -128,10 +128,10 @@
   height: 100%;
 }
 #client-menu-dropdown {
-  gap: 25px;
+  gap: calc(min(10px, 1vh) + 15px);
   background-color: var(--color-background-main);
   box-shadow: var(--shadow-main);
-  padding: 15px;
+  padding: calc(min(10px, 1vh) + 5px);
   text-align: center;
   translate: 0 3px;
   opacity: 0;
@@ -153,8 +153,8 @@
 }
 #client-options > button.setting-bool::after {
   color: var(--color-text-light-main);
-  padding-inline: calc(10px);
-  padding-block: calc(10px / 8);
+  padding-inline: calc(min(10px, 1vh));
+  padding-block: calc(min(10px, 1vh) / 8);
   text-transform: uppercase;
   border-radius: 1000px;
   /* off by default */
@@ -171,8 +171,8 @@
 }
 #client-debug-options #client-option-debug-screenshotMode::after {
   color: var(--color-text-light-main);
-  padding-inline: calc(10px);
-  padding-block: calc(10px / 8);
+  padding-inline: calc(min(10px, 1vh));
+  padding-block: calc(min(10px, 1vh) / 8);
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 10px;
@@ -201,9 +201,9 @@ button#shareButton {
 #client-menu-dropdown > #meta-links > button {
   width: 100%;
   width: -webkit-fill-available;
-  padding-inline-start: 20px;
-  padding-inline-end: 60px;
-  padding-block: 10px;
+  padding-inline-start: calc(min(10px, 1vh) + 10px);
+  padding-inline-end: calc(min(10px, 1vh) + 50px);
+  padding-block: min(10px, 1vh);
   text-shadow: 0 0 15px var(--color-text-inverted-main);
   background: linear-gradient(90deg, var(--color-background-main), var(--color-unlayer-heavy), var(--color-unlayer) 80%, transparent), repeat -7px 0 / 28px var(--bgImgUrl);
   background-clip: padding-box;
