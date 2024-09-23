@@ -1,6 +1,6 @@
 {
 	"client" : {
-		"version" : "1.5",
+		"version" : "1.6",
 		"saveLocalConfig" : false,
 		"localConfigKey" : "local-config",
 		"developmentMode": true,
@@ -20,63 +20,78 @@
 			"types" : {
 				"csITEMTYPE:commission" : {
 					"names" : { "singular" : "commission", "plural" : "commissions", "section_title" : "commissions" },
-					"icon" : "king.png"
+					"icon" : "king.png",
+					"emoji" : "💰"
 				},
 				"csITEMTYPE:context" : {
 					"names" : { "singular" : "context", "plural" : "context", "section_title" : "context" },
-					"icon" : "dashed-square.png"
+					"icon" : "dashed-square.png",
+					"emoji" : "🌎"
 				},
 				"csITEMTYPE:history" : {
 					"names" : { "singular" : "history", "plural" : "histories", "section_title" : "history" },
-					"icon" : "history.png"
+					"icon" : "history.png",
+					"emoji" : "🕰️"
 				},
 				"csITEMTYPE:size" : {
 					"names" : { "singular" : "size", "plural" : "sizes", "section_title" : "size" },
-					"icon" : "ruler.png"
+					"icon" : "ruler.png",
+					"emoji" : "🐘"
 				},
 				"csITEMTYPE:description" : {
 					"names" : { "singular" : "description", "plural" : "descriptions", "section_title" : "description" },
-					"icon" : "text.png"
+					"icon" : "text.png",
+					"emoji" : "📝"
 				},
 				"csITEMTYPE:inspiration" : {
 					"names" : { "singular" : "inspiration", "plural" : "inspirations", "section_title" : "inspiration sources" },
-					"icon" : "bubble.png"
+					"icon" : "bubble.png",
+					"emoji" : "💡"
 				},
 				"csITEMTYPE:style" : {
 					"names" : { "singular" : "style", "plural" : "styles", "section_title" : "style" },
-					"icon" : "shapes.png"
+					"icon" : "shapes.png",
+					"emoji" : "🖌️"
 				},
 				"csITEMTYPE:color" : {
 					"names" : { "singular" : "color", "plural" : "colors", "section_title" : "colors" },
-					"icon" : "palette.png"
+					"icon" : "palette.png",
+					"emoji" : "🎨"
 				},
 				"csITEMTYPE:light" : {
 					"names" : { "singular" : "light", "plural" : "lights", "section_title" : "light" },
-					"icon" : "sun.png"
+					"icon" : "sun.png",
+					"emoji" : "☀️"
 				},
 				"csITEMTYPE:architecture" : {
 					"names" : { "singular" : "architecture", "plural" : "architectures", "section_title" : "architectures" },
-					"icon" : "temple.png"
+					"icon" : "temple.png",
+					"emoji" : "🏛️"
 				},
 				"csITEMTYPE:material" : {
 					"names" : { "singular" : "material", "plural" : "materials", "section_title" : "materials" },
-					"icon" : "materials.png"
+					"icon" : "materials.png",
+					"emoji" : "🧱"
 				},
 				"csITEMTYPE:interpretation" : {
 					"names" : { "singular" : "interpretation", "plural" : "interpretations", "section_title" : "interpretations" },
-					"icon" : "magnifying-lens.png"
+					"icon" : "magnifying-lens.png",
+					"emoji" : "🔎"
 				},
 				"csITEMTYPE:hypothesis" : {
 					"names" : { "singular" : "hypothesis", "plural" : "hypotheses", "section_title" : "hypotheses" },
-					"icon" : "question-mark.png"
+					"icon" : "question-mark.png",
+					"emoji" : "❓"
 				},
 				"csITEMTYPE:document" : {
 					"names" : { "singular" : "document", "plural" : "documents", "section_title" : "documents" },
-					"icon" : "sheet.png"
+					"icon" : "sheet.png",
+					"emoji" : "📑"
 				},
 				"csITEMTYPE:text" : {
 					"names": {"singular": "text", "plural": "texts", "section_title": "texts" },
-					"icon": "book.png"
+					"icon": "book.png",
+					"emoji" : "📚"
 				}
 			},
 			"dynamicBackgroundsRoot" : "assets/",

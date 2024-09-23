@@ -1,8 +1,9 @@
 
 function addItem(type) {
+    const itemType = CONFIG.sheet.items.types[type]
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
-    }, null, `New ${CONFIG.sheet.items.types[type].names.singular}`, "content:", "Add")
+    }, null, `${itemType.emoji} New ${itemType.names.singular}`, "content:", "Add")
 }
 
 function addItemGenerationButtons(parent) {
@@ -13,7 +14,7 @@ function addItemGenerationButtons(parent) {
         const e = document.createElement("button")
         e.onclick = _ => { addItem(key) }
         e.className = "item-gen-button"
-        e.innerText = `+ ${capitalize(type.names.singular)}`
+        e.innerText = `${type.emoji} ${capitalize(type.names.singular)}`
         parent.appendChild(e)
     })
 }
