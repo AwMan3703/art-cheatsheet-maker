@@ -40,11 +40,11 @@ Default options:
 
 */
 function Dialog(parent, structure) {
-    const addhr = () => wrapper.appendChild(document.createElement("hr"))
-
     const wrapper = document.createElement("div")
     wrapper.className = "dialog-wrapper"
-    wrapper.id = `dialog-${crypto.randomUUID()}`
+    wrapper.id = `dialog-${getRandomUUID()}`
+
+    const addhr = () => wrapper.appendChild(document.createElement("hr"))
 
     // Build the title
     if (!isEmptyString(structure.title)) {
@@ -70,7 +70,7 @@ function Dialog(parent, structure) {
     const inputs = document.createElement("div")
     inputs.className = "dialog-inputs-wrapper"
     if (isObject(structure.inputs)) for (const [name, options] of Object.entries(structure.inputs)) {
-        const id = `dialog-input-${name}-${crypto.randomUUID()}`
+        const id = `dialog-input-${name}-${getRandomUUID()}`
         inputMap[name] = id
         inputs.appendChild(createInputField(id, inputsClass, name, options.description, options.type, options.defaultValue, options.attributes))
     }

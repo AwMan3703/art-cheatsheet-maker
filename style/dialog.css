@@ -40,12 +40,12 @@
 .flex-vert {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .flex-hor {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: min(10px, 1vh);
 }
 .round-corners,
 .material,
@@ -66,8 +66,8 @@
 .scrollbar-visible::-webkit-scrollbar-thumb,
 .dialog-wrapper {
   background-color: var(--color-layer);
-  padding: 10px;
-  gap: 10px;
+  padding: min(10px, 1vh);
+  gap: calc(min(10px, 1vh) + 2px);
 }
 .material-border {
   border-style: solid;
@@ -93,6 +93,7 @@
 }
 #dialog-screen-darkener:not(:has(.dialog-wrapper)) {
   display: none;
+  pointer-events: none;
 }
 .dialog-wrapper {
   position: fixed;
@@ -101,11 +102,11 @@
   transform: translate(-50%, -50%);
   min-width: 30%;
   background-color: var(--color-background-main);
-  padding: 20px;
+  padding: calc(min(10px, 1vh) + 10px);
   box-shadow: var(--shadow-main);
 }
 .dialog-wrapper hr {
-  margin-block: 20px;
+  margin-block: calc(min(10px, 1vh) * 2);
 }
 .dialog-title {
   font-size: xx-large;
@@ -118,7 +119,7 @@
   justify-content: space-around;
 }
 .dialog-options-button {
-  padding: 20px;
+  padding: calc(min(10px, 1vh) + 10px);
 }
 .dialog-options-buttonComplete {
   font-weight: bold;
@@ -128,15 +129,15 @@
   background-color: var(--color-accent-main);
 }
 .dialog-input {
-  margin-block-end: 20px;
+  margin-block-end: calc(min(10px, 1vh) + 10px);
 }
 .dialog-input-field {
   display: inline;
   background-color: var(--color-layer);
-  padding: 10px;
+  padding: min(10px, 1vh);
 }
 .dialog-input-title {
   display: inline;
-  margin-inline-end: 10px;
+  margin-inline-end: min(10px, 1vh);
 }
 /*# sourceMappingURL=dialog.css.map */
