@@ -98,16 +98,11 @@ function getDynamicBackground(string) {
     return CONFIG.sheet.items.dynamicBackgroundsRoot + `DYNBG-${bgasset}.png`
 }
 
-function addItem(type) {
-    textInputDialog((text) => {
-        if (!isEmptyString(text)) appendItem(type, text)
-    }, null, `New ${CONFIG.sheet.items.types[type].names.singular}`, "content:", "Add")
-}
 function appendItem(type, content) {
     const e = document.createElement("div")
     e.className = `cs-item item-${type}`
     e.dataset.itemtype = type
-    const itemID = getUUID("item")
+    const itemID = `csITEM-UUID-${getRandomUUID()}`
     e.id = itemID
     e.style.backgroundImage = `url("${getDynamicBackground(content)}")`
 

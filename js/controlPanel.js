@@ -1,11 +1,17 @@
 
+function addItem(type) {
+    textInputDialog((text) => {
+        if (!isEmptyString(text)) appendItem(type, text)
+    }, null, `New ${CONFIG.sheet.items.types[type].names.singular}`, "content:", "Add")
+}
+
 function addItemGenerationButtons(parent) {
     const exclude = [""]
     Object.keys(CONFIG.sheet.items.types).forEach((key) => {
         if (exclude.includes(key)) { return }
         const type = CONFIG.sheet.items.types[key]
         const e = document.createElement("button")
-        e.setAttribute("onclick", `addItem("${key}")`)
+        e.onclick = _ => { addItem(key) }
         e.className = "item-gen-button"
         e.innerText = `+ ${capitalize(type.names.singular)}`
         parent.appendChild(e)

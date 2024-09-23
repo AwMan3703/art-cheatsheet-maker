@@ -93,6 +93,7 @@
 }
 #dialog-screen-darkener:not(:has(.dialog-wrapper)) {
   display: none;
+  pointer-events: none;
 }
 .dialog-wrapper {
   position: fixed;

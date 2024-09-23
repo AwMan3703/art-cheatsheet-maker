@@ -2,6 +2,7 @@
 input,
 button {
   all: unset;
+  pointer-events: all;
 }
 /* ----------------- */
 /* Global variables / Config */

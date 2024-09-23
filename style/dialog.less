@@ -2,7 +2,10 @@
 @import "globals";
 @import "material";
 
-#dialog-screen-darkener:not(:has(.dialog-wrapper)) { display: none }
+#dialog-screen-darkener:not(:has(.dialog-wrapper)) {
+	display: none;
+	pointer-events: none;
+}
 
 .dialog-wrapper {
 	&:extend(.material);
