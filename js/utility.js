@@ -3,12 +3,11 @@ function getRandomUUID() {
     // Fallback for crypto.randomUUID() because apparently some devices still don't support it lol
     try { return crypto.randomUUID() }    // "mom can we get randomUUID()?"
     catch (e) {                           // "we have randomUUID() at home"
-        alert("LMAO-"+e)
         console.error(e)
+        // randomUUID() at home:
+        const r = _ => Math.round(1000000 * Math.random())
+        return `${r()}-${r()}-${r()}-${r()}-${r()}`
     }
-    // randomUUID() at home:
-    const r = _ => Math.round(1000000 * Math.random())
-    return `${r()}-${r()}-${r()}-${r()}-${r()}`
 }
 
 // If the element is in the array, it gets removed – if not, it gets added
