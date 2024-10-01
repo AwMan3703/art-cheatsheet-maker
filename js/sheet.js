@@ -143,6 +143,7 @@ function appendItem(type, content) {
 
     const p = document.getElementById(`section-${type}`)
     p.appendChild(e)
+    p.style.display = 'inherit'
     return e
 }
 
@@ -160,14 +161,19 @@ function editItem(eID) {
 function deleteItem(eID) {
     const e = document.getElementById(eID)
     const type = CONFIG.sheet.items.types[e.dataset.itemtype]
+    const p = document.getElementById(`section-${e.dataset.itemtype}`)
+    const removeItem = () => {
+        e.remove()
+        if (p.querySelectorAll('.cs-item').length === 0) p.style.display = 'none'
+    }
     if (
         document.querySelector(`#${eID} > p`).innerText.length > CONFIG.sheet.editing.deleteWarningLengthThreshold ||
         document.querySelectorAll(`#${eID} .image-carousel .carousel-image`).length > 0 && CONFIG.sheet.editing.deleteWarningWhenImagePresent
     ) {
-        yesNoDialog(() => {e.remove()}, null,
+        yesNoDialog(removeItem, null,
             `Vuoi davvero eliminare questo elemento (${type.names.singular})?`,
             "Se confermi, verrà eliminato permanentemente")
-    } else { e.remove() }
+    } else { removeItem() }
 }
 
 function addImages(parent, files) {

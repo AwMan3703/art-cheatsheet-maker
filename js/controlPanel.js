@@ -12,7 +12,7 @@ function addItemGenerationButtons(parent) {
         if (exclude.includes(key)) { return }
         const type = CONFIG.sheet.items.types[key]
         const e = document.createElement("button")
-        e.onclick = _ => { addItem(key) }
+        e.ontouchstart = e.onclick = _ => { addItem(key) }
         e.className = "item-gen-button"
         e.innerText = `${type.emoji} ${capitalize(type.names.singular)}`
         parent.appendChild(e)

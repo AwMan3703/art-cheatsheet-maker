@@ -90,6 +90,8 @@ function Dialog(parent, structure) {
     optionAbort.className = "dialog-options-button dialog-options-buttonAbort"
     optionAbort.innerText = structure.options.abortDialog.label
     optionAbort.onclick = () => {
+        parent.style.display = 'none'
+
         callbackWrapper(() => { structure.options.abortDialog.callback(null) })
     }
     options.appendChild(optionAbort)
@@ -99,6 +101,8 @@ function Dialog(parent, structure) {
         optionComplete.className = "dialog-options-button dialog-options-buttonComplete"
         optionComplete.innerText = structure.options.completeDialog.label
         optionComplete.onclick = () => {
+            parent.style.display = 'none'
+
             const results = {}
             for (const [name, id] of Object.entries(inputMap)) {
                 results[name] = document.getElementById(id)
@@ -115,6 +119,7 @@ function Dialog(parent, structure) {
 
     // Append the dialog
     parent.appendChild(wrapper)
+    parent.style.display = 'inherit'
 }
 
 // Utility
