@@ -3,7 +3,7 @@ function addItem(type) {
     const itemType = CONFIG.sheet.items.types[type]
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
-    }, null, `${itemType.emoji} Agguingi ${itemType.names.singular}`, "contenuto:", "Aggiungi")
+    }, null, `${itemType.emoji} Aggiungi ${itemType.names.singular}`, "contenuto:", "Aggiungi")
 }
 
 function addItemGenerationButtons(parent) {
