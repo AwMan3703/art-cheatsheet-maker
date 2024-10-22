@@ -139,6 +139,9 @@
 #input-date-wrapper > *:not(.input-date-separator) {
   all: inherit;
 }
+#date-label {
+  opacity: 0.3 !important;
+}
 /* during screenshot */
 .during-screenshot #main-data :not(#input-date-wrapper) > .main-data-icon:not(:has( + input:not(:placeholder-shown))),
 .during-screenshot #main-data #input-date-wrapper .main-data-icon:not(:has( ~ *[id$="wrapper"] input:not(:placeholder-shown))),

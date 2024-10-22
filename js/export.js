@@ -29,7 +29,11 @@ function exportSheet() {
     const toDownloadButton = (blob) => {
         downloadButton.href = URL.createObjectURL(blob)
         downloadButton.classList.add("available")
-        downloadButton.download = document.getElementById("main-title").value
+
+        const sheet_name = document.getElementById("main-title").value
+        const sheet_date = document.getElementById('input-dateFrom-year').value || document.getElementById('input-dateTo-year').value
+        const include_date = document.getElementById('export-with-date').checked
+        downloadButton.download = `${sheet_date && include_date ? sheet_date + ' ' : ''}${sheet_name}`
 
         downloadButton.addEventListener("click", () => {
             downloadButton.classList.remove("available")

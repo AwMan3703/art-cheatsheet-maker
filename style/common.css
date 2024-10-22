@@ -146,8 +146,9 @@ input::placeholder {
 .during-screenshot input:placeholder-shown {
   display: none;
 }
-label {
-  opacity: 0.3 !important;
+input[type=checkbox] {
+  all: revert;
+  display: inline;
 }
 h1,
 h2,

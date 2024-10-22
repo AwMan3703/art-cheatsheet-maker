@@ -59,7 +59,10 @@ input::placeholder {
 	color: var(--color-text-secondary);
 }
 .during-screenshot input:placeholder-shown { display: none }
-label { opacity: .3 !important }
+input[type=checkbox] {
+	all: revert;
+	display: inline;
+}
 
 h1, h2, h3, h4, h5, h6 { margin: 0; }
 
