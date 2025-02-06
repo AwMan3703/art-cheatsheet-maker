@@ -55,6 +55,28 @@ function addItemSections(parent) {
     })
 }
 
+function makeImageCarouselSearchButton(source_elements) {
+    const btnSearch = document.createElement("button")
+    btnSearch.className = "imageCarousel-button-search"
+    btnSearch.onclick = () => {
+        const text = []
+        forAllElements(source_elements, e => {
+            text.push(e.innerText || e.value)
+        })
+        const query = text.join(', ')
+        console.log('Attempting to open quick image search for: ', query)
+        window.open(googleImageSearchUrl(query), '_blank').focus();
+    }
+    const iconSearch = document.createElement("img")
+    iconSearch.className = "icon-mono display-mode-dynamic-icon"
+    iconSearch.src = "assets/magnifying-lens.png"
+    iconSearch.alt = "+"
+    btnSearch.appendChild(iconSearch)
+    btnSearch.appendChild(document.createTextNode("Cerca immagine"))
+
+    return btnSearch
+}
+
 function addImageCarouselOptions(e) {
     const wrapper = document.createElement("div")
     wrapper.className = "flex-hor image-carousel-options"
@@ -78,7 +100,6 @@ function addImageCarouselOptions(e) {
                 )
             }
         )
-
     }
     const iconLink = document.createElement("img")
     iconLink.className = "icon-mono display-mode-dynamic-icon"
@@ -89,6 +110,14 @@ function addImageCarouselOptions(e) {
 
     wrapper.appendChild(btnUpload)
     wrapper.appendChild(btnLink)
+    if (e.id === 'section-mainImage') {
+        const source_elements = [
+            document.getElementById('main-title'),
+            document.getElementById('input-author'),
+            document.getElementById('input-dateFrom-year')
+        ]
+        wrapper.appendChild(makeImageCarouselSearchButton(source_elements))
+    }
     e.appendChild(wrapper)
 }
 
