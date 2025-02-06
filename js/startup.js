@@ -58,6 +58,8 @@ function startup(configData) {
     if (displayModes.length!==0) { for (const dm of displayModes) {
         document.body.classList.add(dm)
     } }
+    const content_body = document.getElementById('content-body')
+    if (CONFIG.sheet.editing.enableDynamicBackgrounds) content_body.classList.add('dynamic-backgrounds-enabled')
 
     window.onbeforeunload = () => {
         console.log("Running beforeunload callback...")
