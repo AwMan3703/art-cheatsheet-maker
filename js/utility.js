@@ -135,3 +135,11 @@ function findLastContainedStringArrays(obj, targetString) {
     }
     return null;
 }
+
+function googleImageSearchUrl(s) {
+    const baseURL = 'https://images.google.com/search?'
+    const url = new URLSearchParams()
+    url.set('q', s)
+    url.set('udm', '2')
+    return baseURL + url.toString()
+}
