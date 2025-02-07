@@ -187,11 +187,11 @@ function appendItem(type, content) {
 
 function selectColor(eID) {
     const e = document.querySelector(`#${eID}`)
-    const type = CONFIG.sheet.items.types[e.parentNode.dataset.itemtype]
+    const type = CONFIG.sheet.items.types[e.dataset.itemtype]
     colorSelectDialog(color => {
         console.log(color)
         e.style.backgroundColor = color
-    }, `Scegli un colore per l'elemento ${type}`, CONFIG.sheet.items.default_highlight_colors)
+    }, `Evidenzia ${type.names.singular}`, CONFIG.sheet.items.default_highlight_colors)
 }
 
 function editItem(eID) {
@@ -218,7 +218,7 @@ function deleteItem(eID) {
         document.querySelectorAll(`#${eID} .image-carousel .carousel-image`).length > 0 && CONFIG.sheet.editing.deleteWarningWhenImagePresent
     ) {
         yesNoDialog(removeItem, null,
-            `Vuoi davvero eliminare questo elemento (${type.names.singular})?`,
+            `Eliminare ${type.names.singular}?`,
             "Se confermi, verrà eliminato permanentemente")
     } else { removeItem() }
 }

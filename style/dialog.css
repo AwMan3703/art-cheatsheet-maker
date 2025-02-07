@@ -145,6 +145,8 @@
   margin-inline-end: min(10px, 1vh);
 }
 .cs-item-color-selector-list {
+  max-width: 40vw;
+  flex-wrap: wrap;
   gap: min(10px, 1vh);
   padding-inline-start: 0;
 }
