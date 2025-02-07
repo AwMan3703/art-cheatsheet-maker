@@ -42,7 +42,9 @@
   flex-direction: column;
   gap: min(10px, 1vh);
 }
-.flex-hor {
+.flex-hor,
+.cs-item-color-selector-list,
+.cs-item-color-selector-item {
   display: flex;
   flex-direction: row;
   gap: min(10px, 1vh);
@@ -52,7 +54,8 @@
 .dialog-wrapper,
 .dialog-input-field,
 .scrollbar-visible::-webkit-scrollbar-thumb,
-.dialog-wrapper {
+.dialog-wrapper,
+.cs-item-color-selector-item {
   border-radius: 20px;
 }
 .backdrop-blur {
@@ -64,7 +67,8 @@
 }
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
-.dialog-wrapper {
+.dialog-wrapper,
+.cs-item-color-selector-item {
   background-color: var(--color-layer);
   padding: min(10px, 1vh);
   gap: calc(min(10px, 1vh) + 2px);
@@ -139,5 +143,9 @@
 .dialog-input-title {
   display: inline;
   margin-inline-end: min(10px, 1vh);
+}
+.cs-item-color-selector-list {
+  gap: min(10px, 1vh);
+  padding-inline-start: 0;
 }
 /*# sourceMappingURL=dialog.css.map */

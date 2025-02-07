@@ -16,7 +16,17 @@
 			"enableDynamicBackgrounds" : true
 		},
 		"items" : {
-			"iconRoot": "assets/",
+			"default_highlight_colors" : {
+				"Rosso": "#ff000015",
+				"Arancione": "#ff880022",
+				"Giallo": "#ffdd0030",
+				"Verde": "#00dd0015",
+				"Azzurro": "#00bbff20",
+				"Blu": "#0000ff10",
+				"Viola": "#aa00aa15",
+				"Nessuno": "inherit"
+			},
+			"iconRoot" : "assets/",
 			"types" : {
 				"csITEMTYPE:commission" : {
 					"names" : { "singular" : "commissione", "plural" : "commissioni", "section_title" : "commissione" },

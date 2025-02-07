@@ -151,6 +151,13 @@ function appendItem(type, content) {
     const btnWrapper = document.createElement("div")
     btnWrapper.className = "csItem-btn-wrapper"
 
+    const colorBtn = document.createElement("button")
+    colorBtn.onclick = _ => selectColor(itemID)
+    const colorIcon = document.createElement("img")
+    colorIcon.className = "icon-mono display-mode-dynamic-icon"
+    colorIcon.src = "assets/palette.png"
+    colorBtn.appendChild(colorIcon)
+
     const editBtn = document.createElement("button")
     editBtn.onclick = _ => editItem(itemID)
     const editIcon = document.createElement("img")
@@ -165,6 +172,7 @@ function appendItem(type, content) {
     xIcon.src = "assets/x.png"
     xBtn.appendChild(xIcon)
 
+    btnWrapper.appendChild(colorBtn)
     btnWrapper.appendChild(editBtn)
     btnWrapper.appendChild(xBtn)
 
