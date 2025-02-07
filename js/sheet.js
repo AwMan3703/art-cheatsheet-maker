@@ -177,6 +177,15 @@ function appendItem(type, content) {
     return e
 }
 
+function selectColor(eID) {
+    const e = document.querySelector(`#${eID}`)
+    const type = CONFIG.sheet.items.types[e.parentNode.dataset.itemtype]
+    colorSelectDialog(color => {
+        console.log(color)
+        e.style.backgroundColor = color
+    }, `Scegli un colore per l'elemento ${type}`, CONFIG.sheet.items.default_highlight_colors)
+}
+
 function editItem(eID) {
     const p = document.getElementById(eID)
     const e = document.querySelector(`#${eID} > p`)

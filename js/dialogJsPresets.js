@@ -88,3 +88,38 @@ const editItemDialog = (item, callbackYes, callbackNo, title) => {
         }
     )
 }
+
+const colorSelectDialog = (callback, title, colors) => {
+    let html = "<ul class='cs-item-color-selector-list'>"
+    for (const [name, code] of Object.entries(colors)) {
+        const id = crypto.randomUUID()
+        html += `<li class="cs-item-color-selector-item" style="background-color: ${code};">
+                    <input type="radio" name="color-selector-option" class="cs-item-color-selector-item-input" id="${id}" value="${code}">
+                    <label for="${id}" class="cs-item-color-selector-item-label" data-color-value="${code}">${name}</label></li>`
+    }
+    html += "</ul>"
+    Dialog(dialogParent,
+        {
+            title: title ? title : "Scegli un colore",
+            inputs: {
+                "scegli un colore:": {
+                    type: html,
+                    raw: true
+                }
+            },
+            options: {
+                completeDialog: {
+                    label: "Salva",
+                    callback: (data) => {
+                        const c = dialogParent.querySelector('input[type="radio"]:checked').value
+                        callback(c)
+                    }
+                },
+                abortDialog: {
+                    label: "Annulla",
+                    callback: () => {}
+                }
+            }
+        }
+    )
+}
