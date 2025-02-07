@@ -64,7 +64,7 @@ const textInputDialog = (callbackYes, callbackNo, title, label, yesLabel) => {
 const editItemDialog = (item, callbackYes, callbackNo, title) => {
     Dialog(dialogParent,
         {
-            title: !isEmptyString(title) ? title : `edit ${item.parentNode.id}`,
+            title: title ? title : `Modifica ${item.parentNode.id}`,
             description: "Modifica il testo, quindi clicca \"Salva\" per applicare i cambiamenti.",
             inputs: {
                 "modifica contenuto:": {
