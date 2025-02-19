@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cheatsheet maker update log</title>
+
+	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="style/material.css">
+	<link rel="stylesheet" href="style/common.css">
+	<link rel="stylesheet" href="style/dialog.css">
+	<link rel="stylesheet" href="style/commitLog.css">
+</head>
+<body>
+	<main>
+		<ol id="commit-log-list">
+		</ol>
+	</main>
+
+	<template id="commit-log-list-element-template">
+		<li class="commit-log-list-element material">
+			<div>
+				<p class="author-data">
+					<img class="author-pfp" src="">
+					<a class="author-username"></a>
+				</p>
+			</div>
+			<div>
+				<h1 class="commit-sha-id"></h1> <!--First 7 characters of commit SHA-->
+				<p class="commit-description material"></p>
+				<a class="commit-html-url">View on GitHub</a>
+			</div>
+			<div>
+				<p class="text-secondary">
+					<span class="commit-date"></span> •
+					<span class="commit-time"></span> •
+					<span class="commit-sha"></span> <!--Complete commit SHA-->
+				</p>
+			</div>
+		</li>
+	</template>
+
+	<!--Scripts-->
+	<script src="js/lib/compileHTMLTemplate.min.js"></script>
+	<script src="js/utility.js"></script>
+	<script src="js/dialog.js"></script>
+	<script src="js/dialogJsPresets.js"></script>
+	<script src="js/commitLog.js"></script>
+</body>
+</html>

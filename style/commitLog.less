@@ -1,0 +1,41 @@
+@import "common";
+
+#commit-log-list {
+	display: flex;
+	flex-direction: column;
+	gap: calc(@padding * 2);
+	padding-inline-start: 0;
+	margin: calc(@padding * 2);
+}
+
+.commit-log-list-element {
+	display: flex;
+	flex-direction: column;
+	gap: calc(@padding * 2);
+	padding: calc(@padding * 2);
+}
+.commit-log-list-element > * {
+	display: flex;
+	flex-direction: column;
+	gap: @padding;
+}
+
+.author-data {
+	display: flex;
+	align-items: center;
+	gap: @padding;
+}
+
+.author-pfp {
+	width: 1.5em;
+	aspect-ratio: 1;
+	border-radius: 100%;
+}
+
+.commit-sha-id {
+	font-size: x-large;
+}
+
+.commit-description:first-letter {
+	text-transform: capitalize;
+}

@@ -164,4 +164,7 @@ h6 {
 p {
   margin: 0;
 }
+.text-secondary {
+  opacity: 0.5;
+}
 /*# sourceMappingURL=common.css.map */
