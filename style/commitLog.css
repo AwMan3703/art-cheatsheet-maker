@@ -1,0 +1,204 @@
+/* ----- Reset ----- */
+input,
+button {
+  all: unset;
+  pointer-events: all;
+}
+input[type="radio"] {
+  all: revert;
+}
+/* ----------------- */
+/* Global variables / Config */
+.displaymode-darkmode {
+  --color-layer: rgba(255, 255, 255, 0.05);
+  --color-layer-double: rgba(255, 255, 255, 0.1);
+  --color-layer-heavy: rgba(255, 255, 255, 0.5);
+  --color-unlayer: rgba(0, 0, 0, 0.3);
+  --color-unlayer-heavy: rgba(0, 0, 0, 0.75);
+  /* Keep the same shadow color regardless of set display mode */
+  --color-background-main: #24242a;
+  --color-border-main: #3e3e3e;
+  --color-text-main: #f2f2f2;
+  --color-text-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-inverted-main: #212121;
+  --color-text-inverted-secondary: rgba(33, 33, 33, 0.5);
+}
+:root,
+.during-screenshot {
+  --color-layer: rgba(0, 0, 0, 0.05);
+  --color-layer-double: rgba(0, 0, 0, 0.1);
+  --color-layer-heavy: rgba(0, 0, 0, 0.5);
+  --color-unlayer: rgba(255, 255, 255, 0.6);
+  --color-unlayer-heavy: rgba(255, 255, 255, 0.95);
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-soft: rgba(0, 0, 0, 0.035);
+  --color-background-main: #ffffff;
+  --color-border-main: #7a7a7a;
+  --color-text-main: #212121;
+  --color-text-secondary: rgba(33, 33, 33, 0.5);
+  --color-text-inverted-main: #f2f2f2;
+  --color-text-inverted-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-light-main: #f2f2f2;
+  --color-text-light-secondary: rgba(242, 242, 242, 0.5);
+  --color-text-dark-main: #212121;
+  --color-text-dark-secondary: rgba(33, 33, 33, 0.5);
+  --color-accent-main: #9f374f;
+  --color-accent-secondary: rgba(159, 55, 79, 0.5);
+  --shadow-main: 0 5px 15px 10px var(--color-shadow);
+  --shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
+}
+.flex-vert {
+  display: flex;
+  flex-direction: column;
+  gap: min(10px, 1vh);
+}
+.flex-hor {
+  display: flex;
+  flex-direction: row;
+  gap: min(10px, 1vh);
+}
+.round-corners,
+.material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
+button {
+  border-radius: 20px;
+}
+.backdrop-blur {
+  backdrop-filter: blur(60px);
+}
+.displaymode-darkmode .icon-mono.display-mode-dynamic-icon {
+  filter: contrast(0) brightness(100%) !important;
+  filter: invert(1) !important;
+}
+.material,
+.scrollbar-visible::-webkit-scrollbar-thumb,
+button {
+  background-color: var(--color-layer);
+  padding: min(10px, 1vh);
+  gap: calc(min(10px, 1vh) + 2px);
+}
+.material-border {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-border-main);
+}
+.scrollbar-visible::-webkit-scrollbar {
+  display: flex;
+  position: fixed;
+}
+.scrollbar-visible::-webkit-scrollbar-track {
+  width: 50% !important;
+}
+.screen-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  user-select: none;
+}
+* {
+  font-family: system-ui, "Arial";
+  font-size: max(10pt, 1.25vw, 1vh);
+  color: var(--color-text-main);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background-main);
+}
+button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-block: 7px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, translate 0.1s, background-color 0.2s;
+}
+button:hover {
+  box-shadow: var(--shadow-soft);
+  translate: 0px -2px;
+}
+button:active {
+  box-shadow: var(--shadow-main);
+  translate: 0 1px;
+}
+button > img {
+  width: 20px;
+  opacity: 0.5;
+}
+button > img.icon-mono {
+  opacity: 0.75;
+}
+button:hover > img {
+  opacity: 1 !important;
+}
+input {
+  width: 100%;
+  width: -webkit-fill-available;
+}
+input::placeholder {
+  font-weight: normal;
+  color: var(--color-text-secondary);
+}
+.during-screenshot input:placeholder-shown {
+  display: none;
+}
+input[type=checkbox] {
+  all: revert;
+  display: inline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+.text-secondary {
+  opacity: 0.5;
+}
+#commit-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(min(10px, 1vh) * 2);
+  padding-inline-start: 0;
+  margin: calc(min(10px, 1vh) * 2);
+}
+.commit-log-list-element {
+  display: flex;
+  flex-direction: column;
+  gap: calc(min(10px, 1vh) * 2);
+  padding: calc(min(10px, 1vh) * 2);
+}
+.commit-log-list-element > * {
+  display: flex;
+  flex-direction: column;
+  gap: min(10px, 1vh);
+}
+.author-data {
+  display: flex;
+  align-items: center;
+  gap: min(10px, 1vh);
+}
+.author-pfp {
+  width: 1.5em;
+  aspect-ratio: 1;
+  border-radius: 100%;
+}
+.commit-sha-id {
+  font-size: x-large;
+}
+.commit-description:first-letter {
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=commitLog.css.map */
