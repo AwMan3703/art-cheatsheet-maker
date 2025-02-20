@@ -167,6 +167,10 @@ p {
 .text-secondary {
   opacity: 0.5;
 }
+h1 {
+  font-size: xxx-large;
+  padding: min(10px, 1vh);
+}
 #commit-log-list {
   display: flex;
   flex-direction: column;
