@@ -136,4 +136,7 @@
   color: var(--color-text-light-main);
   background-color: var(--color-accent-main);
 }
+#csSUBJECT-selector {
+  text-transform: capitalize;
+}
 /*# sourceMappingURL=controlPanel.css.map */
