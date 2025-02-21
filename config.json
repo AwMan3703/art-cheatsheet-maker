@@ -1,7 +1,7 @@
 {
 	"client" : {
 		"version" : "1.8",
-		"saveLocalConfig" : false,
+		"saveLocalConfig" : true,
 		"localConfigKey" : "local-config",
 		"developmentMode": true,
 		"developmentModeOutsideLocalhost": false
@@ -55,12 +55,12 @@
 		}
 	},
 	"sheet" : {
-		"currentSubject" : "csSUBJECT:art_history",
+		"currentSubject" : "csSUBJECT:none",
 		"editing" : {
 			"deleteWarningLengthThreshold" : 25,
 			"deleteWarningWhenImagePresent" : true,
-			"enableDynamicBackgrounds" : true
 			"enableDynamicBackgrounds" : false,
+			"saveCurrentSubject" : true
 		},
 		"items" : {
 			"default_highlight_colors" : {
@@ -149,6 +149,11 @@
 					"names": {"singular": "testo", "plural": "testi", "section_title": "testi" },
 					"icon": "book.png",
 					"emoji" : "📚"
+				},
+				"csITEMTYPE:event" : {
+					"names": {"singular": "evento", "plural": "eventi", "section_title": "eventi" },
+					"icon": "noicon.png",
+					"emoji" : "📆"
 				}
 			},
 			"dynamicBackgroundsRoot" : "assets/",

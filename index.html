@@ -66,6 +66,9 @@
                         <a id="download-point" download="senza_nome.jpg">Scarica</a>
                     </div>
                     <div id="display-panel" class="controls-panel">
+                        <select name="csSUBJECT-selector" id="csSUBJECT-selector">
+                            <option value="csSUBJECT:none">Scegli materia...</option>
+                        </select>
                         <button id="darkmode-button" onclick="toggleDisplayMode('darkmode')">Modalità scura</button>
                         <button id="subwaysurfers-button" onclick="toggleSubwaySurfers()">Distraimi</button>
                     </div>
@@ -87,6 +90,10 @@
                             <button id="client-option-enableDynamicBackgrounds" class="setting-bool" data-setting="sheet.editing.enableDynamicBackgrounds" onclick="
                                 toggleDynamicBackgrounds('client-option-enableDynamicBackgrounds')
                             ">Sfondi dinamici: </button>
+
+                            <button id="client-option-saveCurrentSubject" class="setting-bool" data-setting="sheet.editing.saveCurrentSubject" onclick="
+                                toggleSaveSubject('client-option-saveCurrentSubject')
+                            ">Salva materia: </button>
                         </div>
 
                         <div id="client-debug-options">
