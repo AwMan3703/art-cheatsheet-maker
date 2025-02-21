@@ -1,8 +1,9 @@
 
 function addItem(type) {
+    const itemType = CONFIG.sheet.items.types[type]
     textInputDialog((text) => {
         if (!isEmptyString(text)) appendItem(type, text)
-    }, null, `${type.emoji} Aggiungi ${type.names.singular}`, "contenuto:", "Aggiungi")
+    }, null, `${itemType.emoji} Aggiungi ${itemType.names.singular}`, "contenuto:", "Aggiungi")
 }
 
 function addItemGenerationButtons(types) {
@@ -10,11 +11,11 @@ function addItemGenerationButtons(types) {
     parent.querySelectorAll('*').forEach(cn => cn.remove())
 
     types.forEach(type => {
-        type = CONFIG.sheet.items.types[type]
+        const itemType = CONFIG.sheet.items.types[type]
         const e = document.createElement("button")
         e.ontouchend = e.onclick = _ => { addItem(type) }
         e.className = "item-gen-button"
-        e.innerText = `${type.emoji} ${capitalize(type.names.singular)}`
+        e.innerText = `${itemType.emoji} ${capitalize(itemType.names.singular)}`
         parent.appendChild(e)
     })
 }

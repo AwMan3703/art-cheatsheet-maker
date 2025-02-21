@@ -180,6 +180,7 @@ function appendItem(type, content) {
     e.appendChild(btnWrapper)
 
     const p = document.getElementById(`section-${type}`)
+    console.log(type)
     p.appendChild(e)
     p.style.display = 'inherit'
     return e
