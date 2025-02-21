@@ -4,6 +4,8 @@
 let CONFIG = {}
 const immutableConfig = [ // Config paths that should NOT be saved locally
     "client.version",
+    "client.localConfigKey",
+    "subjects",
     "sheet.items"
 ]
 
@@ -55,7 +57,7 @@ function applyConfig() {
     const clientMenuOptions = document.querySelectorAll("#client-menu-dropdown > #client-options > button")
     clientMenuOptions.forEach((o) => { updateClientMenuOption(o) })
 
-    addSubjectSelectionOptions(Object.keys(CONFIG.subjects).filter(v => v!=='csSUBJECT:none'))
+    addSubjectSelectionOptions(Object.keys(CONFIG.subjects || {}).filter(v => v!=='csSUBJECT:none'))
     const subjectSelector = document.getElementById('csSUBJECT-selector')
     if (CONFIG.sheet.editing.saveCurrentSubject) subjectSelector.value = CONFIG.sheet.currentSubject
     subjectSelector.onchange({currentTarget: subjectSelector})
