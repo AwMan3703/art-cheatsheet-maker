@@ -1,6 +1,6 @@
 {
 	"client" : {
-		"version" : "2.0",
+		"version" : "2.1",
 		"saveLocalConfig" : true,
 		"localConfigKey" : "local-config",
 		"developmentMode": true,
