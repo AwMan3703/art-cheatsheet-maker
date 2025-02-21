@@ -14,6 +14,7 @@
 			"deleteWarningLengthThreshold" : 25,
 			"deleteWarningWhenImagePresent" : true,
 			"enableDynamicBackgrounds" : true
+			"enableDynamicBackgrounds" : false,
 		},
 		"items" : {
 			"default_highlight_colors" : {
