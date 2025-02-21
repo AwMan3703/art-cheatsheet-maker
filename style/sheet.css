@@ -115,6 +115,9 @@
   min-width: 98dvw;
   min-height: 100dvh;
 }
+.displaymode-subwaysurfers #content-body {
+  min-width: unset;
+}
 /* ------------------------ HEADER ------------------------ */
 /* main title */
 #section-contentHeader > #main-title {
