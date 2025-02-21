@@ -33,8 +33,19 @@ function addSubjectSelectionOptions(subjects) {
     })
 }
 
+function updateMainDataSection(subject) {
+    const mainDataSection = document.getElementById('main-data')
+    const targets = mainDataSection.children
+
+    for (const e of targets) {
+        if (e.dataset.subjects.split(' ').includes(subject)) e.style.removeProperty('display')
+        else e.style.display = 'none'
+    }
+}
+
 
 document.getElementById('csSUBJECT-selector').onchange = ev => {
     CONFIG.sheet.currentSubject = ev.currentTarget.value
     addItemGenerationButtons(CONFIG.subjects[CONFIG.sheet.currentSubject].item_types)
+    updateMainDataSection(CONFIG.sheet.currentSubject)
 }
