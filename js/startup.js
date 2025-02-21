@@ -7,6 +7,7 @@ const immutableConfig = [ // Config paths that should NOT be saved locally
     "sheet.items"
 ]
 
+
 function checkConfig(local) {
     // Warn if the config is empty
     if (Object.keys(local).length===0)
@@ -20,18 +21,23 @@ function checkConfig(local) {
 
     return local
 }
-function startup(configData) {
+
+function loadConfig(configData) {
     console.info("Config data obtained")
+
     console.log("Saving remote config...")
     const remoteConfigData = {...configData}
     console.info("Remote config saved")
+
     const localConfig = JSON.parse(localStorage.getItem(configData.client.localConfigKey))
-    console.log(`Local config data ${localConfig!=null ? 'detected' : 'not found - loading default'}`)
+    console.log(`Local config data ${localConfig!=null ? 'found' : 'not found - loading default'}`)
     if (localConfig!=null && localConfig.client.saveLocalConfig) configData = localConfig
     console.info(`saveLocalConfig is ${configData.client.saveLocalConfig} – ${configData.client.saveLocalConfig ? 'default' : 'if present, local'} config has been discarded`)
+
     console.log("Checking config data...")
     CONFIG = checkConfig(configData)
     console.info("Config data loaded")
+
     console.log("Restoring immutable config data...")
     for (const path of immutableConfig) {
         const immutableValue = getNestedJSON(remoteConfigData, path)
@@ -40,24 +46,34 @@ function startup(configData) {
     }
     console.info("Immutable config data ready")
 
-    if (CONFIG.client.developmentMode) console.info("Development mode is enabled")
+    console.log(configData)
+}
 
-    // Apply config
-    if (!CONFIG.client.developmentMode) document.getElementById("client-debug-options").remove()
+function applyConfig() {
+    if (!CONFIG.client.developmentMode) document.getElementById("client-debug-options")?.remove()
+
     const clientMenuOptions = document.querySelectorAll("#client-menu-dropdown > #client-options > button")
     clientMenuOptions.forEach((o) => { updateClientMenuOption(o) })
-    const itemGenerationPanel = document.getElementById("add-element-panel")
-    addItemGenerationButtons(itemGenerationPanel)
+
+    addSubjectSelectionOptions(Object.keys(CONFIG.subjects).filter(v => v!=='csSUBJECT:none'))
+    const subjectSelector = document.getElementById('csSUBJECT-selector')
+    if (CONFIG.sheet.editing.saveCurrentSubject) subjectSelector.value = CONFIG.sheet.currentSubject
+    subjectSelector.onchange({currentTarget: subjectSelector})
+
     const contentBody = document.getElementById("content-body")
     addItemSections(contentBody)
+
     const imageCarousels = document.getElementsByClassName("imageCarousel-wrapper")
     forAllElements(imageCarousels, addImageCarouselOptions)
+
     const versionLabel = document.querySelector("#clientInfo-wrapper > #version")
     versionLabel.innerText = `v${CONFIG.client.version}${CONFIG.client.developmentMode ? "dev" : ""}`
+
     const displayModes = CONFIG.ui.displayModes
     if (displayModes.length!==0) { for (const dm of displayModes) {
         document.body.classList.add(dm)
     } }
+
     const content_body = document.getElementById('content-body')
     if (CONFIG.sheet.editing.enableDynamicBackgrounds) content_body.classList.add('dynamic-backgrounds-enabled')
 
@@ -71,6 +87,14 @@ function startup(configData) {
         // If debug mode is not enabled, warn about progress loss before leaving the page
         if (!CONFIG.client.developmentMode) return true
     }
+}
+
+function startup(configData) {
+    loadConfig(configData)
+
+    if (CONFIG.client.developmentMode) console.info("Development mode is enabled")
+
+    applyConfig()
 }
 
 console.log("Fetching config data...")

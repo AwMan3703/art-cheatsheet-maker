@@ -60,7 +60,8 @@ input[type="radio"] {
 .round-corners,
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
-button {
+button,
+select {
   border-radius: 20px;
 }
 .backdrop-blur {
@@ -72,10 +73,12 @@ button {
 }
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
-button {
+button,
+select {
   background-color: var(--color-layer);
   padding: min(10px, 1vh);
   gap: calc(min(10px, 1vh) + 2px);
+  border: none;
 }
 .material-border {
   border-style: solid;
@@ -112,7 +115,8 @@ body {
   min-height: 100vh;
   background-color: var(--color-background-main);
 }
-button {
+button,
+select {
   display: flex;
   align-items: center;
   gap: 7px;

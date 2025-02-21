@@ -9,7 +9,53 @@
 	"ui" : {
 		"displayModes" : []
 	},
+	"subjects" : {
+		"csSUBJECT:none" : {
+			"name" : "nessuna materia",
+			"item_types" : []
+		},
+		"csSUBJECT:art_history" : {
+			"name" : "storia dell'arte",
+			"item_types" : [
+				"csITEMTYPE:commission",
+				"csITEMTYPE:context",
+				"csITEMTYPE:history",
+				"csITEMTYPE:size",
+				"csITEMTYPE:description",
+				"csITEMTYPE:inspiration",
+				"csITEMTYPE:style",
+				"csITEMTYPE:color",
+				"csITEMTYPE:light",
+				"csITEMTYPE:architecture",
+				"csITEMTYPE:material",
+				"csITEMTYPE:interpretation",
+				"csITEMTYPE:hypothesis",
+				"csITEMTYPE:document"
+			]
+		},
+		"csSUBJECT:italian" : {
+			"name" : "italiano",
+			"item_types" : [
+				"csITEMTYPE:context",
+				"csITEMTYPE:history",
+				"csITEMTYPE:description",
+				"csITEMTYPE:document",
+				"csITEMTYPE:text"
+			]
+		},
+		"csSUBJECT:history" : {
+			"name" : "storia",
+			"item_types" : [
+				"csITEMTYPE:context",
+				"csITEMTYPE:history",
+				"csITEMTYPE:description",
+				"csITEMTYPE:document",
+				"csITEMTYPE:event"
+			]
+		}
+	},
 	"sheet" : {
+		"currentSubject" : "csSUBJECT:art_history",
 		"editing" : {
 			"deleteWarningLengthThreshold" : 25,
 			"deleteWarningWhenImagePresent" : true,

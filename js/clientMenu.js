@@ -4,7 +4,7 @@ function updateClientMenuOption(o) {
     let setting = getNestedJSON(CONFIG, o.dataset.setting)
     switch (typeof setting) {
         case "boolean":
-            if (setting || setting==null) o.classList.add('setting-bool-active')
+            if (setting) o.classList.add('setting-bool-active')
             break
         default:
             break
@@ -35,4 +35,13 @@ const toggleDynamicBackgrounds = (e) => {
         e.classList.remove('setting-bool-active')
         document.getElementById('content-body').classList.remove('dynamic-backgrounds-enabled')
     }
+}
+
+const toggleSaveSubject = (e) => {
+    e = document.getElementById(e)
+    CONFIG.sheet.editing.saveCurrentSubject = !CONFIG.sheet.editing.saveCurrentSubject
+
+    // Update the UI
+    if (CONFIG.sheet.editing.saveCurrentSubject) e.classList.add('setting-bool-active')
+    else e.classList.remove('setting-bool-active')
 }

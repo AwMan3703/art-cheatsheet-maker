@@ -69,6 +69,7 @@
   background-color: var(--color-layer);
   padding: min(10px, 1vh);
   gap: calc(min(10px, 1vh) + 2px);
+  border: none;
 }
 .material-border {
   border-style: solid;
