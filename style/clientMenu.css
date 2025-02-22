@@ -204,7 +204,7 @@ button#shareButton {
   user-select: none;
   align-items: center;
 }
-#clientInfo-wrapper > * {
+#clientInfo-wrapper *:not(a) {
   color: var(--color-text-secondary);
 }
 #clientInfo-wrapper > #version {
