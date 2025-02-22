@@ -1,0 +1,14 @@
+.link-preview {
+  --favicon-url: "";
+}
+.link-preview::before {
+  display: inline-block;
+  content: "";
+  background-image: var(--favicon-url);
+  width: 1em;
+  height: 1em;
+  background-size: contain;
+  vertical-align: middle;
+  margin-inline-end: 0.25em;
+}
+/*# sourceMappingURL=link-previews.css.map */
