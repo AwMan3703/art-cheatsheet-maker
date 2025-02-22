@@ -24,7 +24,14 @@ function addCommitLogElement(commit) {
 
 
 fetch('https://api.github.com/repos/AwMan3703/art-cheatsheet-maker/commits')
-	.then(res => res.json())
+	.then(res => {
+		if (!res.ok) {
+			const errMessage = document.getElementById('error-message')
+			errMessage.innerText = `Error fetching commit list: ${res.status} ${res.statusText} - ${JSON.stringify(res)}`
+			errMessage.style.display = 'unset'
+		}
+		res.json()
+	})
 	.then(commits => {
 		for (const commit of commits) {
 			console.log(commit)
