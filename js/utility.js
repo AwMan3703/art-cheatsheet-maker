@@ -143,3 +143,7 @@ function googleImageSearchUrl(s) {
     url.set('udm', '2')
     return baseURL + url.toString()
 }
+
+const isEmptyString = (str) => {return str===undefined || str.replace(/\s/g, '')===""}
+
+const isObject = (obj) => typeof obj === 'object' && obj instanceof Object && !Array.isArray(obj) && obj.constructor !== Date;

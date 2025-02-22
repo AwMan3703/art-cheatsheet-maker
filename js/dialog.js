@@ -159,10 +159,6 @@ const createInputField = (id, class_string, title_string, description_string, ty
     return wrapper
 }
 
-const isEmptyString = (str) => {return str===undefined || str.replace(/\s/g, '')===""}
-
-const isObject = (obj) => typeof obj === 'object' && obj instanceof Object && !Array.isArray(obj) && obj.constructor !== Date;
-
 const firstLetterUpper = (text) => {return !isEmptyString(text) ? text[0].toUpperCase() + text.substring(1, text.length) : ""}
 
 /* --------------------------- */

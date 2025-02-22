@@ -83,17 +83,9 @@
 
                     <div id="client-menu-dropdown">
                         <div id="client-options">
-                            <button id="client-option-saveLocalConfig" class="setting-bool" data-setting="client.saveLocalConfig" onclick="
-                                toggleSaveConfig('client-option-saveLocalConfig')
-                            ">Salva impostazioni </button>
-
-                            <button id="client-option-enableDynamicBackgrounds" class="setting-bool" data-setting="sheet.editing.enableDynamicBackgrounds" onclick="
-                                toggleDynamicBackgrounds('client-option-enableDynamicBackgrounds')
-                            ">Sfondi dinamici </button>
-
-                            <button id="client-option-saveCurrentSubject" class="setting-bool" data-setting="sheet.editing.saveCurrentSubject" onclick="
-                                toggleSaveSubject('client-option-saveCurrentSubject')
-                            ">Ricorda materia selezionata </button>
+                            <button id="client-option-saveLocalConfig" class="setting-bool" data-setting="client.saveLocalConfig">Salva impostazioni </button>
+                            <button id="client-option-toggleDynamicBackgrounds" class="setting-bool" data-setting="sheet.editing.enableDynamicBackgrounds">Sfondi dinamici </button>
+                            <button id="client-option-saveCurrentSubject" class="setting-bool" data-setting="sheet.editing.saveCurrentSubject">Ricorda materia selezionata </button>
                         </div>
 
                         <div id="client-debug-options">
@@ -101,6 +93,8 @@
                             <button id="client-option-debug-screenshotMode" class="setting-bool" onclick="
                                 toggleClass(document.body, 'during-screenshot')
                             ">Modalità screenshot:</button>
+
+                            <button id="client-option-debug-toggleScreenshotMode" class="setting-bool">Modalità screenshot:</button>
                         </div>
 
                         <div id="meta-links">
