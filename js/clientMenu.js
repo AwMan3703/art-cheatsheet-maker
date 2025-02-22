@@ -49,7 +49,7 @@ makeClientBooleanOptionButton(saveCurrentSubjectButton,
 const configResetButton = document.getElementById('client-option-debug-resetConfig')
 const toggleScreenshotModeButton = document.getElementById('client-option-debug-toggleScreenshotMode')
 
-configResetButton.addEventListener('click', ev => {
+configResetButton.addEventListener('click', _ => {
     let csTitle = document.getElementById('main-title').value
     csTitle = isEmptyString(csTitle) ? null : csTitle
     const confirmation = window.confirm(`Saranno perse tutte le impostazioni${csTitle ? ` e la scheda attuale ("${csTitle}")` : ''}. 

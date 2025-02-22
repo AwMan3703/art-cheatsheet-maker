@@ -61,7 +61,8 @@ input[type="radio"] {
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
 button,
-select {
+select,
+code {
   border-radius: 20px;
 }
 .backdrop-blur {
@@ -74,7 +75,8 @@ select {
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
 button,
-select {
+select,
+code {
   background-color: var(--color-layer);
   padding: min(10px, 1vh);
   gap: calc(min(10px, 1vh) + 2px);
@@ -156,6 +158,11 @@ input::placeholder {
 input[type=checkbox] {
   all: revert;
   display: inline;
+}
+code {
+  background-color: var(--color-unlayer);
+  font-family: "JetBrains Mono", "Andale Mono", "Droid Sans Mono", monospace;
+  padding: calc(min(10px, 1vh) / 2);
 }
 h1,
 h2,
