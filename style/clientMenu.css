@@ -149,10 +149,12 @@
   box-shadow: var(--shadow-main);
 }
 /* ------------------ OPTIONS ------------------ */
-#client-options > button {
+#client-options button,
+#client-debug-options button {
   justify-content: space-between;
 }
-#client-options > button.setting-bool::after {
+#client-options button.setting-bool::after,
+#client-debug-options button.setting-bool::after {
   color: var(--color-text-light-main);
   padding-inline: calc(min(10px, 1vh));
   padding-block: calc(min(10px, 1vh) / 8);
@@ -162,29 +164,16 @@
   content: "off";
   background-color: #b60000;
 }
-#client-options > button.setting-bool.setting-bool-active::after {
+#client-options button.setting-bool.setting-bool-active::after,
+#client-debug-options button.setting-bool.setting-bool-active::after {
   content: "on";
   background-color: green;
 }
 /* ------------------ DEBUG OPTIONS ------------------ */
-#client-debug-options > button {
-  justify-content: center;
-}
-#client-debug-options #client-option-debug-screenshotMode::after {
-  color: var(--color-text-light-main);
-  padding-inline: calc(min(10px, 1vh));
-  padding-block: calc(min(10px, 1vh) / 8);
-  text-transform: uppercase;
+#client-debug-options button.setting-bool::after {
   font-weight: bold;
   border-radius: 10px;
   background-image: repeating-linear-gradient(110deg, rgba(255, 255, 0, 0.5) 0, rgba(255, 255, 0, 0.5) 5px, transparent 5px, transparent 12px);
-  /* off by default */
-  content: "off";
-  background-color: #b60000;
-}
-.during-screenshot #client-debug-options #client-option-debug-screenshotMode::after {
-  content: "on";
-  background-color: green;
 }
 /* ------------------ OUTBOUND LINKS ------------------ */
 button#feedbackButton {

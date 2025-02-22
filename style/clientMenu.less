@@ -65,9 +65,13 @@
 
 
 /* ------------------ OPTIONS ------------------ */
-#client-options > button { justify-content: space-between }
-
-#client-options > button.setting-bool::after {
+#client-options, #client-debug-options {
+	button {
+		justify-content: space-between
+	}
+}
+#client-options, #client-debug-options {
+	button.setting-bool::after {
 	color: var(--color-text-light-main);
 	padding-inline: calc(@padding);
 	padding-block: calc(@padding / 8);
@@ -75,24 +79,19 @@
 	border-radius: 1000px;
 	/* off by default */
 	content: "off"; background-color: #b60000;
+	}
 }
-#client-options > button.setting-bool.setting-bool-active::after { content: "on"; background-color: green }
+#client-options, #client-debug-options {
+	button.setting-bool.setting-bool-active::after { content: "on"; background-color: green }
+}
 
 
 /* ------------------ DEBUG OPTIONS ------------------ */
-#client-debug-options > button { justify-content: center }
-#client-debug-options #client-option-debug-screenshotMode::after {
-	color: var(--color-text-light-main);
-	padding-inline: calc(@padding);
-	padding-block: calc(@padding / 8);
-	text-transform: uppercase;
+#client-debug-options button.setting-bool::after {
 	font-weight: bold;
 	border-radius: 10px;
 	background-image: repeating-linear-gradient(110deg, rgba(255, 255, 0, 0.5) 0, rgba(255, 255, 0, 0.5) 5px, transparent 5px, transparent 12px);
-	/* off by default */
-	content: "off"; background-color: #b60000;
 }
-.during-screenshot #client-debug-options #client-option-debug-screenshotMode::after { content: "on"; background-color: green }
 
 
 /* ------------------ OUTBOUND LINKS ------------------ */
@@ -109,7 +108,7 @@ button#shareButton { --bgImgUrl: url("../assets/menu-shareButton-background.png"
 
 	text-shadow: 0 0 15px var(--color-text-inverted-main);
 	background: linear-gradient(90deg, var(--color-background-main), var(--color-unlayer-heavy), var(--color-unlayer) 80%, transparent),
-				repeat -7px 0 / 28px var(--bgImgUrl);
+		repeat -7px 0 / 28px var(--bgImgUrl);
 	background-clip: padding-box;
 	border: solid 5px var(--color-layer);
 }
