@@ -210,7 +210,7 @@
 /* ------------------------ CAROUSELS ------------------------ */
 .imageCarousel-wrapper {
   margin-block: calc(min(10px, 1vh) / 2);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .during-screenshot .imageCarousel-wrapper {
   height: fit-content;
