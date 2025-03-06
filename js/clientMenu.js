@@ -59,5 +59,5 @@ configResetButton.addEventListener('click', _ => {
     window.location.reload()
 })
 makeClientBooleanOptionButton(toggleScreenshotModeButton,
-    _ => {document.body.classList.contains('during-screenshot')},
+    _ => {return document.body.classList.contains('during-screenshot')},
     is_active => {document.body.classList.toggle('during-screenshot', is_active)})
