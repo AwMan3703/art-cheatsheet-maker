@@ -172,6 +172,7 @@ p {
   height: 1.2em;
   padding-inline: 0.1em;
   font-family: "JetBrains Mono", "Andale Mono", "Droid Sans Mono", monospace;
+  font-size: 0.75em;
   color: var(--color-layer-heavy);
   background-color: var(--color-layer);
   border: 0.1em solid var(--color-layer-double);
