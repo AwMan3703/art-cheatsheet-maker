@@ -30,11 +30,9 @@ fetch('https://api.github.com/repos/AwMan3703/art-cheatsheet-maker/commits')
 			errMessage.innerText = `Error fetching commit list: ${res.status} ${res.statusText} - ${JSON.stringify(res)}`
 			errMessage.style.display = 'unset'
 		}
-		res.json()
-	})
-	.then(commits => {
-		for (const commit of commits) {
-			console.log(commit)
-			addCommitLogElement(commit)
-		}
+		res.json().then(commits => {
+			for (const commit of commits) {
+				addCommitLogElement(commit)
+			}
+		})
 	})
