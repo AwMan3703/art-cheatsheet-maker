@@ -41,7 +41,8 @@ const textInputDialog = (callbackYes, callbackNo, title, label, yesLabel) => {
             title: title ? title : "Input di testo",
             inputs: {
                 [label]: {
-                    type: "textarea"
+                    type: "textarea",
+                    attributes: { "style" : "width:60vw;height:20vh" }
                 }
             },
             options: {
@@ -69,6 +70,7 @@ const editItemDialog = (item, callbackYes, callbackNo, title) => {
             inputs: {
                 "modifica contenuto:": {
                     type: "textarea",
+                    attributes: { "style" : "width:60vw;height:20vh" },
                     defaultValue: item.innerText
                 }
             },
