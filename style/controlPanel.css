@@ -3,15 +3,16 @@
   --color-layer: rgba(255, 255, 255, 0.05);
   --color-layer-double: rgba(255, 255, 255, 0.1);
   --color-layer-heavy: rgba(255, 255, 255, 0.5);
-  --color-unlayer: rgba(0, 0, 0, 0.3);
-  --color-unlayer-heavy: rgba(0, 0, 0, 0.75);
-  /* Keep the same shadow color regardless of set display mode */
-  --color-background-main: #24242a;
-  --color-border-main: #3e3e3e;
-  --color-text-main: #f2f2f2;
-  --color-text-secondary: rgba(242, 242, 242, 0.5);
+  --color-unlayer: rgba(25, 25, 25, 0.6);
+  --color-unlayer-heavy: rgba(25, 25, 25, 0.95);
+  --color-background-main: #191919;
+  --color-border-main: #858585;
+  --color-text-main: #dedede;
   --color-text-inverted-main: #212121;
+  --color-text-secondary: rgba(222, 222, 222, 0.5);
   --color-text-inverted-secondary: rgba(33, 33, 33, 0.5);
+  --shadow-main: 0 5px 15px 10px var(--color-shadow);
+  --shadow-soft: 0 1px 8px 5px var(--color-shadow-soft);
 }
 :root,
 .during-screenshot {
@@ -23,15 +24,10 @@
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-shadow-soft: rgba(0, 0, 0, 0.035);
   --color-background-main: #ffffff;
+  --color-background-secondary: #dedede;
   --color-border-main: #7a7a7a;
   --color-text-main: #212121;
   --color-text-secondary: rgba(33, 33, 33, 0.5);
-  --color-text-inverted-main: #f2f2f2;
-  --color-text-inverted-secondary: rgba(242, 242, 242, 0.5);
-  --color-text-light-main: #f2f2f2;
-  --color-text-light-secondary: rgba(242, 242, 242, 0.5);
-  --color-text-dark-main: #212121;
-  --color-text-dark-secondary: rgba(33, 33, 33, 0.5);
   --color-accent-main: #9f374f;
   --color-accent-secondary: rgba(159, 55, 79, 0.5);
   --shadow-main: 0 5px 15px 10px var(--color-shadow);
@@ -50,6 +46,9 @@
 .round-corners,
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
+button,
+select,
+code,
 #controls,
 .controls-panel {
   border-radius: 20px;
@@ -64,6 +63,9 @@
 }
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
+button,
+select,
+code,
 #controls,
 .controls-panel {
   background-color: var(--color-layer);
@@ -92,6 +94,90 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
   user-select: none;
+}
+* {
+  font-family: system-ui, "Arial";
+  font-size: max(10pt, 1.25vw, 1vh);
+  color: var(--color-text-main);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background-main);
+}
+button,
+select {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-block: 7px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, translate 0.1s, background-color 0.2s;
+}
+button:hover {
+  box-shadow: var(--shadow-soft);
+  translate: 0px -2px;
+}
+button:active {
+  box-shadow: var(--shadow-main);
+  translate: 0 1px;
+}
+button > img {
+  width: 20px;
+  opacity: 0.5;
+}
+button > img.icon-mono {
+  opacity: 0.75;
+}
+button:hover > img {
+  opacity: 1 !important;
+}
+input {
+  width: 100%;
+  width: -webkit-fill-available;
+}
+input::placeholder {
+  font-weight: normal;
+  color: var(--color-text-secondary);
+}
+.during-screenshot input:placeholder-shown {
+  display: none;
+}
+input[type=checkbox] {
+  all: revert;
+  display: inline;
+}
+code {
+  background-color: var(--color-unlayer);
+  font-family: "JetBrains Mono", "Andale Mono", "Droid Sans Mono", monospace;
+  padding: calc(min(10px, 1vh) / 2);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+.key-allegory,
+.item-gen-button::before {
+  display: flex;
+  justify-content: center;
+  width: 1.5em;
+  aspect-ratio: 1;
+  color: var(--color-layer-heavy);
+  background-color: var(--color-layer);
+  border-radius: 0.3em;
 }
 #download-point:not(.available) {
   display: none;

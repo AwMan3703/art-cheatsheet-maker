@@ -1,0 +1,11 @@
+/* ----- Reset ----- */
+input,
+button {
+  all: unset;
+  pointer-events: all;
+}
+input[type="radio"] {
+  all: revert;
+}
+/* ----------------- */
+/*# sourceMappingURL=reset.css.map */
