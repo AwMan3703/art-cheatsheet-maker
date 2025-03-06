@@ -40,8 +40,14 @@
 #display-panel { grid-row: 2; grid-column: 2; }
 
 #export-panel > #export-button:hover {
-	color: var(--color-text-light-main);
+	color: var(--color-unlayer-heavy);
 	background-color: var(--color-accent-main);
+}
+
+.item-gen-button::before {
+	&:extend(.key-allegory);
+	content: attr(data-keybind);
+	margin-inline-end: @padding / 2;
 }
 
 #csSUBJECT-selector {

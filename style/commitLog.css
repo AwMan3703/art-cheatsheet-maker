@@ -167,11 +167,17 @@ p {
 .key-allegory {
   display: flex;
   justify-content: center;
-  width: 1.5em;
-  aspect-ratio: 1;
+  align-items: center;
+  min-width: 1em;
+  height: 1.2em;
+  padding-inline: 0.1em;
+  font-family: "JetBrains Mono", "Andale Mono", "Droid Sans Mono", monospace;
   color: var(--color-layer-heavy);
   background-color: var(--color-layer);
+  border: 0.1em solid var(--color-layer-double);
   border-radius: 0.3em;
+  box-shadow: 0.075em 0.15em 0 0.05em var(--color-layer-double);
+  translate: 0 -0.15em;
 }
 h1 {
   font-size: xxx-large;
