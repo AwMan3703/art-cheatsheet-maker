@@ -50,6 +50,9 @@
 .dialog-wrapper,
 .dialog-input-field,
 .scrollbar-visible::-webkit-scrollbar-thumb,
+button,
+select,
+code,
 .dialog-wrapper,
 .cs-item-color-selector-item {
   border-radius: 20px;
@@ -63,6 +66,9 @@
 }
 .material,
 .scrollbar-visible::-webkit-scrollbar-thumb,
+button,
+select,
+code,
 .dialog-wrapper,
 .cs-item-color-selector-item {
   background-color: var(--color-layer);
@@ -91,6 +97,98 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
   user-select: none;
+}
+* {
+  font-family: system-ui, "Arial";
+  font-size: max(10pt, 1.25vw, 1vh);
+  color: var(--color-text-main);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background-main);
+}
+button,
+select {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-block: 7px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, translate 0.1s, background-color 0.2s;
+}
+button:hover {
+  box-shadow: var(--shadow-soft);
+  translate: 0px -2px;
+}
+button:active {
+  box-shadow: var(--shadow-main);
+  translate: 0 1px;
+}
+button > img {
+  width: 20px;
+  opacity: 0.5;
+}
+button > img.icon-mono {
+  opacity: 0.75;
+}
+button:hover > img {
+  opacity: 1 !important;
+}
+input {
+  width: 100%;
+  width: -webkit-fill-available;
+}
+input::placeholder {
+  font-weight: normal;
+  color: var(--color-text-secondary);
+}
+.during-screenshot input:placeholder-shown {
+  display: none;
+}
+input[type=checkbox] {
+  all: revert;
+  display: inline;
+}
+code {
+  background-color: var(--color-unlayer);
+  font-family: "JetBrains Mono", "Andale Mono", "Droid Sans Mono", monospace;
+  padding: calc(min(10px, 1vh) / 2);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+.key-allegory,
+.dialog-options-buttonAbort::before,
+.dialog-options-buttonComplete::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1em;
+  height: 1.2em;
+  padding-inline: 0.1em;
+  font-family: "JetBrains Mono", "Andale Mono", "Droid Sans Mono", monospace;
+  font-size: 0.75em;
+  color: var(--color-layer-heavy);
+  background-color: var(--color-layer);
+  border: 0.1em solid var(--color-layer-double);
+  border-radius: 0.3em;
+  box-shadow: 0.075em 0.15em 0 0.05em var(--color-layer-double);
+  translate: 0 -0.15em;
 }
 #dialog-screen-darkener:not(:has(.dialog-wrapper)) {
   display: none;
@@ -122,12 +220,19 @@
 .dialog-options-button {
   padding: calc(min(10px, 1vh) + 10px);
 }
+.dialog-options-buttonAbort::before {
+  content: "ESC";
+}
 .dialog-options-buttonComplete {
   font-weight: bold;
 }
 .dialog-options-buttonComplete:hover {
   color: var(--color-unlayer-heavy);
   background-color: var(--color-accent-main);
+}
+.dialog-options-buttonComplete::before {
+  content: "\21A9";
+  /* ↩︎ */
 }
 .dialog-input {
   margin-block-end: calc(min(10px, 1vh) + 10px);

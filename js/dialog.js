@@ -111,6 +111,13 @@ function Dialog(parent, structure) {
     optionAbort.onclick = () => {
         callbackWrapper(() => { structure.options.abortDialog.callback(null) })
     }
+    const abortKeyBindCallback = ev => {
+        if (ev.key === 'Escape') {
+            optionAbort.onclick(ev)
+            document.body.removeEventListener('keyup', abortKeyBindCallback)
+        }
+    }
+    document.body.addEventListener("keyup", abortKeyBindCallback)
     options.appendChild(optionAbort)
 
     if (isObject(structure.options.completeDialog)) {
@@ -126,6 +133,13 @@ function Dialog(parent, structure) {
                 structure.options.completeDialog.callback(results)
             })
         }
+        const completeKeyBindCallback = ev => {
+            if (ev.key === 'Enter') {
+                optionComplete.onclick(ev)
+                document.body.removeEventListener('keyup', completeKeyBindCallback)
+            }
+        }
+        document.body.addEventListener("keyup", completeKeyBindCallback)
         options.appendChild(optionComplete)
     }
 

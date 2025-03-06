@@ -1,6 +1,7 @@
 
 @import "globals";
 @import "material";
+@import "common";
 
 #dialog-screen-darkener:not(:has(.dialog-wrapper)) {
 	display: none;
@@ -32,10 +33,18 @@
 }
 .dialog-options-button { padding: calc(@padding + 10px) }
 .dialog-options-buttonAbort {}
+.dialog-options-buttonAbort::before {
+	&:extend(.key-allegory);
+	content: "ESC";
+}
 .dialog-options-buttonComplete { font-weight: bold }
 .dialog-options-buttonComplete:hover {
 	color: var(--color-unlayer-heavy);
 	background-color: var(--color-accent-main);
+}
+.dialog-options-buttonComplete::before {
+	&:extend(.key-allegory);
+	content: "\21A9";  /* ↩︎ */
 }
 
 .dialog-input { margin-block-end: calc(@padding + 10px) }
