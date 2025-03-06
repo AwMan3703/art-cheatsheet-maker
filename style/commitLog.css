@@ -172,6 +172,7 @@ p {
   height: 1.2em;
   padding-inline: 0.1em;
   font-family: "JetBrains Mono", "Andale Mono", "Droid Sans Mono", monospace;
+  font-size: 0.75em;
   color: var(--color-layer-heavy);
   background-color: var(--color-layer);
   border: 0.1em solid var(--color-layer-double);
@@ -181,11 +182,15 @@ p {
 }
 h1 {
   font-size: xxx-large;
-  padding: min(10px, 1vh);
+}
+h1#main-title {
+  padding-inline: calc(min(10px, 1vh) * 2);
 }
 #commit-log-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: calc(min(10px, 1vh) * 2);
   padding-inline-start: 0;
   margin: calc(min(10px, 1vh) * 2);

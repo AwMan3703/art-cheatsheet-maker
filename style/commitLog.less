@@ -2,12 +2,16 @@
 
 h1 {
 	font-size: xxx-large;
-	padding: @padding;
+}
+h1#main-title {
+	padding-inline: calc(@padding * 2);
 }
 
 #commit-log-list {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: calc(@padding * 2);
 	padding-inline-start: 0;
 	margin: calc(@padding * 2);
