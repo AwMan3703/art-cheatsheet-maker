@@ -21,7 +21,7 @@ function addItemGenerationButtons(types) {
         e.ontouchend = e.onclick = _ => { addItem(type) }
 
         e.dataset.keybind = keyBindKeys[counter]
-        const keyBindCallback = ev => { if (ev.key === e.dataset.keybind) addItem(type) }
+        const keyBindCallback = ev => { if (document.activeElement === document.body && ev.key === e.dataset.keybind) addItem(type) }
         document.body.addEventListener("keyup", keyBindCallback)
         keyBindListeners.push(keyBindCallback)
 
