@@ -96,50 +96,54 @@ function Dialog(parent, structure) {
 
     addhr()
 
+    const keyCallbacks = [];
+    const removeKeyCallbacks = () => {
+        keyCallbacks.forEach(({ event, handler }) => document.body.removeEventListener(event, handler));
+        keyCallbacks.length = 0;
+    };
+    const callbackWrapper = (callback, key) => {
+        const handler = (ev) => {
+            if (key && ev.key !== key) return;
+            callback();
+            wrapper.remove();
+            parents.splice(parents.indexOf(parent), 1);
+            removeKeyCallbacks();
+        };
+
+        if (key) {
+            document.body.addEventListener("keyup", handler);
+            keyCallbacks.push({ event: "keyup", handler });
+        }
+
+        return handler;
+    };
+
+
     // Build the option buttons
-    const callbackWrapper = (c) => {
-        c()
-        wrapper.remove()
-        parents.splice(parents.indexOf(parent), 1)
-    }
     const options = document.createElement("div")
     options.className = "dialog-options-wrapper"
 
+    const abortCallback = _ => {
+        structure.options.abortDialog.callback(null)
+    }
     const optionAbort = document.createElement("button")
     optionAbort.className = "dialog-options-button dialog-options-buttonAbort"
     optionAbort.innerText = structure.options.abortDialog.label
-    optionAbort.onclick = () => {
-        callbackWrapper(() => { structure.options.abortDialog.callback(null) })
-    }
-    const abortKeyBindCallback = ev => {
-        if (ev.key === 'Escape') {
-            optionAbort.onclick(ev)
-            document.body.removeEventListener('keyup', abortKeyBindCallback)
-        }
-    }
-    document.body.addEventListener("keyup", abortKeyBindCallback)
+    optionAbort.onclick = callbackWrapper(abortCallback)
+    document.body.addEventListener("keyup", callbackWrapper(abortCallback, "Escape"))
     options.appendChild(optionAbort)
 
     if (isObject(structure.options.completeDialog)) {
+        const completeCallback = _ => {
+            const results = {}
+            for (const [name, id] of Object.entries(inputMap)) results[name] = document.getElementById(id)
+            structure.options.completeDialog.callback(results)
+        }
         const optionComplete = document.createElement("button")
         optionComplete.className = "dialog-options-button dialog-options-buttonComplete"
         optionComplete.innerText = structure.options.completeDialog.label
-        optionComplete.onclick = () => {
-            const results = {}
-            for (const [name, id] of Object.entries(inputMap)) {
-                results[name] = document.getElementById(id)
-            }
-            callbackWrapper(() => {
-                structure.options.completeDialog.callback(results)
-            })
-        }
-        const completeKeyBindCallback = ev => {
-            if (ev.key === 'Enter') {
-                optionComplete.onclick(ev)
-                document.body.removeEventListener('keyup', completeKeyBindCallback)
-            }
-        }
-        document.body.addEventListener("keyup", completeKeyBindCallback)
+        optionComplete.onclick = callbackWrapper(completeCallback)
+        document.body.addEventListener("keyup", callbackWrapper(completeCallback, "Enter"))
         options.appendChild(optionComplete)
     }
 
