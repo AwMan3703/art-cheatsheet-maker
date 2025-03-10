@@ -146,13 +146,13 @@
 					"emoji" : "📑"
 				},
 				"csITEMTYPE:text" : {
-					"names": {"singular": "testo", "plural": "testi", "section_title": "testi" },
+					"names": { "singular": "testo", "plural": "testi", "section_title": "testi" },
 					"icon": "book.png",
 					"emoji" : "📚"
 				},
 				"csITEMTYPE:event" : {
-					"names": {"singular": "evento", "plural": "eventi", "section_title": "eventi" },
 					"icon": "noicon.png",
+					"names": { "singular": "evento", "plural": "eventi", "section_title": "eventi" },
 					"emoji" : "📆"
 				}
 			},
