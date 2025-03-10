@@ -153,6 +153,7 @@ function appendItem(type, content) {
 
     const colorBtn = document.createElement("button")
     colorBtn.onclick = _ => selectColor(itemID)
+    colorBtn.title = "Evidenzia"
     const colorIcon = document.createElement("img")
     colorIcon.className = "icon-mono display-mode-dynamic-icon"
     colorIcon.src = "assets/palette.png"
@@ -160,6 +161,7 @@ function appendItem(type, content) {
 
     const editBtn = document.createElement("button")
     editBtn.onclick = _ => editItem(itemID)
+    editBtn.title = "Modifica"
     const editIcon = document.createElement("img")
     editIcon.className = "icon-mono display-mode-dynamic-icon"
     editIcon.src = "assets/pencil.png"
@@ -167,6 +169,7 @@ function appendItem(type, content) {
 
     const xBtn = document.createElement("button")
     xBtn.onclick = _ => deleteItem(itemID)
+    xBtn.title = "Elimina"
     const xIcon = document.createElement("img")
     xIcon.className = "icon-mono display-mode-dynamic-icon"
     xIcon.src = "assets/x.png"
