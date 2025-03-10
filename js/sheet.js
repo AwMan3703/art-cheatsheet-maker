@@ -180,7 +180,6 @@ function appendItem(type, content) {
     e.appendChild(btnWrapper)
 
     const p = document.getElementById(`section-${type}`)
-    console.log(type)
     p.appendChild(e)
     p.style.display = 'inherit'
     return e
@@ -190,7 +189,6 @@ function selectColor(eID) {
     const e = document.querySelector(`#${eID}`)
     const type = CONFIG.sheet.items.types[e.dataset.itemtype]
     colorSelectDialog(color => {
-        console.log(color)
         e.style.backgroundColor = color
     }, `Evidenzia ${type.names.singular}`, CONFIG.sheet.items.default_highlight_colors)
 }
