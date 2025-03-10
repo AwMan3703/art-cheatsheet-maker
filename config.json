@@ -151,8 +151,8 @@
 					"emoji" : "📚"
 				},
 				"csITEMTYPE:event" : {
-					"icon": "noicon.png",
 					"names": { "singular": "evento", "plural": "eventi", "section_title": "eventi" },
+					"icon": "calendar.png",
 					"emoji" : "📆"
 				}
 			},
