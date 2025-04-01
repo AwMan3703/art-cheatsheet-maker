@@ -250,4 +250,12 @@ function addImages(parent, files) {
     }
 }
 
-
+const main_title = document.getElementById("main-title")
+const date_from = document.getElementById("input-dateFrom-year")
+const callback = _ => {
+    document.title = "" +
+        (main_title.value !== "" ? main_title.value : "Editor Scheda") +
+        (main_title.value !== "" && date_from.value !== "" ? (", " + date_from.value) : "")
+}
+main_title.addEventListener('input', callback)
+date_from.addEventListener('input', callback)
