@@ -164,7 +164,7 @@ p {
 .text-secondary {
   color: var(--color-text-secondary);
 }
-.key-allegory {
+kbd {
   display: flex;
   justify-content: center;
   align-items: center;

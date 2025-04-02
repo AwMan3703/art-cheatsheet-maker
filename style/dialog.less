@@ -34,7 +34,7 @@
 .dialog-options-button { padding: calc(@padding + 10px) }
 .dialog-options-buttonAbort {}
 .dialog-options-buttonAbort::before {
-	&:extend(.key-allegory);
+	&:extend(kbd);
 	content: "ESC";
 }
 .dialog-options-buttonComplete { font-weight: bold }
@@ -43,7 +43,7 @@
 	background-color: var(--color-accent-main);
 }
 .dialog-options-buttonComplete::before {
-	&:extend(.key-allegory);
+	&:extend(kbd);
 	content: "\21A9";  /* ↩︎ */
 }
 
